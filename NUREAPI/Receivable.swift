@@ -16,4 +16,6 @@ public protocol Receivable {
 	var completion: (Received -> Void) { get set }
 	var error: (AnError -> Void)? { get set }
 
+	func execute() -> ()
+
 }
