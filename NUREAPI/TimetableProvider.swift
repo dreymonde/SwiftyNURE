@@ -10,7 +10,7 @@ import Foundation
 
 public protocol TimetableProvider: Receivable {
     
-	var completion: (Timetable -> Void) { get set }
+	var completion: (Timetable -> Void) { get }
 	var error: (ErrorType -> Void)? { get set }
 
 	init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void))
@@ -24,11 +24,11 @@ enum ProviderError: ErrorType {
 	case CantParseFromJSON
 }
 
-public class CISTTimetableProvider: TimetableProvider {
+public class RemoteTimetableProvider: TimetableProvider {
 
-	public var completion: (Timetable -> Void)
+	public let completion: (Timetable -> Void)
 	public lazy var error: (ErrorType -> Void)?
-	private requestURL: NSURL
+	private let requestURL: NSURL
 
 	public required init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void)) {
 		self.completion = completion
@@ -47,6 +47,7 @@ public class CISTTimetableProvider: TimetableProvider {
 		request.error = { error in
 			self.error?(error)
 		}
+		request.execute()
 	}
 
 }

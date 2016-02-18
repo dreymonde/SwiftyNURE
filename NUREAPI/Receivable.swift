@@ -13,7 +13,7 @@ public protocol Receivable {
 	typealias Received
 	typealias AnError = ErrorType
 
-	var completion: (Received -> Void) { get set }
+	var completion: (Received -> Void) { get }
 	var error: (AnError -> Void)? { get set }
 
 	func execute() -> ()
