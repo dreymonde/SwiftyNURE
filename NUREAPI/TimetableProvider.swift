@@ -27,16 +27,16 @@ enum ProviderError: ErrorType {
 public class RemoteTimetableProvider: TimetableProvider {
 
 	public let completion: (Timetable -> Void)
-	public lazy var error: (ErrorType -> Void)?
+	public var error: (ErrorType -> Void)?
 	private let requestURL: NSURL
 
 	public required init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void)) {
 		self.completion = completion
-		let url = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)&type_id=1&time_from=\(timeFrom.timeIntervalSince1970)&time_to=\(timeTo.timeIntervalSince1970)")
+		requestURL = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)&type_id=1&time_from=\(fromDate.timeIntervalSince1970)&time_to=\(toDate.timeIntervalSince1970)")
 	}
 
 	public func execute() {
-		var request = JSONRequest(.GET, url: url) { jsonResponse in
+		var request = JSONRequest(.GET, url: requestURL) { jsonResponse in
 			if let timetable = TimetableParser.parse(fromJSON: jsonResponse.data) {
 				self.completion(timetable)
 				return

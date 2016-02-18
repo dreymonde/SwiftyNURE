@@ -29,4 +29,5 @@ public enum Method: String {
 public enum RequestError: ErrorType {
     case NetworkError(info: String)
     case NoData
+    case JsonParseNull
 }

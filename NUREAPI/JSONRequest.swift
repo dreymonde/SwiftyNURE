@@ -21,7 +21,8 @@ extension JSON: BodyType {
     }
     
     public static func fromData(data: NSData) -> JSON? {
-        return JSON(data: data)
+        let json = JSON(data: data)
+        return json
     }
     
 }
@@ -57,15 +58,36 @@ public struct JSONRequest: RequestType {
                 return
             }
             
-            guard let data = data, jsonResponse = JSON.fromData(data) else {
+            guard let data = data else {
                 self.error?(.NoData)
                 return
             }
-
+            var jsonResponse = JSON(data: data)
+            if jsonResponse == JSON.null {
+                guard let fixedData = self.fixFuckingCIST(data) else {
+                    self.error?(.JsonParseNull)
+                    return
+                }
+                jsonResponse = JSON(data: fixedData)
+                if jsonResponse == JSON.null {
+                    self.error?(.JsonParseNull)
+                    return
+                }
+            }
             let responseStruct = Response(data: jsonResponse, response: httpResponse)
             self.completion(responseStruct)
         }
         task.resume()
+    }
+    
+    private func fixFuckingCIST(data: NSData) -> NSData? {
+        guard let received = String(data: data, encoding: NSWindowsCP1251StringEncoding) else {
+            return nil
+        }
+        guard let dataFromString = received.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) else {
+            return nil
+        }
+        return dataFromString
     }
     
 }

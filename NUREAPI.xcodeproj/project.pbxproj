@@ -32,6 +32,7 @@
 		BE9F77161C760DA3007DB538 /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77151C760DA3007DB538 /* TimetableProvider.swift */; };
 		BE9F77181C760DDF007DB538 /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77171C760DDF007DB538 /* NURE.swift */; };
 		BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77191C761AFE007DB538 /* Receivable.swift */; };
+		BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F771B1C767713007DB538 /* GroupsProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		BE9F77151C760DA3007DB538 /* TimetableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
 		BE9F77171C760DDF007DB538 /* NURE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURE.swift; sourceTree = "<group>"; };
 		BE9F77191C761AFE007DB538 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
+		BE9F771B1C767713007DB538 /* GroupsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +187,7 @@
 		BE7E06DB1C75EC4A0050E57D /* NUREAPI */ = {
 			isa = PBXGroup;
 			children = (
-				BE9F77141C760D8D007DB538 /* ActuallyNetworking */,
+				BE9F77141C760D8D007DB538 /* Providers */,
 				BE7E07271C75FBD30050E57D /* Events and co */,
 				BE7E07221C75FACC0050E57D /* Parsers */,
 				BE7E071B1C75F5870050E57D /* Request */,
@@ -259,12 +261,13 @@
 			name = "Events and co";
 			sourceTree = "<group>";
 		};
-		BE9F77141C760D8D007DB538 /* ActuallyNetworking */ = {
+		BE9F77141C760D8D007DB538 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
 				BE9F77151C760DA3007DB538 /* TimetableProvider.swift */,
+				BE9F771B1C767713007DB538 /* GroupsProvider.swift */,
 			);
-			name = ActuallyNetworking;
+			name = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +454,7 @@
 				BE7E07181C75F4FE0050E57D /* BodyType.swift in Sources */,
 				BE7E071F1C75F7720050E57D /* JSONRequest.swift in Sources */,
 				BE7E06F71C75EC550050E57D /* Event.swift in Sources */,
+				BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */,
 				BE7E071D1C75F7230050E57D /* Response.swift in Sources */,
 				BE7E06F81C75EC550050E57D /* Timetable.swift in Sources */,
 				BE7E072D1C75FD400050E57D /* TeacherParser.swift in Sources */,
