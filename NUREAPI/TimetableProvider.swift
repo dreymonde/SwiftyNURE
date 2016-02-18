@@ -23,24 +23,26 @@ enum ProviderError: ErrorType {
 	case CantParseFromJSON
 }
 
-class CISTTimetableProvider: TimetableProvider {
+public class CISTTimetableProvider: TimetableProvider {
 
-	var completion: (Timetable -> Void)
-	var error: (ErrorType -> Void)?
+	public var completion: (Timetable -> Void)
+	public var error: (ErrorType -> Void)?
 
-	init() {
+	public required init() {
 		self.completion = { _ in
 			print("Timetable received")
 		}
 		self.error = nil
 	}
 
-	func getTimetable(forGroupID groupId: Int, timeFrom: NSDate, timeTo: NSDate, completion: (Timetable -> Void)?) {
-		self.completion = completion
-		var url = //composeURL
+	public func getTimetable(forGroupID groupId: Int, timeFrom: NSDate, timeTo: NSDate, completion: (Timetable -> Void)?) {
+        if let completion = completion {
+            self.completion = completion
+        }
+		let url = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)&type_id=1&time_from=\(timeFrom.timeIntervalSince1970)&time_to=\(timeTo.timeIntervalSince1970)")
 		var request = JSONRequest(.GET, url: url) { jsonResponse in
 			if let timetable = TimetableParser.parse(fromJSON: jsonResponse.data) {
-				completion(timetable)
+				self.completion(timetable)
 				return
 			} else {
 				self.error?(ProviderError.CantParseFromJSON)

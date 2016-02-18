@@ -22,6 +22,7 @@ class NUREAPITests: XCTestCase {
     }
     
     func testExample() {
+        let wait = 
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

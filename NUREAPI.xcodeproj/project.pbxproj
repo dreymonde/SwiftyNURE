@@ -31,6 +31,7 @@
 		BE7E07391C7607750050E57D /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07381C7607750050E57D /* EventType.swift */; };
 		BE9F77161C760DA3007DB538 /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77151C760DA3007DB538 /* TimetableProvider.swift */; };
 		BE9F77181C760DDF007DB538 /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77171C760DDF007DB538 /* NURE.swift */; };
+		BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77191C761AFE007DB538 /* Receivable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		BE7E07381C7607750050E57D /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		BE9F77151C760DA3007DB538 /* TimetableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
 		BE9F77171C760DDF007DB538 /* NURE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURE.swift; sourceTree = "<group>"; };
+		BE9F77191C761AFE007DB538 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				BE7E071B1C75F5870050E57D /* Request */,
 				BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */,
 				BE7E06DE1C75EC4A0050E57D /* Info.plist */,
+				BE9F77191C761AFE007DB538 /* Receivable.swift */,
 				BE9F77171C760DDF007DB538 /* NURE.swift */,
 			);
 			path = NUREAPI;
@@ -444,6 +447,7 @@
 				BE7E07371C7600510050E57D /* EventTypeParser.swift in Sources */,
 				BE7E07261C75FB3E0050E57D /* Parser.swift in Sources */,
 				BE7E07241C75FAF70050E57D /* SubjectParser.swift in Sources */,
+				BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */,
 				BE7E07181C75F4FE0050E57D /* BodyType.swift in Sources */,
 				BE7E071F1C75F7720050E57D /* JSONRequest.swift in Sources */,
 				BE7E06F71C75EC550050E57D /* Event.swift in Sources */,
