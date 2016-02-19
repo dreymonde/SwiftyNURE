@@ -13,7 +13,7 @@ public struct Response<T: BodyType> {
         self.data = data
         self.response = response
     }
-    
+        
     public var data: T
     private var response: NSHTTPURLResponse
     public var statusCode: Int {

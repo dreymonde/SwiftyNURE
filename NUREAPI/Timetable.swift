@@ -11,9 +11,13 @@ import Foundation
 public struct Timetable {
     
     public var events: [Eventable] = [Eventable]()
-    public var teachers: [Teacher] = [Teacher]()
-    public var groups: [Group] = [Group]()
-    public var subjects: [Subject] = [Subject]()
-    public var types: [EventType] = [EventType]()
+    internal var teachers: [Teacher] = [Teacher]()
+    internal var groups: [Group] = [Group]()
+    internal var subjects: [Subject] = [Subject]()
+    internal var types: [EventType] = [EventType]()
+    
+    func events(forDay date: NSDate) -> [Eventable] {
+        return events.filter { NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: $0.startDate) }
+    }
     
 }

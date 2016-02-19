@@ -14,3 +14,14 @@ struct NURE {
     static let apiGroupJson = NURE.apiRoot.URLByAppendingPathComponent("P_API_GROUP_JSON")
 
 }
+
+extension String {
+    
+    func containsOptionalString(other: String?) -> Bool {
+        if let string = other {
+            return self.containsString(string)
+        }
+        return true
+    }
+    
+}

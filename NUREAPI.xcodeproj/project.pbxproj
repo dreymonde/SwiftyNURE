@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */; };
+		BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */; };
 		BE7E06DD1C75EC4A0050E57D /* NUREAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE7E06E41C75EC4A0050E57D /* NUREAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7E06D91C75EC4A0050E57D /* NUREAPI.framework */; };
 		BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */; };
@@ -50,26 +52,12 @@
 			remoteGlobalIDString = 2E4FEFDB19575BE100351305;
 			remoteInfo = "SwiftyJSON iOS";
 		};
-		BE7E07071C75F4480050E57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2E4FEFE619575BE100351305;
-			remoteInfo = "SwiftyJSON iOS Tests";
-		};
 		BE7E07091C75F4480050E57D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9C7DFC5B1A9102BD005AA3F7;
 			remoteInfo = "SwiftyJSON OSX";
-		};
-		BE7E070B1C75F4480050E57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9C7DFC651A9102BD005AA3F7;
-			remoteInfo = "SwiftyJSON OSX Tests";
 		};
 		BE7E070D1C75F4480050E57D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -84,13 +72,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 7236B4F61BAC14150020529B;
 			remoteInfo = "SwiftyJSON tvOS";
-		};
-		BE7E07111C75F4480050E57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A8580F741BCF5C5B00DA927B;
-			remoteInfo = "SwiftyJSON tvOS Tests";
 		};
 		BE7E07131C75F46D0050E57D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -115,6 +96,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProviderTests.swift; sourceTree = "<group>"; };
+		BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProviderTests.swift; sourceTree = "<group>"; };
 		BE7E06D91C75EC4A0050E57D /* NUREAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NUREAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NUREAPI.h; sourceTree = "<group>"; };
 		BE7E06DE1C75EC4A0050E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -203,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */,
+				BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */,
+				BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */,
 				BE7E06EA1C75EC4A0050E57D /* Info.plist */,
 			);
 			path = NUREAPITests;
@@ -212,12 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				BE7E07061C75F4480050E57D /* SwiftyJSON.framework */,
-				BE7E07081C75F4480050E57D /* SwiftyJSON iOS Tests.xctest */,
 				BE7E070A1C75F4480050E57D /* SwiftyJSON.framework */,
-				BE7E070C1C75F4480050E57D /* SwiftyJSON OSX Tests.xctest */,
 				BE7E070E1C75F4480050E57D /* SwiftyJSON.framework */,
 				BE7E07101C75F4480050E57D /* SwiftyJSON.framework */,
-				BE7E07121C75F4480050E57D /* SwiftyJSON tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,25 +354,11 @@
 			remoteRef = BE7E07051C75F4480050E57D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BE7E07081C75F4480050E57D /* SwiftyJSON iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SwiftyJSON iOS Tests.xctest";
-			remoteRef = BE7E07071C75F4480050E57D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		BE7E070A1C75F4480050E57D /* SwiftyJSON.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftyJSON.framework;
 			remoteRef = BE7E07091C75F4480050E57D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BE7E070C1C75F4480050E57D /* SwiftyJSON OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SwiftyJSON OSX Tests.xctest";
-			remoteRef = BE7E070B1C75F4480050E57D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		BE7E070E1C75F4480050E57D /* SwiftyJSON.framework */ = {
@@ -405,13 +373,6 @@
 			fileType = wrapper.framework;
 			path = SwiftyJSON.framework;
 			remoteRef = BE7E070F1C75F4480050E57D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BE7E07121C75F4480050E57D /* SwiftyJSON tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SwiftyJSON tvOS Tests.xctest";
-			remoteRef = BE7E07111C75F4480050E57D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -467,6 +428,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */,
+				BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */,
 				BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

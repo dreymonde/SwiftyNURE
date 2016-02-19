@@ -32,15 +32,18 @@ public class RemoteTimetableProvider: TimetableProvider {
 
 	public required init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void)) {
 		self.completion = completion
-		requestURL = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)&type_id=1&time_from=\(fromDate.timeIntervalSince1970)&time_to=\(toDate.timeIntervalSince1970)")
+        let from = UInt64(floor(fromDate.timeIntervalSince1970))
+        let to = UInt64(floor(toDate.timeIntervalSince1970))
+        self.requestURL = NSURL(string: "P_API_EVENT_JSON?timetable_id=\(groupId)&type_id=1&time_from=\(from)&time_to=\(to)", relativeToURL: NURE.apiRoot)!
 	}
 
 	public required init(forGroupID groupId: Int, completion: (Timetable -> Void)) {
 		self.completion = completion
-		requestURL = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)")
+        self.requestURL = NSURL(string: "P_API_EVENT_JSON?timetable_id=\(groupId)", relativeToURL: NURE.apiRoot)!
 	}
 
 	public func execute() {
+        print(requestURL)
 		var request = JSONRequest(.GET, url: requestURL) { jsonResponse in
 			if let timetable = TimetableParser.parse(fromJSON: jsonResponse.data) {
 				self.completion(timetable)

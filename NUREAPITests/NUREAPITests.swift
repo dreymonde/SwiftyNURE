@@ -21,28 +21,7 @@ class NUREAPITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testGroups() {
-        let expectation = expectationWithDescription("Async group task")
-        let provider = RemoteGroupsProvider() { groups in
-            print(groups)
-            for group in groups {
-                print(group.name)
-            }
-            expectation.fulfill()
-        }
-        provider.error = { error in
-            print(error)
-        }
-        provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
-    }
-    
+        
     func testJSONRequest() {
         let expectation = expectationWithDescription("Async JSON task")
         let url = NSURL(string: "http://cist.nure.ua/ias/app/tt/P_API_DEPARTMENTS_JSON?p_id_faculty=1")!
@@ -52,16 +31,31 @@ class NUREAPITests: XCTestCase {
         }
         request.error = { error in
             print(error)
+            XCTFail()
         }
         request.execute()
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testDataRequest() {
+        let expectation = expectationWithDescription("Async Data task")
+        let url = NSURL(string: "https://tjournal.ru")!
+        var request = DataRequest(.GET, url: url) { respond in
+            expectation.fulfill()
         }
+        request.error = { error in
+            print(error)
+            XCTFail()
+        }
+        request.execute()
+        waitForExpectationsWithTimeout(10.0, handler: nil)
+    }
+    
+    func testEpoch() {
+        let date = NSDate(timeIntervalSince1970: 1454916600)
+        print(date)
+        let interval = date.timeIntervalSince1970
+        print(interval)
     }
     
 }

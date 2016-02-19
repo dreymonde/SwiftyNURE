@@ -13,6 +13,7 @@ public protocol GroupsProvider: Receivable {
     var completion: ([Group] -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
     
+    init(matching filter: String?, completion: ([Group] -> Void))
     init(completion: ([Group] -> Void))
     
     func execute() -> ()
@@ -23,9 +24,15 @@ public class RemoteGroupsProvider: GroupsProvider {
     
     public let completion: ([Group] -> Void)
     public var error: (ErrorType -> Void)?
+    private let filter: String?
     
-    public required init(completion: ([Group] -> Void)) {
+    public required init(matching filter: String?, completion: ([Group] -> Void)) {
+        self.filter = filter
         self.completion = completion
+    }
+    
+    public convenience required init(completion: ([Group] -> Void)) {
+        self.init(matching: nil, completion: completion)
     }
     
     public func execute() {
@@ -36,7 +43,7 @@ public class RemoteGroupsProvider: GroupsProvider {
                 for direction in faculty["directions"].arrayValue {
                     for groupJSON in direction["groups"].arrayValue {
                         if let group = GroupParser.parse(fromJSON: groupJSON) {
-                            if !groups.contains(group) {
+                            if group.name.containsOptionalString(self.filter) && !groups.contains(group) {
                                 groups.append(group)
                             }
                         }
@@ -44,7 +51,7 @@ public class RemoteGroupsProvider: GroupsProvider {
                     for speciality in direction["specialities"].arrayValue {
                         for groupJSON in speciality["groups"].arrayValue {
                             if let group = GroupParser.parse(fromJSON: groupJSON) {
-                                if !groups.contains(group) {
+                                if group.name.containsOptionalString(self.filter) && !groups.contains(group) {
                                     groups.append(group)
                                 }
                             }
