@@ -14,9 +14,9 @@ public protocol TimetableProvider: Receivable {
 	var error: (ErrorType -> Void)? { get set }
 
 	init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void))
+	init(forGroupID groupId: Int, completion: (Timetable -> Void))
 
 	func execute() -> ()
-    // func getTimetable(forGroupID groupId: Int, timeFrom: NSDate, timeTo: NSDate, completion: (Timetable -> Void)?)
     
 }
 
@@ -33,6 +33,11 @@ public class RemoteTimetableProvider: TimetableProvider {
 	public required init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void)) {
 		self.completion = completion
 		requestURL = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)&type_id=1&time_from=\(fromDate.timeIntervalSince1970)&time_to=\(toDate.timeIntervalSince1970)")
+	}
+
+	public required init(forGroupID groupId: Int, completion: (Timetable -> Void)) {
+		self.completion = completion
+		requestURL = NURE.apiRoot.URLByAppendingPathComponent("P_API_EVENT_JSON?timetable_id=\(groupId)")
 	}
 
 	public func execute() {
