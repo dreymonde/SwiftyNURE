@@ -35,11 +35,19 @@ public class RemoteGroupsProvider: GroupsProvider {
             for faculty in json["university"]["faculties"].arrayValue {
                 for direction in faculty["directions"].arrayValue {
                     for groupJSON in direction["groups"].arrayValue {
-                        if let group = GroupParser.parse(fromJSON: groupJSON) { groups.append(group) }
+                        if let group = GroupParser.parse(fromJSON: groupJSON) {
+                            if !groups.contains(group) {
+                                groups.append(group)
+                            }
+                        }
                     }
                     for speciality in direction["specialities"].arrayValue {
                         for groupJSON in speciality["groups"].arrayValue {
-                            if let group = GroupParser.parse(fromJSON: groupJSON) { groups.append(group) }
+                            if let group = GroupParser.parse(fromJSON: groupJSON) {
+                                if !groups.contains(group) {
+                                    groups.append(group)
+                                }
+                            }
                         }
                     }
                 }

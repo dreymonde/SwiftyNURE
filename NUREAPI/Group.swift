@@ -19,3 +19,9 @@ public struct Group {
     }
     
 }
+
+extension Group: Equatable {  }
+
+public func == (lhs: Group, rhs: Group) -> Bool {
+    return lhs.id == rhs.id && lhs.name == rhs.name
+}
