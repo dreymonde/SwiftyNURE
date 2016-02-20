@@ -10,7 +10,7 @@ import XCTest
 import SwiftyJSON
 @testable import NUREAPI
 
-class TimetableProviderTests: XCTestCase {
+class TimetableProviderTests: NURETests {
     
     let groupID = 4801986
     
@@ -31,12 +31,9 @@ class TimetableProviderTests: XCTestCase {
             print(timetable)
             expectation.fulfill()
         }
-        provider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testProvideIncorrect() {
@@ -49,7 +46,7 @@ class TimetableProviderTests: XCTestCase {
             expectation.fulfill()
         }
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testProvideThisWeek() {
@@ -60,12 +57,9 @@ class TimetableProviderTests: XCTestCase {
             print(timetable)
             expectation.fulfill()
         }
-        provider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testProvideFullAndShowDay() {
@@ -76,12 +70,9 @@ class TimetableProviderTests: XCTestCase {
             print(todayEvents)
             expectation.fulfill()
         }
-        provider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testRawRemoteProvider() {
@@ -89,10 +80,7 @@ class TimetableProviderTests: XCTestCase {
         let today = NSDate()
         let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
         let rawProvider = TimetableProvider.RawRemote(forGroupID: groupID, fromDate: today, toDate: nextWeek) { timetable in }
-        rawProvider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        rawProvider.error = defaultError
         rawProvider.raw = { json in
             print(json)
             if let events = json["events"].array {
@@ -101,7 +89,7 @@ class TimetableProviderTests: XCTestCase {
             expectation.fulfill()
         }
         rawProvider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
 }

@@ -31,7 +31,7 @@ class NUREAPITests: NURETests {
         }
         request.error = defaultError
         request.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testDataRequest() {

@@ -13,8 +13,8 @@ public protocol GroupsProvider: Receivable {
     var completion: ([Group] -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
     
-    init(matching filter: String?, completion: ([Group] -> Void))
-    init(completion: ([Group] -> Void))
+    init(matching filter: String?, _ completion: ([Group] -> Void))
+    init(_ completion: ([Group] -> Void))
     
     func execute() -> ()
     
@@ -26,13 +26,13 @@ public class RemoteGroupsProvider: GroupsProvider {
     public var error: (ErrorType -> Void)?
     private let filter: String?
     
-    public required init(matching filter: String?, completion: ([Group] -> Void)) {
+    public required init(matching filter: String?, _ completion: ([Group] -> Void)) {
         self.filter = filter
         self.completion = completion
     }
     
-    public convenience required init(completion: ([Group] -> Void)) {
-        self.init(matching: nil, completion: completion)
+    public convenience required init(_ completion: ([Group] -> Void)) {
+        self.init(matching: nil, completion)
     }
     
     public func execute() {
@@ -61,9 +61,7 @@ public class RemoteGroupsProvider: GroupsProvider {
             }
             self.completion(groups) 
         }
-        request.error = { error in
-            self.error?(error)
-        }
+        request.error = pushError
         request.execute()
     }
     

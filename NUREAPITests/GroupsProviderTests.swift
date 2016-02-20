@@ -9,7 +9,7 @@
 import XCTest
 @testable import NUREAPI
 
-class GroupsProviderTests: XCTestCase {
+class GroupsProviderTests: NURETests {
 
     override func setUp() {
         super.setUp()
@@ -33,7 +33,7 @@ class GroupsProviderTests: XCTestCase {
             print(error)
         }
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testPartGroups() {
@@ -48,7 +48,7 @@ class GroupsProviderTests: XCTestCase {
             }
             expectation.fulfill()
             }.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
 
 }
