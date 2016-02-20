@@ -9,9 +9,9 @@
 import Foundation
 import SwiftyJSON
 
-struct TimetableParser: JSONParser {
+public struct TimetableParser: JSONParser {
     
-    static func parse(fromJSON json: JSON) -> Timetable? {
+    public static func parse(fromJSON json: JSON) -> Timetable? {
         guard let jGroups = json["groups"].array, jTeachers = json["teachers"].array, jSubjects = json["subjects"].array, jTypes = json["types"].array, jEvents = json["events"].array else {
             return nil
         }
@@ -30,7 +30,7 @@ struct TimetableParser: JSONParser {
         return timetable
     }
     
-    static func constructEvent(fromJSON json: JSON, withInformedTimetable timetable: Timetable) -> Event? {
+    internal static func constructEvent(fromJSON json: JSON, withInformedTimetable timetable: Timetable) -> Event? {
         guard let startInt = json["start_time"].int, endInt = json["end_time"].int, subjectId = json["subject_id"].int, typeId = json["type"].int, pairNumber = json["number_pair"].int, auditory = json["auditory"].string, jTeachers = json["teachers"].arrayObject as? [Int], jGroups = json["groups"].arrayObject as? [Int] else {
             return nil
         }
@@ -51,7 +51,7 @@ struct TimetableParser: JSONParser {
         
     }
     
-    static func getGroups(json: [JSON]) -> [Group] {
+    internal static func getGroups(json: [JSON]) -> [Group] {
         var groups = [Group]()
         for groupJSON in json {
             if let group = GroupParser.parse(fromJSON: groupJSON) {
@@ -61,7 +61,7 @@ struct TimetableParser: JSONParser {
         return groups
     }
     
-    static func getTeachers(json: [JSON]) -> [Teacher] {
+    internal static func getTeachers(json: [JSON]) -> [Teacher] {
         var teachers = [Teacher]()
         for teacherJSON in json {
             if let teacher = TeacherParser.parse(fromJSON: teacherJSON) {
@@ -71,7 +71,7 @@ struct TimetableParser: JSONParser {
         return teachers
     }
     
-    static func getSubjects(json: [JSON]) -> [Subject] {
+    internal static func getSubjects(json: [JSON]) -> [Subject] {
         var subjects = [Subject]()
         for subjectJSON in json {
             if let subject = SubjectParser.parse(fromJSON: subjectJSON) {
@@ -81,7 +81,7 @@ struct TimetableParser: JSONParser {
         return subjects
     }
     
-    static func getTypes(json: [JSON]) -> [EventType] {
+    internal static func getTypes(json: [JSON]) -> [EventType] {
         var types = [EventType]()
         for typeJSON in json {
             if let type = EventTypeParser.parse(fromJSON: typeJSON) {
@@ -91,7 +91,7 @@ struct TimetableParser: JSONParser {
         return types
     }
     
-    static func eventType(fromID id: Int, inJSONArray json: [JSON]) -> EventType? {
+    internal static func eventType(fromID id: Int, inJSONArray json: [JSON]) -> EventType? {
         for typeJSON in json {
             if typeJSON["id"].int == id {
                 return EventTypeParser.parse(fromJSON: typeJSON)

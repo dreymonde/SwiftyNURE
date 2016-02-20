@@ -10,10 +10,9 @@ import XCTest
 import SwiftyJSON
 @testable import NUREAPI
 
-class TimetableProviderTests: XCTestCase {
+class TimetableProviderTests: NURETests {
     
     let groupID = 4801986
-    
 
     override func setUp() {
         super.setUp()
@@ -31,10 +30,7 @@ class TimetableProviderTests: XCTestCase {
             print(timetable)
             expectation.fulfill()
         }
-        provider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        provider.error = defaultError
         provider.execute()
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
@@ -60,10 +56,7 @@ class TimetableProviderTests: XCTestCase {
             print(timetable)
             expectation.fulfill()
         }
-        provider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        provider.error = defaultError
         provider.execute()
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
@@ -76,10 +69,7 @@ class TimetableProviderTests: XCTestCase {
             print(todayEvents)
             expectation.fulfill()
         }
-        provider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        provider.error = defaultError
         provider.execute()
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
@@ -89,10 +79,7 @@ class TimetableProviderTests: XCTestCase {
         let today = NSDate()
         let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
         let rawProvider = TimetableProvider.RawRemote(forGroupID: groupID, fromDate: today, toDate: nextWeek) { timetable in }
-        rawProvider.error = { error in
-            print(error)
-            XCTFail()
-        }
+        rawProvider.error = defaultError
         rawProvider.raw = { json in
             print(json)
             if let events = json["events"].array {
