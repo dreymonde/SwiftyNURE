@@ -14,7 +14,7 @@ public protocol RequestType {
     
     var method: Method { get }
     var URL: NSURL { get }
-    var body: ABodyType? { get set }
+    var body: NSData? { get set }
     var completion: (Response<ABodyType> -> Void) { get set }
     var error: (RequestError -> Void)? { get set }
     

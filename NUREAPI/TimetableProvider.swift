@@ -14,7 +14,7 @@ public protocol TimetableProviderType: Receivable {
 	var completion: (Timetable -> Void) { get }
 	var error: (ErrorType -> Void)? { get set }
 
-	init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void))
+	init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, _ completion: (Timetable -> Void))
 	init(forGroupID groupId: Int, completion: (Timetable -> Void))
 
 	func execute() -> ()
@@ -33,7 +33,7 @@ public struct TimetableProvider {
         public var error: (ErrorType -> Void)?
         private let requestURL: NSURL
 
-        public required init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, completion: (Timetable -> Void)) {
+        public required init(forGroupID groupId: Int, fromDate: NSDate, toDate: NSDate, _ completion: (Timetable -> Void)) {
             self.completion = completion
             let from = UInt64(floor(fromDate.timeIntervalSince1970))
             let to = UInt64(floor(toDate.timeIntervalSince1970))

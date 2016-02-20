@@ -16,7 +16,7 @@ public struct DataRequest: RequestType {
     public var completion: (Response<NSData> -> Void)
     public var error: (RequestError -> Void)? = nil
     
-    public init(_ method: Method, url: NSURL, completion: (Response<NSData> -> Void)) {
+    public init(_ method: Method, url: NSURL, _ completion: (Response<NSData> -> Void)) {
         self.method = method
         self.URL = url
         self.completion = completion

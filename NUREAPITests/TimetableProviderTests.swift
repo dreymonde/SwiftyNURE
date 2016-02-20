@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftyJSON
 @testable import NUREAPI
 
 class TimetableProviderTests: XCTestCase {
@@ -23,7 +24,7 @@ class TimetableProviderTests: XCTestCase {
 
     func testProvide() {
         let expectation = expectationWithDescription("Async timetable task")
-        let provider = RemoteTimetableProvider(forGroupID: 4801986) { timetable in
+        let provider = TimetableProvider.Remote(forGroupID: 4801986) { timetable in
             print(timetable)
             expectation.fulfill()
         }
@@ -37,7 +38,7 @@ class TimetableProviderTests: XCTestCase {
     
     func testProvideIncorrect() {
         let expectation = expectationWithDescription("Async timetable task")
-        let provider = RemoteTimetableProvider(forGroupID: 15) { timetable in
+        let provider = TimetableProvider.Remote(forGroupID: 15) { timetable in
             XCTFail()
         }
         provider.error = { error in
@@ -51,8 +52,8 @@ class TimetableProviderTests: XCTestCase {
     func testProvideThisWeek() {
         let expectation = expectationWithDescription("Async timetable task")
         let today = NSDate()
-        let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 12 * 60 * 60)
-        let provider = RemoteTimetableProvider(forGroupID: 4801986, fromDate: today, toDate: nextWeek) { timetable in
+        let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
+        let provider = TimetableProvider.Remote(forGroupID: 4801986, fromDate: today, toDate: nextWeek) { timetable in
             print(timetable)
             expectation.fulfill()
         }
@@ -67,15 +68,36 @@ class TimetableProviderTests: XCTestCase {
     func testProvideFullAndShowDay() {
         let expectation = expectationWithDescription("Async timetable task")
         let today = NSDate()
-        let provider = RemoteTimetableProvider(forGroupID: 4801986) { timetable in
+        let provider = TimetableProvider.Remote(forGroupID: 4801986) { timetable in
             let todayEvents = timetable.events(forDay: today)
             print(todayEvents)
             expectation.fulfill()
         }
         provider.error = { error in
             print(error)
+            XCTFail()
         }
         provider.execute()
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testRawRemoteProvider() {
+        let expectation = expectationWithDescription("Async timetable task")
+        let today = NSDate()
+        let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
+        let rawProvider = TimetableProvider.RawRemote(forGroupID: 4801986, fromDate: today, toDate: nextWeek) { timetable in }
+        rawProvider.error = { error in
+            print(error)
+            XCTFail()
+        }
+        rawProvider.raw = { json in
+            print(json)
+            if let events = json["events"].array {
+                print(events.count)
+            }
+            expectation.fulfill()
+        }
+        rawProvider.execute()
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     

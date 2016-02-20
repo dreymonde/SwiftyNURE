@@ -210,8 +210,8 @@
 				BE7E07171C75F4FE0050E57D /* BodyType.swift */,
 				BE7E06F61C75EC550050E57D /* RequestType.swift */,
 				BE7E07191C75F5830050E57D /* DataRequest.swift */,
-				BE7E071C1C75F7230050E57D /* Response.swift */,
 				BE7E071E1C75F7720050E57D /* JSONRequest.swift */,
+				BE7E071C1C75F7230050E57D /* Response.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";

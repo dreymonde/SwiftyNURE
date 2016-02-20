@@ -31,11 +31,29 @@ public struct JSONRequest: RequestType {
     
     public let method: Method
     public let URL: NSURL
-    public var body: JSON?
+    public var body: NSData?
+    public var JSONBody: JSON? {
+        get {
+            if let body = body {
+                return JSON(data: body)
+            }
+            return nil
+        }
+        set {
+            guard let newValue = newValue else {
+                return
+            }
+            do {
+                self.body = try newValue.rawData()
+            } catch {
+                return
+            }
+        }
+    }
     public var completion: (Response<JSON> -> Void)
     public var error: (RequestError -> Void)? = nil
     
-    public init(_ method: Method, url: NSURL, completion: (Response<JSON> -> Void)) {
+    public init(_ method: Method, url: NSURL, _ completion: (Response<JSON> -> Void)) {
         self.method = method
         self.URL = url
         self.completion = completion
