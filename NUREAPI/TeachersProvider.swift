@@ -55,8 +55,10 @@ public struct TeachersProvider {
                         let departmentName = Teacher.Extended.DepartmentName(full: departmentFull, short: departmentShort)
                         for teacherJSON in department["teachers"].arrayValue {
                             if let steacher = TeacherParser.parse(fromJSON: teacherJSON) {
-                                let teacher = Teacher.Extended(teacher: steacher, department: departmentName, faculty: facultyName)
-                                teachers.append(teacher)
+                                if steacher.fullName.containsOptionalString(self.filter) || facultyName.isConforming(self.filter) || departmentName.isConforming(self.filter) {
+                                    let teacher = Teacher.Extended(teacher: steacher, department: departmentName, faculty: facultyName)
+                                    teachers.append(teacher)
+                                }
                             }
                         }
                     }

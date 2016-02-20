@@ -8,6 +8,17 @@
 
 import Foundation
 
+protocol Name {
+    var full: String { get }
+    var short: String { get }
+}
+
+extension Name {
+    func isConforming(string: String?) -> Bool {
+        return full.containsOptionalString(string) || short.containsOptionalString(string)
+    }
+}
+
 public protocol TeacherType {
     
     var id: Int { get }
@@ -20,12 +31,12 @@ public struct Teacher: TeacherType {
     
     public struct Extended: TeacherType {
         
-        public struct FacultyName {
+        public struct FacultyName: Name {
             var full: String
             var short: String
         }
         
-        public struct DepartmentName {
+        public struct DepartmentName: Name {
             var full: String
             var short: String
         }

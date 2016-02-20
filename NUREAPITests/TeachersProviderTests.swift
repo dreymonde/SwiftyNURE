@@ -27,11 +27,41 @@ class TeachersProviderTests: NURETests {
             for teacher in teachers {
                 print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
             }
+            XCTAssertGreaterThanOrEqual(teachers.count, 800)
             expectation.fulfill()
         }
         provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(10.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
+    }
+    
+    func testFilteredNameProvide() {
+        let expectation = expectationWithDescription("Async teacher task")
+        let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
+            for teacher in teachers {
+                print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
+            }
+            XCTAssertGreaterThanOrEqual(teachers.count, 1)
+            expectation.fulfill()
+        }
+        provider.error = defaultError
+        provider.execute()
+        waitForExpectationsWithTimeout(timeout, handler: nil)
+    }
+    
+    func testFilteredDepProvide() {
+        let expectation = expectationWithDescription("Async teacher task")
+        let provider = TeachersProvider.Remote(matching: "Кафедра програмної інженерії") { teachers in
+            for teacher in teachers {
+                print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
+            }
+            print(teachers.count)
+            XCTAssertGreaterThanOrEqual(teachers.count, 1)
+            expectation.fulfill()
+        }
+        provider.error = defaultError
+        provider.execute()
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
 }
