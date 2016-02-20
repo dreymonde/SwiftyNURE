@@ -38,6 +38,10 @@
 		BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB701C78C6950004F21F /* NURETests.swift */; };
 		BEF2BB781C78CFE80004F21F /* TeachersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */; };
 		BEF2BB7D1C78D3C80004F21F /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */; };
+		BEF2BB831C78E2B20004F21F /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB821C78E2B20004F21F /* University.swift */; };
+		BEF2BB891C78E3400004F21F /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB881C78E3400004F21F /* JSONProtocols.swift */; };
+		BEF2BB8B1C78E8750004F21F /* UniversityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB8A1C78E8750004F21F /* UniversityProvider.swift */; };
+		BEF2BB8D1C78EA850004F21F /* UniversityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB8C1C78EA850004F21F /* UniversityProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +137,10 @@
 		BEF2BB701C78C6950004F21F /* NURETests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURETests.swift; sourceTree = "<group>"; };
 		BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProvider.swift; sourceTree = "<group>"; };
 		BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProviderTests.swift; sourceTree = "<group>"; };
+		BEF2BB821C78E2B20004F21F /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		BEF2BB881C78E3400004F21F /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
+		BEF2BB8A1C78E8750004F21F /* UniversityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProvider.swift; sourceTree = "<group>"; };
+		BEF2BB8C1C78EA850004F21F /* UniversityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,7 @@
 		BE7E06DB1C75EC4A0050E57D /* NUREAPI */ = {
 			isa = PBXGroup;
 			children = (
+				BEF2BB871C78E3300004F21F /* Administrative */,
 				BE9F77141C760D8D007DB538 /* Providers */,
 				BE7E07271C75FBD30050E57D /* Events and co */,
 				BE7E07221C75FACC0050E57D /* Parsers */,
@@ -183,7 +192,7 @@
 				BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */,
 				BE7E06DE1C75EC4A0050E57D /* Info.plist */,
 				BE9F77191C761AFE007DB538 /* Receivable.swift */,
-				BE9F77171C760DDF007DB538 /* NURE.swift */,
+				BEF2BB821C78E2B20004F21F /* University.swift */,
 			);
 			path = NUREAPI;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 				BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */,
 				BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */,
 				BE7E06EA1C75EC4A0050E57D /* Info.plist */,
+				BEF2BB8C1C78EA850004F21F /* UniversityProviderTests.swift */,
 			);
 			path = NUREAPITests;
 			sourceTree = "<group>";
@@ -257,8 +267,18 @@
 				BE9F77151C760DA3007DB538 /* TimetableProvider.swift */,
 				BE9F771B1C767713007DB538 /* GroupsProvider.swift */,
 				BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */,
+				BEF2BB8A1C78E8750004F21F /* UniversityProvider.swift */,
 			);
 			name = Providers;
+			sourceTree = "<group>";
+		};
+		BEF2BB871C78E3300004F21F /* Administrative */ = {
+			isa = PBXGroup;
+			children = (
+				BEF2BB881C78E3400004F21F /* JSONProtocols.swift */,
+				BE9F77171C760DDF007DB538 /* NURE.swift */,
+			);
+			name = Administrative;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,12 +433,14 @@
 				BE7E072F1C75FE170050E57D /* DateParser.swift in Sources */,
 				BEF2BB781C78CFE80004F21F /* TeachersProvider.swift in Sources */,
 				BE7E07311C75FF690050E57D /* Group.swift in Sources */,
+				BEF2BB831C78E2B20004F21F /* University.swift in Sources */,
 				BE9F77161C760DA3007DB538 /* TimetableProvider.swift in Sources */,
 				BE7E07291C75FBE50050E57D /* Subject.swift in Sources */,
 				BE7E071A1C75F5830050E57D /* DataRequest.swift in Sources */,
 				BE9F77181C760DDF007DB538 /* NURE.swift in Sources */,
 				BE7E07331C75FFAD0050E57D /* GroupParser.swift in Sources */,
 				BE7E07371C7600510050E57D /* EventTypeParser.swift in Sources */,
+				BEF2BB8B1C78E8750004F21F /* UniversityProvider.swift in Sources */,
 				BE7E07261C75FB3E0050E57D /* Parser.swift in Sources */,
 				BE7E07241C75FAF70050E57D /* SubjectParser.swift in Sources */,
 				BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */,
@@ -426,6 +448,7 @@
 				BE7E071F1C75F7720050E57D /* JSONRequest.swift in Sources */,
 				BE7E06F71C75EC550050E57D /* Event.swift in Sources */,
 				BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */,
+				BEF2BB891C78E3400004F21F /* JSONProtocols.swift in Sources */,
 				BE7E071D1C75F7230050E57D /* Response.swift in Sources */,
 				BE7E06F81C75EC550050E57D /* Timetable.swift in Sources */,
 				BE7E072D1C75FD400050E57D /* TeacherParser.swift in Sources */,
@@ -442,6 +465,7 @@
 				BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */,
 				BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */,
 				BEF2BB7D1C78D3C80004F21F /* TeachersProviderTests.swift in Sources */,
+				BEF2BB8D1C78EA850004F21F /* UniversityProviderTests.swift in Sources */,
 				BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
