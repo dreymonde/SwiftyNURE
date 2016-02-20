@@ -20,13 +20,23 @@ public struct Teacher: TeacherType {
     
     public struct Extended: TeacherType {
         
+        public struct FacultyName {
+            var full: String
+            var short: String
+        }
+        
+        public struct DepartmentName {
+            var full: String
+            var short: String
+        }
+        
         public var id: Int
         public var shortName: String
         public var fullName: String
-        public var department: String
-        public var faculty: String
+        public var department: DepartmentName
+        public var faculty: FacultyName
         
-        public init(fullName: String, shortName: String, department: String, faculty: String, id: Int) {
+        public init(fullName: String, shortName: String, department: DepartmentName, faculty: FacultyName, id: Int) {
             self.id = id
             self.fullName = fullName
             self.shortName = shortName
@@ -34,7 +44,7 @@ public struct Teacher: TeacherType {
             self.faculty = faculty
         }
         
-        public init(teacher: Teacher, department: String, faculty: String) {
+        public init(teacher: Teacher, department: DepartmentName, faculty: FacultyName) {
             self.init(fullName: teacher.fullName, shortName: teacher.shortName, department: department, faculty: faculty, id: teacher.id)
         }
         

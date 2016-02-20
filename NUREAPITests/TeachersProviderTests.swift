@@ -24,9 +24,8 @@ class TeachersProviderTests: NURETests {
     func testProvide() {
         let expectation = expectationWithDescription("Async teacher task")
         let provider = TeachersProvider.Remote() { teachers in
-            print(teachers)
             for teacher in teachers {
-                print("\(teacher.fullName) | \(teacher.department) | \(teacher.faculty)")
+                print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
             }
             expectation.fulfill()
         }

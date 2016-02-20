@@ -42,15 +42,17 @@ public struct TeachersProvider {
                 let json = jsonResponse.data
                 var teachers = Array<Teacher.Extended>()
                 for faculty in json["university"]["faculties"].arrayValue {
-                    guard let facultyName = faculty["full_name"].string else {
+                    guard let facultyFull = faculty["full_name"].string, facultyShort = faculty["short_name"].string else {
                         print("No faculty name")
                         continue
                     }
+                    let facultyName = Teacher.Extended.FacultyName(full: facultyFull, short: facultyShort)
                     for department in faculty["departments"].arrayValue {
-                        guard let departmentName = department["full_name"].string else {
+                        guard let departmentFull = department["full_name"].string, departmentShort = department["short_name"].string else {
                             print("No dep name")
                             continue
                         }
+                        let departmentName = Teacher.Extended.DepartmentName(full: departmentFull, short: departmentShort)
                         for teacherJSON in department["teachers"].arrayValue {
                             if let steacher = TeacherParser.parse(fromJSON: teacherJSON) {
                                 let teacher = Teacher.Extended(teacher: steacher, department: departmentName, faculty: facultyName)
