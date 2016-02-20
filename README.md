@@ -1,5 +1,5 @@
 # SwiftyNURE #
-### Swift OS X framework for operating with NURE CIST API. ###
+### OS X framework for operating with NURE CIST API. Written on Swift. ###
 Guides coming soon.
 
 ### TODO: ###
