@@ -32,7 +32,7 @@ class TimetableProviderTests: NURETests {
         }
         provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testProvideIncorrect() {
@@ -45,7 +45,7 @@ class TimetableProviderTests: NURETests {
             expectation.fulfill()
         }
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testProvideThisWeek() {
@@ -58,7 +58,7 @@ class TimetableProviderTests: NURETests {
         }
         provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testProvideFullAndShowDay() {
@@ -71,7 +71,7 @@ class TimetableProviderTests: NURETests {
         }
         provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testRawRemoteProvider() {
@@ -88,7 +88,7 @@ class TimetableProviderTests: NURETests {
             expectation.fulfill()
         }
         rawProvider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
 }

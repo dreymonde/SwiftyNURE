@@ -12,6 +12,7 @@ struct NURE {
     
     static let apiRoot = NSURL(string: "http://cist.nure.ua/ias/app/tt/")!
     static let apiGroupJson = NURE.apiRoot.URLByAppendingPathComponent("P_API_GROUP_JSON")
+    static let apiTeachersJson = NURE.apiRoot.URLByAppendingPathComponent("P_API_PODR_JSON")
 
 }
 

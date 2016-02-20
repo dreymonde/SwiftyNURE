@@ -36,6 +36,8 @@
 		BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77191C761AFE007DB538 /* Receivable.swift */; };
 		BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F771B1C767713007DB538 /* GroupsProvider.swift */; };
 		BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB701C78C6950004F21F /* NURETests.swift */; };
+		BEF2BB781C78CFE80004F21F /* TeachersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */; };
+		BEF2BB7D1C78D3C80004F21F /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		BE9F77191C761AFE007DB538 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
 		BE9F771B1C767713007DB538 /* GroupsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProvider.swift; sourceTree = "<group>"; };
 		BEF2BB701C78C6950004F21F /* NURETests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURETests.swift; sourceTree = "<group>"; };
+		BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProvider.swift; sourceTree = "<group>"; };
+		BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 				BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */,
 				BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */,
 				BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */,
+				BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */,
 				BE7E06EA1C75EC4A0050E57D /* Info.plist */,
 			);
 			path = NUREAPITests;
@@ -251,6 +256,7 @@
 			children = (
 				BE9F77151C760DA3007DB538 /* TimetableProvider.swift */,
 				BE9F771B1C767713007DB538 /* GroupsProvider.swift */,
+				BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				BE7E072B1C75FC9A0050E57D /* Teacher.swift in Sources */,
 				BE7E06FA1C75EC550050E57D /* RequestType.swift in Sources */,
 				BE7E072F1C75FE170050E57D /* DateParser.swift in Sources */,
+				BEF2BB781C78CFE80004F21F /* TeachersProvider.swift in Sources */,
 				BE7E07311C75FF690050E57D /* Group.swift in Sources */,
 				BE9F77161C760DA3007DB538 /* TimetableProvider.swift in Sources */,
 				BE7E07291C75FBE50050E57D /* Subject.swift in Sources */,
@@ -434,6 +441,7 @@
 				BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */,
 				BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */,
 				BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */,
+				BEF2BB7D1C78D3C80004F21F /* TeachersProviderTests.swift in Sources */,
 				BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

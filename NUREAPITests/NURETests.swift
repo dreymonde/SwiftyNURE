@@ -14,5 +14,7 @@ class NURETests: XCTestCase {
         print(error)
         XCTFail()
     }
+    
+    let timeout = 5.0
 
 }

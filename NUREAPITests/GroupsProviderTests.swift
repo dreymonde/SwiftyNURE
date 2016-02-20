@@ -31,7 +31,7 @@ class GroupsProviderTests: NURETests {
         }
         provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
     func testPartGroups() {
@@ -46,7 +46,7 @@ class GroupsProviderTests: NURETests {
             }
             expectation.fulfill()
             }.execute()
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectationsWithTimeout(timeout, handler: nil)
     }
 
 }
