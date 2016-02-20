@@ -37,7 +37,6 @@ public struct TeachersProvider {
         }
         
         public func execute() {
-            print(NURE.apiTeachersJson)
             var request = JSONRequest(.GET, url: NURE.apiTeachersJson) { jsonResponse in
                 let json = jsonResponse.data
                 var teachers = Array<Teacher.Extended>()

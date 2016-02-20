@@ -17,7 +17,7 @@ public struct Timetable {
     internal var types: [EventType] = [EventType]()
     
     func events(forDay date: NSDate) -> [Eventable] {
-        return events.filter { NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: $0.startDate) }
+        return events.filter({ NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: $0.startDate) }).sort{ $0.number < $1.number }
     }
     
 }

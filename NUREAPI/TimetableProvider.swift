@@ -46,7 +46,6 @@ public struct TimetableProvider {
         }
 
         public func execute() {
-            print(requestURL)
             var request = JSONRequest(.GET, url: requestURL) { jsonResponse in
                 if let timetable = TimetableParser.parse(fromJSON: jsonResponse.data) {
                     self.completion(timetable)

@@ -9,15 +9,38 @@
 import Foundation
 import SwiftyJSON
 
-protocol JSONEncodable {
+public protocol JSONEncodable {
     
     var toJSON: JSON { get }
     
 }
 
-protocol JSONDecodable {
+extension JSONEncodable {
+    
+    public var toData: NSData? {
+        do {
+            let data = try self.toJSON.rawData()
+            return data
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+}
+
+public protocol JSONDecodable {
     
     init?(withJSON json: JSON)
+    
+}
+
+extension JSONDecodable {
+    
+    public init?(withData data: NSData) {
+        let json = JSON(data: data)
+        self.init(withJSON: json)
+    }
     
 }
 
@@ -25,7 +48,7 @@ protocol JSONObject: JSONEncodable, JSONDecodable { }
 
 extension Teacher.Extended: JSONObject {
     
-    var toJSON: JSON {
+    public var toJSON: JSON {
         var teacherJson = JSON(["id": nil, "short_name": nil, "full_name": nil, "faculty_short": nil, "faculty_full": nil, "department_short": nil, "department_full": nil])
         teacherJson["id"].int = id
         teacherJson["short_name"].string = shortName
@@ -37,7 +60,7 @@ extension Teacher.Extended: JSONObject {
         return teacherJson
     }
     
-    init?(withJSON json: JSON) {
+    public init?(withJSON json: JSON) {
         guard let id = json["id"].int, shortName = json["short_name"].string, fullName = json["full_name"].string, facShort = json["faculty_short"].string, facFull = json["faculty_full"].string, depShort = json["department_short"].string, depFull = json["department_full"].string else {
             return nil
         }
@@ -52,14 +75,14 @@ extension Teacher.Extended: JSONObject {
 
 extension Group: JSONObject {
     
-    var toJSON: JSON {
+    public var toJSON: JSON {
         var groupJson = JSON(["id": nil, "name": nil])
         groupJson["id"].int = id
         groupJson["name"].string = name
         return groupJson
     }
     
-    init?(withJSON json: JSON) {
+    public init?(withJSON json: JSON) {
         guard let id = json["id"].int, name = json["name"].string else {
             return nil
         }
