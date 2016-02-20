@@ -35,6 +35,7 @@
 		BE9F77181C760DDF007DB538 /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77171C760DDF007DB538 /* NURE.swift */; };
 		BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77191C761AFE007DB538 /* Receivable.swift */; };
 		BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F771B1C767713007DB538 /* GroupsProvider.swift */; };
+		BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB701C78C6950004F21F /* NURETests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		BE9F77171C760DDF007DB538 /* NURE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURE.swift; sourceTree = "<group>"; };
 		BE9F77191C761AFE007DB538 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
 		BE9F771B1C767713007DB538 /* GroupsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProvider.swift; sourceTree = "<group>"; };
+		BEF2BB701C78C6950004F21F /* NURETests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURETests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		BE7E06E71C75EC4A0050E57D /* NUREAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				BEF2BB701C78C6950004F21F /* NURETests.swift */,
 				BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */,
 				BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */,
 				BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */,
@@ -431,6 +434,7 @@
 				BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */,
 				BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */,
 				BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */,
+				BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

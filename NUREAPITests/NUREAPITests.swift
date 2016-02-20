@@ -10,7 +10,7 @@ import XCTest
 import SwiftyJSON
 @testable import NUREAPI
 
-class NUREAPITests: XCTestCase {
+class NUREAPITests: NURETests {
     
     override func setUp() {
         super.setUp()
@@ -29,10 +29,7 @@ class NUREAPITests: XCTestCase {
             print(jsonRespond.data)
             expectation.fulfill()
         }
-        request.error = { error in
-            print(error)
-            XCTFail()
-        }
+        request.error = defaultError
         request.execute()
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
@@ -43,10 +40,7 @@ class NUREAPITests: XCTestCase {
         var request = DataRequest(.GET, url: url) { respond in
             expectation.fulfill()
         }
-        request.error = { error in
-            print(error)
-            XCTFail()
-        }
+        request.error = defaultError
         request.execute()
         waitForExpectationsWithTimeout(10.0, handler: nil)
     }

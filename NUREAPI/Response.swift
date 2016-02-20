@@ -15,7 +15,7 @@ public struct Response<T: BodyType> {
     }
         
     public var data: T
-    private var response: NSHTTPURLResponse
+    internal var response: NSHTTPURLResponse
     public var statusCode: Int {
         return response.statusCode
     }
