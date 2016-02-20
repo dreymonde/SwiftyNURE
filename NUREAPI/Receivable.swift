@@ -19,3 +19,11 @@ public protocol Receivable {
 	func execute() -> ()
 
 }
+
+public protocol RawReceivable: Receivable {
+    
+    typealias ABodyType = BodyType
+    
+    var raw: (ABodyType -> Void)? { get set }
+    
+}
