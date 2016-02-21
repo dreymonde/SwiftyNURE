@@ -1,3 +1,4 @@
+![SwiftyNURE](/SwiftyNURELogo.jpg)
 # SwiftyNURE #
 ### Swift-фреймворк для OS X. ###
 
