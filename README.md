@@ -1,5 +1,5 @@
 # SwiftyNURE #
-### Framework для OS X, написанный на языке Swift. ###
+### Swift-фреймворк для OS X. ###
 Guides coming soon.
 
 ### Инструкции ###
