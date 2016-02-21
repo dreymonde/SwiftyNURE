@@ -29,7 +29,7 @@ extension Receivable {
     
 }
 
-public protocol RawReceivable: Receivable {
+internal protocol RawReceivable: Receivable {
     
     typealias ABodyType = BodyType
     

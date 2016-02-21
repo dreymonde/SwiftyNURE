@@ -9,9 +9,9 @@
 import Foundation
 import SwiftyJSON
 
-public struct TimetableParser: JSONParser {
+internal struct TimetableParser: JSONParser {
     
-    public static func parse(fromJSON json: JSON) -> Timetable? {
+    internal static func parse(fromJSON json: JSON) -> Timetable? {
         guard let jGroups = json["groups"].array, jTeachers = json["teachers"].array, jSubjects = json["subjects"].array, jTypes = json["types"].array, jEvents = json["events"].array else {
             return nil
         }

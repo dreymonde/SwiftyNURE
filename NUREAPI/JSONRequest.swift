@@ -11,7 +11,7 @@ import SwiftyJSON
 
 extension JSON: BodyType {
     
-    public var toData: NSData {
+    internal var toData: NSData {
         do {
             return try self.rawData()
         } catch {
@@ -20,19 +20,19 @@ extension JSON: BodyType {
         }
     }
     
-    public static func fromData(data: NSData) -> JSON? {
+    internal static func fromData(data: NSData) -> JSON? {
         let json = JSON(data: data)
         return json
     }
     
 }
 
-public struct JSONRequest: RequestType {
+internal struct JSONRequest: RequestType {
     
-    public let method: Method
-    public let URL: NSURL
-    public var body: NSData?
-    public var JSONBody: JSON? {
+    internal let method: Method
+    internal let URL: NSURL
+    internal var body: NSData?
+    internal var JSONBody: JSON? {
         get {
             if let body = body {
                 return JSON(data: body)
@@ -50,17 +50,17 @@ public struct JSONRequest: RequestType {
             }
         }
     }
-    public var completion: (Response<JSON> -> Void)
-    public var error: (RequestError -> Void)? = nil
+    internal var completion: (Response<JSON> -> Void)
+    internal var error: (RequestError -> Void)? = nil
     
-    public init(_ method: Method, url: NSURL, _ completion: (Response<JSON> -> Void)) {
+    internal init(_ method: Method, url: NSURL, _ completion: (Response<JSON> -> Void)) {
         self.method = method
         self.URL = url
         self.completion = completion
         self.error = nil
     }
     
-    public func execute() {
+    internal func execute() {
         var request = DataRequest(.GET, url: URL) { response in
             var jsonResponse = JSON(data: response.data)
             if jsonResponse == JSON.null {
@@ -86,7 +86,7 @@ public struct JSONRequest: RequestType {
     /**
      Deprecated
      */
-    public func oldExecute() {
+    private func oldExecute() {
         let nRequest = NSMutableURLRequest(URL: URL)
         nRequest.HTTPMethod = method.rawValue
         nRequest.HTTPBody = body?.toData

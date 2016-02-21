@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-protocol JSONParser {
+internal protocol JSONParser {
     
     typealias ParseTo
     

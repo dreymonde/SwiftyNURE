@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol RequestType {
+protocol RequestType {
     
     typealias ABodyType: BodyType
     
@@ -22,7 +22,7 @@ public protocol RequestType {
     
 }
 
-public enum Method: String {
+enum Method: String {
     case GET, POST
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Name {
+public protocol Name {
     var full: String { get }
     var short: String { get }
 }
@@ -32,13 +32,13 @@ public struct Teacher: TeacherType {
     public struct Extended: TeacherType {
         
         public struct FacultyName: Name {
-            var full: String
-            var short: String
+            public var full: String
+            public var short: String
         }
         
         public struct DepartmentName: Name {
-            var full: String
-            var short: String
+            public var full: String
+            public var short: String
         }
         
         public var id: Int

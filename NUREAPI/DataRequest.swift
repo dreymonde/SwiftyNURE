@@ -8,22 +8,22 @@
 
 import Foundation
 
-public struct DataRequest: RequestType {
+internal struct DataRequest: RequestType {
     
-    public let method: Method
-    public let URL: NSURL
-    public var body: NSData?
-    public var completion: (Response<NSData> -> Void)
-    public var error: (RequestError -> Void)? = nil
+    internal let method: Method
+    internal let URL: NSURL
+    internal var body: NSData?
+    internal var completion: (Response<NSData> -> Void)
+    internal var error: (RequestError -> Void)? = nil
     
-    public init(_ method: Method, url: NSURL, _ completion: (Response<NSData> -> Void)) {
+    internal init(_ method: Method, url: NSURL, _ completion: (Response<NSData> -> Void)) {
         self.method = method
         self.URL = url
         self.completion = completion
         self.error = nil
     }
     
-    public func execute() -> () {
+    internal func execute() -> () {
         let nRequest = NSMutableURLRequest(URL: URL)
         nRequest.HTTPMethod = method.rawValue
         nRequest.HTTPBody = body

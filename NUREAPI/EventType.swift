@@ -10,16 +10,6 @@ import Foundation
 
 public struct EventType {
     
-    public enum Type {
-        case Lecture
-        case Practice
-        case Lab
-        case Consultation
-        case Test
-        case Exam
-        case CourseWork
-    }
-    
     public init(id: Int, shortName: String, fullName: String, type: Type) {
         self.id = id
         self.shortName = shortName
@@ -32,4 +22,14 @@ public struct EventType {
     public var fullName: String
     public var type: Type
     
+}
+
+public enum Type: String {
+    case Lecture
+    case Practice
+    case Lab
+    case Consultation
+    case Test
+    case Exam
+    case CourseWork
 }

@@ -21,7 +21,7 @@ public protocol TimetableProviderType: Receivable {
     
 }
 
-enum ProviderError: ErrorType {
+public enum ProviderError: ErrorType {
 	case CantParseFromJSON
 }
 
@@ -62,11 +62,12 @@ public struct TimetableProvider {
 
     }
 
-    public class RawRemote: Remote, RawReceivable {
+    /// Deprecated. Use Timetable.toData to convert to binary.
+    internal class RawRemote: Remote, RawReceivable {
         
-        public var raw: (JSON -> Void)? = nil
+        internal var raw: (JSON -> Void)? = nil
         
-        public override func execute() {
+        internal override func execute() {
             var request = JSONRequest(.GET, url: requestURL) { jsonResponse in
                 if let timetable = TimetableParser.parse(fromJSON: jsonResponse.data) {
                     self.raw?(jsonResponse.data)

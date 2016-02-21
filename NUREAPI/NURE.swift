@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NURE {
+internal struct NURE {
     
     static let apiRoot = NSURL(string: "http://cist.nure.ua/ias/app/tt/")!
     static let apiGroupJson = NURE.apiRoot.URLByAppendingPathComponent("P_API_GROUP_JSON")
@@ -18,7 +18,7 @@ struct NURE {
 
 extension String {
     
-    func containsOptionalString(other: String?) -> Bool {
+    internal func containsOptionalString(other: String?) -> Bool {
         if let string = other {
             return self.containsString(string)
         }

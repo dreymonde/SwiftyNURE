@@ -8,18 +8,18 @@
 
 import Foundation
 
-public struct Response<T: BodyType> {
-    public init(data: T, response: NSHTTPURLResponse) {
+internal struct Response<T: BodyType> {
+    internal init(data: T, response: NSHTTPURLResponse) {
         self.data = data
         self.response = response
     }
         
-    public var data: T
+    internal var data: T
     internal var response: NSHTTPURLResponse
-    public var statusCode: Int {
+    internal var statusCode: Int {
         return response.statusCode
     }
-    public var headers: [NSObject: AnyObject] {
+    internal var headers: [NSObject: AnyObject] {
         return response.allHeaderFields
     }
 }

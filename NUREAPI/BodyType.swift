@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol BodyType {
+protocol BodyType {
     typealias Type
     
     var toData: NSData { get }
