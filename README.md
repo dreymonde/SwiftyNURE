@@ -1,6 +1,5 @@
 # SwiftyNURE #
 ### Swift-фреймворк для OS X. ###
-Guides coming soon.
 
 ### Инструкции ###
 Основа каркаса - поставщики (Providers). Все поставщики имплементируют протокол Receivable.
@@ -77,6 +76,14 @@ public protocol Eventable {
     
 }
 ```
+Также существуют поставщики групп (RemoteGroupsProvider) и предодавателей (TeachersProvider.Remote), которые, по факту, "запакованы" в UniversityProvider. Их отличительной особенностью является возможность фильтрованного запроса:
+```swift
+let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
+    print(teachers)
+}.execute()
+```
+Группы фильтруются по названию, преподаватели - по имени, кафедре (как по полному, так и сокращённому названию) и факультету (аналогично).
+
 ### Оперирование информацией ###
 Университет может быть закодирован в NSData и обратно:
 
@@ -89,4 +96,32 @@ if let university = University(withData: binary) {
 	print(university.groups)
 }
 ```
-Поддержка этой возможности для Timetable появится в ближайшем релизе.
+Это же работает и для Timetable:
+```swift
+// To NSData
+let data = timetable.toData() // NSData?
+
+// From NSData
+if let timetable = Timetable(withData: data) {
+    print(timetable.events(forDay: NSDate()))
+}
+```
+Эти возможности заданы протоколом DataObject, который имплементируют практически все типы SwiftyNURE.
+```swift
+public protocol DataEncodable {
+    var toData: NSData? { get }
+}
+public protocol DataDecodable {
+    init?(withData data: NSData)
+}
+public protocol DataObject: DataEncodable, DataDecodable {  }
+```
+"Под капотом" все эти объекты имплементируют протокол JSONObject: JSONEncodable, JSONDecodable, который наследует DataObject и автоматически конвертирует JSON в NSData. Для работы с JSON используется фреймворк SwitfyJSON. Добавив его в свой проект, вы сможете напрямую обращаться к методам протокола:
+```swift
+let universityJson = university.toJSON // JSON
+let kaukJson = teacher.toJSON // JSON
+let timetable = Timetable(withJSON: timetableJson) // Timetable?
+```
+> Внимание! JSON-объекты, получаемые в результате использования свойства .toJSON, **не** являются идентичными тем, которые получаются в результате запросов к серверам CIST.
+
+Учтите, что структуры Teacher и Teacher.Extended, имплементирующие протокол TeacherType, различаются. Teacher не содержит в себе информации о кафедре и факультете. Teacher тип можно в стретить в объектах Event, Teacher.Extended - в University.
