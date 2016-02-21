@@ -8,7 +8,7 @@
 
 import XCTest
 import SwiftyJSON
-@testable import NUREAPI
+@testable import SwiftyNURE
 
 class TimetableProviderTests: NURETests {
     

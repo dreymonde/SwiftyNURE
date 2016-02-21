@@ -10,7 +10,7 @@
 		BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */; };
 		BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */; };
 		BE7E06DD1C75EC4A0050E57D /* NUREAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE7E06E41C75EC4A0050E57D /* NUREAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7E06D91C75EC4A0050E57D /* NUREAPI.framework */; };
+		BE7E06E41C75EC4A0050E57D /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */; };
 		BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */; };
 		BE7E06F71C75EC550050E57D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06F31C75EC550050E57D /* Event.swift */; };
 		BE7E06F81C75EC550050E57D /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06F41C75EC550050E57D /* Timetable.swift */; };
@@ -106,10 +106,10 @@
 /* Begin PBXFileReference section */
 		BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProviderTests.swift; sourceTree = "<group>"; };
 		BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProviderTests.swift; sourceTree = "<group>"; };
-		BE7E06D91C75EC4A0050E57D /* NUREAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NUREAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNURE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NUREAPI.h; sourceTree = "<group>"; };
 		BE7E06DE1C75EC4A0050E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE7E06E31C75EC4A0050E57D /* NUREAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NUREAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE7E06E31C75EC4A0050E57D /* SwiftyNURETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyNURETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUREAPITests.swift; sourceTree = "<group>"; };
 		BE7E06EA1C75EC4A0050E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE7E06F31C75EC550050E57D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE7E06E41C75EC4A0050E57D /* NUREAPI.framework in Frameworks */,
+				BE7E06E41C75EC4A0050E57D /* SwiftyNURE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +177,8 @@
 		BE7E06DA1C75EC4A0050E57D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE7E06D91C75EC4A0050E57D /* NUREAPI.framework */,
-				BE7E06E31C75EC4A0050E57D /* NUREAPITests.xctest */,
+				BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */,
+				BE7E06E31C75EC4A0050E57D /* SwiftyNURETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,9 +298,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BE7E06D81C75EC4A0050E57D /* NUREAPI */ = {
+		BE7E06D81C75EC4A0050E57D /* SwiftyNURE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE7E06ED1C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "NUREAPI" */;
+			buildConfigurationList = BE7E06ED1C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURE" */;
 			buildPhases = (
 				BE7E06D41C75EC4A0050E57D /* Sources */,
 				BE7E06D51C75EC4A0050E57D /* Frameworks */,
@@ -313,14 +313,14 @@
 			dependencies = (
 				BE7E07141C75F46D0050E57D /* PBXTargetDependency */,
 			);
-			name = NUREAPI;
+			name = SwiftyNURE;
 			productName = NUREAPI;
-			productReference = BE7E06D91C75EC4A0050E57D /* NUREAPI.framework */;
+			productReference = BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BE7E06E21C75EC4A0050E57D /* NUREAPITests */ = {
+		BE7E06E21C75EC4A0050E57D /* SwiftyNURETests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE7E06F01C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "NUREAPITests" */;
+			buildConfigurationList = BE7E06F01C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURETests" */;
 			buildPhases = (
 				BE7E06DF1C75EC4A0050E57D /* Sources */,
 				BE7E06E01C75EC4A0050E57D /* Frameworks */,
@@ -331,9 +331,9 @@
 			dependencies = (
 				BE7E06E61C75EC4A0050E57D /* PBXTargetDependency */,
 			);
-			name = NUREAPITests;
+			name = SwiftyNURETests;
 			productName = NUREAPITests;
-			productReference = BE7E06E31C75EC4A0050E57D /* NUREAPITests.xctest */;
+			productReference = BE7E06E31C75EC4A0050E57D /* SwiftyNURETests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -354,7 +354,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BE7E06D31C75EC4A0050E57D /* Build configuration list for PBXProject "NUREAPI" */;
+			buildConfigurationList = BE7E06D31C75EC4A0050E57D /* Build configuration list for PBXProject "SwiftyNURE" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -372,8 +372,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				BE7E06D81C75EC4A0050E57D /* NUREAPI */,
-				BE7E06E21C75EC4A0050E57D /* NUREAPITests */,
+				BE7E06D81C75EC4A0050E57D /* SwiftyNURE */,
+				BE7E06E21C75EC4A0050E57D /* SwiftyNURETests */,
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +479,7 @@
 /* Begin PBXTargetDependency section */
 		BE7E06E61C75EC4A0050E57D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BE7E06D81C75EC4A0050E57D /* NUREAPI */;
+			target = BE7E06D81C75EC4A0050E57D /* SwiftyNURE */;
 			targetProxy = BE7E06E51C75EC4A0050E57D /* PBXContainerItemProxy */;
 		};
 		BE7E07141C75F46D0050E57D /* PBXTargetDependency */ = {
@@ -590,7 +590,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftyNURE;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -610,7 +610,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftyNURE;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -622,7 +622,7 @@
 				INFOPLIST_FILE = NUREAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftyNURETests;
 			};
 			name = Debug;
 		};
@@ -633,14 +633,14 @@
 				INFOPLIST_FILE = NUREAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftyNURETests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE7E06D31C75EC4A0050E57D /* Build configuration list for PBXProject "NUREAPI" */ = {
+		BE7E06D31C75EC4A0050E57D /* Build configuration list for PBXProject "SwiftyNURE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE7E06EB1C75EC4A0050E57D /* Debug */,
@@ -649,7 +649,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE7E06ED1C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "NUREAPI" */ = {
+		BE7E06ED1C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE7E06EE1C75EC4A0050E57D /* Debug */,
@@ -658,7 +658,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE7E06F01C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "NUREAPITests" */ = {
+		BE7E06F01C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURETests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE7E06F11C75EC4A0050E57D /* Debug */,

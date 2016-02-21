@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import NUREAPI
+@testable import SwiftyNURE
 
 class TeachersProviderTests: NURETests {
 

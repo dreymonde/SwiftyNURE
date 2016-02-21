@@ -8,7 +8,7 @@
 
 import XCTest
 import Foundation
-@testable import NUREAPI
+@testable import SwiftyNURE
 import SwiftyJSON
 
 class UniversityProviderTests: NURETests {

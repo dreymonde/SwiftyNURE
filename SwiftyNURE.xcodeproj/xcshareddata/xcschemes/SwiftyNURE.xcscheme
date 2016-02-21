@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE7E06D81C75EC4A0050E57D"
-               BuildableName = "NUREAPI.framework"
-               BlueprintName = "NUREAPI"
-               ReferencedContainer = "container:NUREAPI.xcodeproj">
+               BuildableName = "SwiftyNURE.framework"
+               BlueprintName = "SwiftyNURE"
+               ReferencedContainer = "container:SwiftyNURE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE7E06E21C75EC4A0050E57D"
-               BuildableName = "NUREAPITests.xctest"
-               BlueprintName = "NUREAPITests"
-               ReferencedContainer = "container:NUREAPI.xcodeproj">
+               BuildableName = "SwiftyNURE.xctest"
+               BlueprintName = "SwiftyNURETests"
+               ReferencedContainer = "container:SwiftyNURE.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE7E06D81C75EC4A0050E57D"
-            BuildableName = "NUREAPI.framework"
-            BlueprintName = "NUREAPI"
-            ReferencedContainer = "container:NUREAPI.xcodeproj">
+            BuildableName = "SwiftyNURE.framework"
+            BlueprintName = "SwiftyNURE"
+            ReferencedContainer = "container:SwiftyNURE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE7E06D81C75EC4A0050E57D"
-            BuildableName = "NUREAPI.framework"
-            BlueprintName = "NUREAPI"
-            ReferencedContainer = "container:NUREAPI.xcodeproj">
+            BuildableName = "SwiftyNURE.framework"
+            BlueprintName = "SwiftyNURE"
+            ReferencedContainer = "container:SwiftyNURE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE7E06D81C75EC4A0050E57D"
-            BuildableName = "NUREAPI.framework"
-            BlueprintName = "NUREAPI"
-            ReferencedContainer = "container:NUREAPI.xcodeproj">
+            BuildableName = "SwiftyNURE.framework"
+            BlueprintName = "SwiftyNURE"
+            ReferencedContainer = "container:SwiftyNURE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
