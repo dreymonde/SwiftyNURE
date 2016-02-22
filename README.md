@@ -1,6 +1,16 @@
 ![SwiftyNURE](/SwiftyNURELogo.jpg)
 # SwiftyNURE #
-### Swift-фреймворк для OS X. ###
+Максимально простой Swift-фреймворк для общения с cist.nure.ua. На данный момент работает только с OS X. В ближайшее время планируется адаптация для iOS/watchOS/tvOS, а также выпуск сборки под Linux.
+
+### Требования ###
+- OS X 10.10+
+- Xcode 7
+
+### Интеграция ###
+Вы можете легко интегрировать SwiftyNURE с вашим проектом с помощью [Carthage](https://github.com/Carthage/Carthage). Просто добавьте в ваш Cartfile:
+```
+github "dreymonde/SwiftyNURE"
+```
 
 ### Инструкции ###
 Основа каркаса - поставщики (Providers). Все поставщики имплементируют протокол Receivable.
@@ -15,7 +25,7 @@ universityProvider.error = { error in
 }
 universityProvider.execute()
 ```
-Обработка ошибок опциональна, но поставщика обязательно нужно "запустить". Если отказаться от отработчика ошибок, можно слегка упростить код:
+Обработка ошибок опциональна, но поставщика обязательно нужно "запустить". Если отказаться от обработчика ошибок, можно слегка упростить код:
 
 ```swift
 let universityProvider = UniversityProvider.Remote() { nure in
