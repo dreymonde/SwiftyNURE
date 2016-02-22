@@ -9,7 +9,39 @@
 /* Begin PBXBuildFile section */
 		BEAAE3E61C7B7BFA003C90BC /* SwiftyNURE.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */; };
-		BEAAE3F21C7B7BFA003C90BC /* SwiftyNURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3F11C7B7BFA003C90BC /* SwiftyNURETests.swift */; };
+		BEAAE4171C7B7C2D003C90BC /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FC1C7B7C2D003C90BC /* JSONProtocols.swift */; };
+		BEAAE4181C7B7C2D003C90BC /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */; };
+		BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */; };
+		BEAAE41A1C7B7C2D003C90BC /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FF1C7B7C2D003C90BC /* TimetableProvider.swift */; };
+		BEAAE41B1C7B7C2D003C90BC /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4001C7B7C2D003C90BC /* GroupsProvider.swift */; };
+		BEAAE41C1C7B7C2D003C90BC /* TeachersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4011C7B7C2D003C90BC /* TeachersProvider.swift */; };
+		BEAAE41D1C7B7C2D003C90BC /* UniversityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4021C7B7C2D003C90BC /* UniversityProvider.swift */; };
+		BEAAE41E1C7B7C2D003C90BC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4031C7B7C2D003C90BC /* Event.swift */; };
+		BEAAE41F1C7B7C2D003C90BC /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4041C7B7C2D003C90BC /* Timetable.swift */; };
+		BEAAE4201C7B7C2D003C90BC /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4051C7B7C2D003C90BC /* Subject.swift */; };
+		BEAAE4211C7B7C2D003C90BC /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4061C7B7C2D003C90BC /* Teacher.swift */; };
+		BEAAE4221C7B7C2D003C90BC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4071C7B7C2D003C90BC /* Group.swift */; };
+		BEAAE4231C7B7C2D003C90BC /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4081C7B7C2D003C90BC /* EventType.swift */; };
+		BEAAE4241C7B7C2D003C90BC /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4091C7B7C2D003C90BC /* Parser.swift */; };
+		BEAAE4251C7B7C2D003C90BC /* TimetableParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40A1C7B7C2D003C90BC /* TimetableParser.swift */; };
+		BEAAE4261C7B7C2D003C90BC /* SubjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40B1C7B7C2D003C90BC /* SubjectParser.swift */; };
+		BEAAE4271C7B7C2D003C90BC /* TeacherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40C1C7B7C2D003C90BC /* TeacherParser.swift */; };
+		BEAAE4281C7B7C2D003C90BC /* GroupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40D1C7B7C2D003C90BC /* GroupParser.swift */; };
+		BEAAE4291C7B7C2D003C90BC /* EventTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40E1C7B7C2D003C90BC /* EventTypeParser.swift */; };
+		BEAAE42A1C7B7C2D003C90BC /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */; };
+		BEAAE42B1C7B7C2D003C90BC /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4101C7B7C2D003C90BC /* BodyType.swift */; };
+		BEAAE42C1C7B7C2D003C90BC /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4111C7B7C2D003C90BC /* RequestType.swift */; };
+		BEAAE42D1C7B7C2D003C90BC /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4121C7B7C2D003C90BC /* DataRequest.swift */; };
+		BEAAE42E1C7B7C2D003C90BC /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4131C7B7C2D003C90BC /* JSONRequest.swift */; };
+		BEAAE42F1C7B7C2D003C90BC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4141C7B7C2D003C90BC /* Response.swift */; };
+		BEAAE4301C7B7C2D003C90BC /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4151C7B7C2D003C90BC /* Receivable.swift */; };
+		BEAAE4311C7B7C2D003C90BC /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4161C7B7C2D003C90BC /* University.swift */; };
+		BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4321C7B7C3C003C90BC /* NURETests.swift */; };
+		BEAAE4391C7B7C3C003C90BC /* NUREAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4331C7B7C3C003C90BC /* NUREAPITests.swift */; };
+		BEAAE43A1C7B7C3C003C90BC /* GroupsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4341C7B7C3C003C90BC /* GroupsProviderTests.swift */; };
+		BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4351C7B7C3C003C90BC /* TimetableProviderTests.swift */; };
+		BEAAE43C1C7B7C3C003C90BC /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */; };
+		BEAAE43D1C7B7C3C003C90BC /* UniversityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4371C7B7C3C003C90BC /* UniversityProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +59,40 @@
 		BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyNURE.h; sourceTree = "<group>"; };
 		BEAAE3E71C7B7BFA003C90BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAAE3EC1C7B7BFA003C90BC /* SwiftyNURETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyNURETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEAAE3F11C7B7BFA003C90BC /* SwiftyNURETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyNURETests.swift; sourceTree = "<group>"; };
 		BEAAE3F31C7B7BFA003C90BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAAE3FC1C7B7C2D003C90BC /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
+		BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
+		BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURE.swift; sourceTree = "<group>"; };
+		BEAAE3FF1C7B7C2D003C90BC /* TimetableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
+		BEAAE4001C7B7C2D003C90BC /* GroupsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProvider.swift; sourceTree = "<group>"; };
+		BEAAE4011C7B7C2D003C90BC /* TeachersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProvider.swift; sourceTree = "<group>"; };
+		BEAAE4021C7B7C2D003C90BC /* UniversityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProvider.swift; sourceTree = "<group>"; };
+		BEAAE4031C7B7C2D003C90BC /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		BEAAE4041C7B7C2D003C90BC /* Timetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		BEAAE4051C7B7C2D003C90BC /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		BEAAE4061C7B7C2D003C90BC /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		BEAAE4071C7B7C2D003C90BC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BEAAE4081C7B7C2D003C90BC /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		BEAAE4091C7B7C2D003C90BC /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		BEAAE40A1C7B7C2D003C90BC /* TimetableParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableParser.swift; sourceTree = "<group>"; };
+		BEAAE40B1C7B7C2D003C90BC /* SubjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectParser.swift; sourceTree = "<group>"; };
+		BEAAE40C1C7B7C2D003C90BC /* TeacherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherParser.swift; sourceTree = "<group>"; };
+		BEAAE40D1C7B7C2D003C90BC /* GroupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupParser.swift; sourceTree = "<group>"; };
+		BEAAE40E1C7B7C2D003C90BC /* EventTypeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeParser.swift; sourceTree = "<group>"; };
+		BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
+		BEAAE4101C7B7C2D003C90BC /* BodyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		BEAAE4111C7B7C2D003C90BC /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		BEAAE4121C7B7C2D003C90BC /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		BEAAE4131C7B7C2D003C90BC /* JSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
+		BEAAE4141C7B7C2D003C90BC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		BEAAE4151C7B7C2D003C90BC /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
+		BEAAE4161C7B7C2D003C90BC /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		BEAAE4321C7B7C3C003C90BC /* NURETests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURETests.swift; sourceTree = "<group>"; };
+		BEAAE4331C7B7C3C003C90BC /* NUREAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUREAPITests.swift; sourceTree = "<group>"; };
+		BEAAE4341C7B7C3C003C90BC /* GroupsProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProviderTests.swift; sourceTree = "<group>"; };
+		BEAAE4351C7B7C3C003C90BC /* TimetableProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProviderTests.swift; sourceTree = "<group>"; };
+		BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProviderTests.swift; sourceTree = "<group>"; };
+		BEAAE4371C7B7C3C003C90BC /* UniversityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +135,12 @@
 		BEAAE3E41C7B7BFA003C90BC /* SwiftyNURE */ = {
 			isa = PBXGroup;
 			children = (
+				BEAAE43E1C7B7C50003C90BC /* Administrative */,
+				BEAAE43F1C7B7C57003C90BC /* Providers */,
+				BEAAE4401C7B7C5E003C90BC /* Model */,
+				BEAAE4411C7B7C67003C90BC /* Parsers */,
+				BEAAE4421C7B7C6D003C90BC /* Requests eez-eh */,
+				BEAAE4161C7B7C2D003C90BC /* University.swift */,
 				BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */,
 				BEAAE3E71C7B7BFA003C90BC /* Info.plist */,
 			);
@@ -80,10 +150,76 @@
 		BEAAE3F01C7B7BFA003C90BC /* SwiftyNURETests */ = {
 			isa = PBXGroup;
 			children = (
-				BEAAE3F11C7B7BFA003C90BC /* SwiftyNURETests.swift */,
+				BEAAE4321C7B7C3C003C90BC /* NURETests.swift */,
+				BEAAE4331C7B7C3C003C90BC /* NUREAPITests.swift */,
+				BEAAE4341C7B7C3C003C90BC /* GroupsProviderTests.swift */,
+				BEAAE4351C7B7C3C003C90BC /* TimetableProviderTests.swift */,
+				BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */,
+				BEAAE4371C7B7C3C003C90BC /* UniversityProviderTests.swift */,
 				BEAAE3F31C7B7BFA003C90BC /* Info.plist */,
 			);
 			path = SwiftyNURETests;
+			sourceTree = "<group>";
+		};
+		BEAAE43E1C7B7C50003C90BC /* Administrative */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAE3FC1C7B7C2D003C90BC /* JSONProtocols.swift */,
+				BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */,
+				BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */,
+			);
+			name = Administrative;
+			sourceTree = "<group>";
+		};
+		BEAAE43F1C7B7C57003C90BC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAE3FF1C7B7C2D003C90BC /* TimetableProvider.swift */,
+				BEAAE4001C7B7C2D003C90BC /* GroupsProvider.swift */,
+				BEAAE4011C7B7C2D003C90BC /* TeachersProvider.swift */,
+				BEAAE4021C7B7C2D003C90BC /* UniversityProvider.swift */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
+		BEAAE4401C7B7C5E003C90BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAE4031C7B7C2D003C90BC /* Event.swift */,
+				BEAAE4041C7B7C2D003C90BC /* Timetable.swift */,
+				BEAAE4051C7B7C2D003C90BC /* Subject.swift */,
+				BEAAE4061C7B7C2D003C90BC /* Teacher.swift */,
+				BEAAE4071C7B7C2D003C90BC /* Group.swift */,
+				BEAAE4081C7B7C2D003C90BC /* EventType.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BEAAE4411C7B7C67003C90BC /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAE4091C7B7C2D003C90BC /* Parser.swift */,
+				BEAAE40A1C7B7C2D003C90BC /* TimetableParser.swift */,
+				BEAAE40B1C7B7C2D003C90BC /* SubjectParser.swift */,
+				BEAAE40C1C7B7C2D003C90BC /* TeacherParser.swift */,
+				BEAAE40D1C7B7C2D003C90BC /* GroupParser.swift */,
+				BEAAE40E1C7B7C2D003C90BC /* EventTypeParser.swift */,
+				BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		BEAAE4421C7B7C6D003C90BC /* Requests eez-eh */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAE4101C7B7C2D003C90BC /* BodyType.swift */,
+				BEAAE4111C7B7C2D003C90BC /* RequestType.swift */,
+				BEAAE4121C7B7C2D003C90BC /* DataRequest.swift */,
+				BEAAE4131C7B7C2D003C90BC /* JSONRequest.swift */,
+				BEAAE4141C7B7C2D003C90BC /* Response.swift */,
+				BEAAE4151C7B7C2D003C90BC /* Receivable.swift */,
+			);
+			name = "Requests eez-eh";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +330,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEAAE41E1C7B7C2D003C90BC /* Event.swift in Sources */,
+				BEAAE42D1C7B7C2D003C90BC /* DataRequest.swift in Sources */,
+				BEAAE4311C7B7C2D003C90BC /* University.swift in Sources */,
+				BEAAE41A1C7B7C2D003C90BC /* TimetableProvider.swift in Sources */,
+				BEAAE41F1C7B7C2D003C90BC /* Timetable.swift in Sources */,
+				BEAAE4221C7B7C2D003C90BC /* Group.swift in Sources */,
+				BEAAE41C1C7B7C2D003C90BC /* TeachersProvider.swift in Sources */,
+				BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */,
+				BEAAE4281C7B7C2D003C90BC /* GroupParser.swift in Sources */,
+				BEAAE4241C7B7C2D003C90BC /* Parser.swift in Sources */,
+				BEAAE4171C7B7C2D003C90BC /* JSONProtocols.swift in Sources */,
+				BEAAE42B1C7B7C2D003C90BC /* BodyType.swift in Sources */,
+				BEAAE4271C7B7C2D003C90BC /* TeacherParser.swift in Sources */,
+				BEAAE4291C7B7C2D003C90BC /* EventTypeParser.swift in Sources */,
+				BEAAE4201C7B7C2D003C90BC /* Subject.swift in Sources */,
+				BEAAE4231C7B7C2D003C90BC /* EventType.swift in Sources */,
+				BEAAE41D1C7B7C2D003C90BC /* UniversityProvider.swift in Sources */,
+				BEAAE4261C7B7C2D003C90BC /* SubjectParser.swift in Sources */,
+				BEAAE4301C7B7C2D003C90BC /* Receivable.swift in Sources */,
+				BEAAE4251C7B7C2D003C90BC /* TimetableParser.swift in Sources */,
+				BEAAE4181C7B7C2D003C90BC /* DataProtocols.swift in Sources */,
+				BEAAE41B1C7B7C2D003C90BC /* GroupsProvider.swift in Sources */,
+				BEAAE42C1C7B7C2D003C90BC /* RequestType.swift in Sources */,
+				BEAAE42A1C7B7C2D003C90BC /* DateParser.swift in Sources */,
+				BEAAE4211C7B7C2D003C90BC /* Teacher.swift in Sources */,
+				BEAAE42E1C7B7C2D003C90BC /* JSONRequest.swift in Sources */,
+				BEAAE42F1C7B7C2D003C90BC /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +364,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAAE3F21C7B7BFA003C90BC /* SwiftyNURETests.swift in Sources */,
+				BEAAE4391C7B7C3C003C90BC /* NUREAPITests.swift in Sources */,
+				BEAAE43D1C7B7C3C003C90BC /* UniversityProviderTests.swift in Sources */,
+				BEAAE43A1C7B7C3C003C90BC /* GroupsProviderTests.swift in Sources */,
+				BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */,
+				BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */,
+				BEAAE43C1C7B7C3C003C90BC /* TeachersProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +473,7 @@
 		BEAAE3F71C7B7BFA003C90BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -317,12 +486,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.SwiftyNURE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BEAAE3F81C7B7BFA003C90BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
