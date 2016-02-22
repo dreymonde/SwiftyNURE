@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */; };
+		BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */; };
+		BE7E06DD1C75EC4A0050E57D /* NUREAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE7E06E41C75EC4A0050E57D /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */; };
+		BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */; };
+		BE7E06F71C75EC550050E57D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06F31C75EC550050E57D /* Event.swift */; };
+		BE7E06F81C75EC550050E57D /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06F41C75EC550050E57D /* Timetable.swift */; };
+		BE7E06FA1C75EC550050E57D /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E06F61C75EC550050E57D /* RequestType.swift */; };
+		BE7E07161C75F4930050E57D /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE7E070A1C75F4480050E57D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE7E07181C75F4FE0050E57D /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07171C75F4FE0050E57D /* BodyType.swift */; };
+		BE7E071A1C75F5830050E57D /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07191C75F5830050E57D /* DataRequest.swift */; };
+		BE7E071D1C75F7230050E57D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E071C1C75F7230050E57D /* Response.swift */; };
+		BE7E071F1C75F7720050E57D /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E071E1C75F7720050E57D /* JSONRequest.swift */; };
+		BE7E07211C75FA340050E57D /* TimetableParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07201C75FA340050E57D /* TimetableParser.swift */; };
+		BE7E07241C75FAF70050E57D /* SubjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07231C75FAF70050E57D /* SubjectParser.swift */; };
+		BE7E07261C75FB3E0050E57D /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07251C75FB3E0050E57D /* Parser.swift */; };
+		BE7E07291C75FBE50050E57D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07281C75FBE50050E57D /* Subject.swift */; };
+		BE7E072B1C75FC9A0050E57D /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E072A1C75FC9A0050E57D /* Teacher.swift */; };
+		BE7E072D1C75FD400050E57D /* TeacherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E072C1C75FD400050E57D /* TeacherParser.swift */; };
+		BE7E072F1C75FE170050E57D /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E072E1C75FE170050E57D /* DateParser.swift */; };
+		BE7E07311C75FF690050E57D /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07301C75FF690050E57D /* Group.swift */; };
+		BE7E07331C75FFAD0050E57D /* GroupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07321C75FFAD0050E57D /* GroupParser.swift */; };
+		BE7E07371C7600510050E57D /* EventTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07361C7600510050E57D /* EventTypeParser.swift */; };
+		BE7E07391C7607750050E57D /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E07381C7607750050E57D /* EventType.swift */; };
+		BE9F77161C760DA3007DB538 /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77151C760DA3007DB538 /* TimetableProvider.swift */; };
+		BE9F77181C760DDF007DB538 /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77171C760DDF007DB538 /* NURE.swift */; };
+		BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F77191C761AFE007DB538 /* Receivable.swift */; };
+		BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F771B1C767713007DB538 /* GroupsProvider.swift */; };
+		BEA70C6C1C7A0640004836AF /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70C6B1C7A0640004836AF /* DataProtocols.swift */; };
+		BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB701C78C6950004F21F /* NURETests.swift */; };
+		BEF2BB781C78CFE80004F21F /* TeachersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */; };
+		BEF2BB7D1C78D3C80004F21F /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */; };
+		BEF2BB831C78E2B20004F21F /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB821C78E2B20004F21F /* University.swift */; };
+		BEF2BB891C78E3400004F21F /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB881C78E3400004F21F /* JSONProtocols.swift */; };
+		BEF2BB8B1C78E8750004F21F /* UniversityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB8A1C78E8750004F21F /* UniversityProvider.swift */; };
+		BEF2BB8D1C78EA850004F21F /* UniversityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2BB8C1C78EA850004F21F /* UniversityProviderTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE7E06E51C75EC4A0050E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE7E06D01C75EC4A0050E57D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE7E06D81C75EC4A0050E57D;
+			remoteInfo = NUREAPI;
+		};
+		BE7E07051C75F4480050E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFDB19575BE100351305;
+			remoteInfo = "SwiftyJSON iOS";
+		};
+		BE7E07091C75F4480050E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C7DFC5B1A9102BD005AA3F7;
+			remoteInfo = "SwiftyJSON OSX";
+		};
+		BE7E070D1C75F4480050E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4D7CCE81B9465A700EE7221;
+			remoteInfo = "SwiftyJSON watchOS";
+		};
+		BE7E070F1C75F4480050E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7236B4F61BAC14150020529B;
+			remoteInfo = "SwiftyJSON tvOS";
+		};
+		BE7E07131C75F46D0050E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C7DFC5A1A9102BD005AA3F7;
+			remoteInfo = "SwiftyJSON OSX";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE7E07151C75F4800050E57D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE7E07161C75F4930050E57D /* SwiftyJSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProviderTests.swift; sourceTree = "<group>"; };
+		BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProviderTests.swift; sourceTree = "<group>"; };
+		BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNURE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NUREAPI.h; sourceTree = "<group>"; };
+		BE7E06DE1C75EC4A0050E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE7E06E31C75EC4A0050E57D /* SwiftyNURETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyNURETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUREAPITests.swift; sourceTree = "<group>"; };
+		BE7E06EA1C75EC4A0050E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE7E06F31C75EC550050E57D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		BE7E06F41C75EC550050E57D /* Timetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		BE7E06F61C75EC550050E57D /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../Alien Code/SwiftyJSON/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		BE7E07171C75F4FE0050E57D /* BodyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		BE7E07191C75F5830050E57D /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		BE7E071C1C75F7230050E57D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		BE7E071E1C75F7720050E57D /* JSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
+		BE7E07201C75FA340050E57D /* TimetableParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableParser.swift; sourceTree = "<group>"; };
+		BE7E07231C75FAF70050E57D /* SubjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectParser.swift; sourceTree = "<group>"; };
+		BE7E07251C75FB3E0050E57D /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		BE7E07281C75FBE50050E57D /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		BE7E072A1C75FC9A0050E57D /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		BE7E072C1C75FD400050E57D /* TeacherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherParser.swift; sourceTree = "<group>"; };
+		BE7E072E1C75FE170050E57D /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
+		BE7E07301C75FF690050E57D /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BE7E07321C75FFAD0050E57D /* GroupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupParser.swift; sourceTree = "<group>"; };
+		BE7E07361C7600510050E57D /* EventTypeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeParser.swift; sourceTree = "<group>"; };
+		BE7E07381C7607750050E57D /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		BE9F77151C760DA3007DB538 /* TimetableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
+		BE9F77171C760DDF007DB538 /* NURE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURE.swift; sourceTree = "<group>"; };
+		BE9F77191C761AFE007DB538 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
+		BE9F771B1C767713007DB538 /* GroupsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsProvider.swift; sourceTree = "<group>"; };
+		BEA70C6B1C7A0640004836AF /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
+		BEF2BB701C78C6950004F21F /* NURETests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURETests.swift; sourceTree = "<group>"; };
+		BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProvider.swift; sourceTree = "<group>"; };
+		BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProviderTests.swift; sourceTree = "<group>"; };
+		BEF2BB821C78E2B20004F21F /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		BEF2BB881C78E3400004F21F /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
+		BEF2BB8A1C78E8750004F21F /* UniversityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProvider.swift; sourceTree = "<group>"; };
+		BEF2BB8C1C78EA850004F21F /* UniversityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProviderTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE7E06D51C75EC4A0050E57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE7E06E01C75EC4A0050E57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE7E06E41C75EC4A0050E57D /* SwiftyNURE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE7E06CF1C75EC4A0050E57D = {
+			isa = PBXGroup;
+			children = (
+				BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */,
+				BE7E06DB1C75EC4A0050E57D /* NUREAPI */,
+				BE7E06E71C75EC4A0050E57D /* NUREAPITests */,
+				BE7E06DA1C75EC4A0050E57D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE7E06DA1C75EC4A0050E57D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */,
+				BE7E06E31C75EC4A0050E57D /* SwiftyNURETests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE7E06DB1C75EC4A0050E57D /* NUREAPI */ = {
+			isa = PBXGroup;
+			children = (
+				BEF2BB871C78E3300004F21F /* Administrative */,
+				BE9F77141C760D8D007DB538 /* Providers */,
+				BE7E07271C75FBD30050E57D /* Events and co */,
+				BE7E07221C75FACC0050E57D /* Parsers */,
+				BE7E071B1C75F5870050E57D /* Request */,
+				BE7E06DC1C75EC4A0050E57D /* NUREAPI.h */,
+				BE7E06DE1C75EC4A0050E57D /* Info.plist */,
+				BE9F77191C761AFE007DB538 /* Receivable.swift */,
+				BEF2BB821C78E2B20004F21F /* University.swift */,
+			);
+			path = NUREAPI;
+			sourceTree = "<group>";
+		};
+		BE7E06E71C75EC4A0050E57D /* NUREAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				BEF2BB701C78C6950004F21F /* NURETests.swift */,
+				BE7E06E81C75EC4A0050E57D /* NUREAPITests.swift */,
+				BE686CED1C773DD000C5D62E /* GroupsProviderTests.swift */,
+				BE686CF51C7743B400C5D62E /* TimetableProviderTests.swift */,
+				BEF2BB7C1C78D3C80004F21F /* TeachersProviderTests.swift */,
+				BEF2BB8C1C78EA850004F21F /* UniversityProviderTests.swift */,
+				BE7E06EA1C75EC4A0050E57D /* Info.plist */,
+			);
+			path = NUREAPITests;
+			sourceTree = "<group>";
+		};
+		BE7E06FC1C75F4470050E57D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE7E07061C75F4480050E57D /* SwiftyJSON.framework */,
+				BE7E070A1C75F4480050E57D /* SwiftyJSON.framework */,
+				BE7E070E1C75F4480050E57D /* SwiftyJSON.framework */,
+				BE7E07101C75F4480050E57D /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE7E071B1C75F5870050E57D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BE7E07171C75F4FE0050E57D /* BodyType.swift */,
+				BE7E06F61C75EC550050E57D /* RequestType.swift */,
+				BE7E07191C75F5830050E57D /* DataRequest.swift */,
+				BE7E071E1C75F7720050E57D /* JSONRequest.swift */,
+				BE7E071C1C75F7230050E57D /* Response.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		BE7E07221C75FACC0050E57D /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				BE7E07251C75FB3E0050E57D /* Parser.swift */,
+				BE7E07201C75FA340050E57D /* TimetableParser.swift */,
+				BE7E07231C75FAF70050E57D /* SubjectParser.swift */,
+				BE7E072C1C75FD400050E57D /* TeacherParser.swift */,
+				BE7E07321C75FFAD0050E57D /* GroupParser.swift */,
+				BE7E07361C7600510050E57D /* EventTypeParser.swift */,
+				BE7E072E1C75FE170050E57D /* DateParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		BE7E07271C75FBD30050E57D /* Events and co */ = {
+			isa = PBXGroup;
+			children = (
+				BE7E06F31C75EC550050E57D /* Event.swift */,
+				BE7E06F41C75EC550050E57D /* Timetable.swift */,
+				BE7E07281C75FBE50050E57D /* Subject.swift */,
+				BE7E072A1C75FC9A0050E57D /* Teacher.swift */,
+				BE7E07301C75FF690050E57D /* Group.swift */,
+				BE7E07381C7607750050E57D /* EventType.swift */,
+			);
+			name = "Events and co";
+			sourceTree = "<group>";
+		};
+		BE9F77141C760D8D007DB538 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F77151C760DA3007DB538 /* TimetableProvider.swift */,
+				BE9F771B1C767713007DB538 /* GroupsProvider.swift */,
+				BEF2BB771C78CFE80004F21F /* TeachersProvider.swift */,
+				BEF2BB8A1C78E8750004F21F /* UniversityProvider.swift */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
+		BEF2BB871C78E3300004F21F /* Administrative */ = {
+			isa = PBXGroup;
+			children = (
+				BEF2BB881C78E3400004F21F /* JSONProtocols.swift */,
+				BEA70C6B1C7A0640004836AF /* DataProtocols.swift */,
+				BE9F77171C760DDF007DB538 /* NURE.swift */,
+			);
+			name = Administrative;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BE7E06D61C75EC4A0050E57D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE7E06DD1C75EC4A0050E57D /* NUREAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BE7E06D81C75EC4A0050E57D /* SwiftyNURE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE7E06ED1C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURE" */;
+			buildPhases = (
+				BE7E06D41C75EC4A0050E57D /* Sources */,
+				BE7E06D51C75EC4A0050E57D /* Frameworks */,
+				BE7E06D61C75EC4A0050E57D /* Headers */,
+				BE7E06D71C75EC4A0050E57D /* Resources */,
+				BE7E07151C75F4800050E57D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE7E07141C75F46D0050E57D /* PBXTargetDependency */,
+			);
+			name = SwiftyNURE;
+			productName = NUREAPI;
+			productReference = BE7E06D91C75EC4A0050E57D /* SwiftyNURE.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE7E06E21C75EC4A0050E57D /* SwiftyNURETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE7E06F01C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURETests" */;
+			buildPhases = (
+				BE7E06DF1C75EC4A0050E57D /* Sources */,
+				BE7E06E01C75EC4A0050E57D /* Frameworks */,
+				BE7E06E11C75EC4A0050E57D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE7E06E61C75EC4A0050E57D /* PBXTargetDependency */,
+			);
+			name = SwiftyNURETests;
+			productName = NUREAPITests;
+			productReference = BE7E06E31C75EC4A0050E57D /* SwiftyNURETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE7E06D01C75EC4A0050E57D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Oleg Dreyman";
+				TargetAttributes = {
+					BE7E06D81C75EC4A0050E57D = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					BE7E06E21C75EC4A0050E57D = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = BE7E06D31C75EC4A0050E57D /* Build configuration list for PBXProject "SwiftyNURE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BE7E06CF1C75EC4A0050E57D;
+			productRefGroup = BE7E06DA1C75EC4A0050E57D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BE7E06FC1C75F4470050E57D /* Products */;
+					ProjectRef = BE7E06FB1C75F4470050E57D /* SwiftyJSON.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				BE7E06D81C75EC4A0050E57D /* SwiftyNURE */,
+				BE7E06E21C75EC4A0050E57D /* SwiftyNURETests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BE7E07061C75F4480050E57D /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = BE7E07051C75F4480050E57D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BE7E070A1C75F4480050E57D /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = BE7E07091C75F4480050E57D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BE7E070E1C75F4480050E57D /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = BE7E070D1C75F4480050E57D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BE7E07101C75F4480050E57D /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = BE7E070F1C75F4480050E57D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE7E06D71C75EC4A0050E57D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE7E06E11C75EC4A0050E57D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE7E06D41C75EC4A0050E57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE7E072B1C75FC9A0050E57D /* Teacher.swift in Sources */,
+				BE7E06FA1C75EC550050E57D /* RequestType.swift in Sources */,
+				BE7E072F1C75FE170050E57D /* DateParser.swift in Sources */,
+				BEF2BB781C78CFE80004F21F /* TeachersProvider.swift in Sources */,
+				BE7E07311C75FF690050E57D /* Group.swift in Sources */,
+				BEA70C6C1C7A0640004836AF /* DataProtocols.swift in Sources */,
+				BEF2BB831C78E2B20004F21F /* University.swift in Sources */,
+				BE9F77161C760DA3007DB538 /* TimetableProvider.swift in Sources */,
+				BE7E07291C75FBE50050E57D /* Subject.swift in Sources */,
+				BE7E071A1C75F5830050E57D /* DataRequest.swift in Sources */,
+				BE9F77181C760DDF007DB538 /* NURE.swift in Sources */,
+				BE7E07331C75FFAD0050E57D /* GroupParser.swift in Sources */,
+				BE7E07371C7600510050E57D /* EventTypeParser.swift in Sources */,
+				BEF2BB8B1C78E8750004F21F /* UniversityProvider.swift in Sources */,
+				BE7E07261C75FB3E0050E57D /* Parser.swift in Sources */,
+				BE7E07241C75FAF70050E57D /* SubjectParser.swift in Sources */,
+				BE9F771A1C761AFE007DB538 /* Receivable.swift in Sources */,
+				BE7E07181C75F4FE0050E57D /* BodyType.swift in Sources */,
+				BE7E071F1C75F7720050E57D /* JSONRequest.swift in Sources */,
+				BE7E06F71C75EC550050E57D /* Event.swift in Sources */,
+				BE9F771C1C767713007DB538 /* GroupsProvider.swift in Sources */,
+				BEF2BB891C78E3400004F21F /* JSONProtocols.swift in Sources */,
+				BE7E071D1C75F7230050E57D /* Response.swift in Sources */,
+				BE7E06F81C75EC550050E57D /* Timetable.swift in Sources */,
+				BE7E072D1C75FD400050E57D /* TeacherParser.swift in Sources */,
+				BE7E07211C75FA340050E57D /* TimetableParser.swift in Sources */,
+				BE7E07391C7607750050E57D /* EventType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE7E06DF1C75EC4A0050E57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE686CEE1C773DD000C5D62E /* GroupsProviderTests.swift in Sources */,
+				BE686CF61C7743B400C5D62E /* TimetableProviderTests.swift in Sources */,
+				BE7E06E91C75EC4A0050E57D /* NUREAPITests.swift in Sources */,
+				BEF2BB7D1C78D3C80004F21F /* TeachersProviderTests.swift in Sources */,
+				BEF2BB8D1C78EA850004F21F /* UniversityProviderTests.swift in Sources */,
+				BEF2BB711C78C6950004F21F /* NURETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE7E06E61C75EC4A0050E57D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE7E06D81C75EC4A0050E57D /* SwiftyNURE */;
+			targetProxy = BE7E06E51C75EC4A0050E57D /* PBXContainerItemProxy */;
+		};
+		BE7E07141C75F46D0050E57D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON OSX";
+			targetProxy = BE7E07131C75F46D0050E57D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BE7E06EB1C75EC4A0050E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BE7E06EC1C75EC4A0050E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE7E06EE1C75EC4A0050E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = NUREAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPI;
+				PRODUCT_NAME = SwiftyNURE;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE7E06EF1C75EC4A0050E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = NUREAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPI;
+				PRODUCT_NAME = SwiftyNURE;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BE7E06F11C75EC4A0050E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NUREAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPITests;
+				PRODUCT_NAME = SwiftyNURETests;
+			};
+			name = Debug;
+		};
+		BE7E06F21C75EC4A0050E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NUREAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.NUREAPITests;
+				PRODUCT_NAME = SwiftyNURETests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE7E06D31C75EC4A0050E57D /* Build configuration list for PBXProject "SwiftyNURE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE7E06EB1C75EC4A0050E57D /* Debug */,
+				BE7E06EC1C75EC4A0050E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE7E06ED1C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE7E06EE1C75EC4A0050E57D /* Debug */,
+				BE7E06EF1C75EC4A0050E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE7E06F01C75EC4A0050E57D /* Build configuration list for PBXNativeTarget "SwiftyNURETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE7E06F11C75EC4A0050E57D /* Debug */,
+				BE7E06F21C75EC4A0050E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE7E06D01C75EC4A0050E57D /* Project object */;
+}
