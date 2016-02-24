@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RequestType {
+protocol RequestType: Receivable {
     
     typealias ABodyType: BodyType
     
