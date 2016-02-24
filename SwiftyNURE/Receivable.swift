@@ -11,9 +11,10 @@ import Foundation
 public protocol Receivable {
 
 	typealias Received
+    typealias AnError = ErrorType
 
 	var completion: (Received -> Void) { get }
-	var error: (ErrorType -> Void)? { get set }
+	var error: (AnError -> Void)? { get set }
 
 	func execute() -> ()
 
@@ -21,7 +22,7 @@ public protocol Receivable {
 
 extension Receivable {
     
-    var pushError: (ErrorType -> Void) {
+    var pushError: (AnError -> Void) {
         return { error in
             self.error?(error)
         }
