@@ -21,6 +21,27 @@ public struct Timetable {
         return events.filter({ NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: $0.startDate) }).sort{ $0.number < $1.number }
     }
     
+    var startDate: NSDate? {
+        if events.count > 0 {
+            let minInterval = events.map({ $0.startDate.timeIntervalSince1970 }).minElement()
+            guard let interval = minInterval else {
+                return nil
+            }
+            return NSDate(timeIntervalSince1970: interval)
+        }
+        return nil
+    }
+    
+    var endDate: NSDate? {
+        if events.count > 0 {
+            guard let maxInterval = events.map({ $0.endDate.timeIntervalSince1970 }).maxElement() else {
+                return nil
+            }
+            return NSDate(timeIntervalSince1970: maxInterval)
+        }
+        return nil
+    }
+    
 }
 
 extension Timetable: JSONObject {
