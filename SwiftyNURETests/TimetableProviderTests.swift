@@ -54,6 +54,8 @@ class TimetableProviderTests: NURETests {
         let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
         let provider = TimetableProvider.Remote(forGroupID: groupID, fromDate: today, toDate: nextWeek) { timetable in
             print(timetable)
+            print(timetable.startDate)
+            print(timetable.endDate)
             expectation.fulfill()
         }
         provider.error = defaultError
@@ -65,7 +67,7 @@ class TimetableProviderTests: NURETests {
         let expectation = expectationWithDescription("Async timetable task")
         let today = NSDate()
         let provider = TimetableProvider.Remote(forGroupID: groupID) { timetable in
-            let todayEvents = timetable.events(forDay: today)
+            let todayEvents = timetable.eventsForDay(today)
             print(todayEvents)
             expectation.fulfill()
         }
