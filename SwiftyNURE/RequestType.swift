@@ -10,12 +10,12 @@ import Foundation
 
 protocol RequestType: Receivable {
     
-    typealias ABodyType: BodyType
+    typealias ResponseType
     
     var method: Method { get }
     var URL: NSURL { get }
     var body: NSData? { get set }
-    var completion: (Response<ABodyType> -> Void) { get set }
+    var completion: (Response<ResponseType> -> Void) { get set }
     var error: (RequestError -> Void)? { get set }
     
     func execute() -> ()

@@ -11,12 +11,12 @@ import Foundation
 protocol BodyType {
     typealias Type
     
-    var toData: NSData { get }
+    var toData: NSData? { get }
     static func fromData(data: NSData) -> Type?
 }
 
 extension NSData: BodyType {
-    public var toData: NSData {
+    public var toData: NSData? {
         return self
     }
     public static func fromData(data: NSData) -> NSData? {

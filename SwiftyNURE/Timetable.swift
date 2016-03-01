@@ -43,20 +43,3 @@ public struct Timetable {
     }
     
 }
-
-extension Timetable: JSONObject {
-    
-    public var toJSON: JSON {
-        let jEvents = events.flatMap{ ($0 as? Event)?.toJSON }
-        return JSON(jEvents)
-    }
-
-    public init?(withJSON json: JSON) {
-        guard let jEvents = json.array else {
-            return nil
-        }
-        print(jEvents.count)
-        self.events = jEvents.flatMap{ Event(withJSON: $0) }
-    }
-    
-}

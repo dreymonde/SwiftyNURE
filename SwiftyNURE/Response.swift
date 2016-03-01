@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal struct Response<T: BodyType> {
+internal struct Response<T> {
     internal init(data: T, response: NSHTTPURLResponse) {
         self.data = data
         self.response = response

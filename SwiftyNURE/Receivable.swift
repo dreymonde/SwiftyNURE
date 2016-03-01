@@ -29,11 +29,3 @@ extension Receivable {
     }
     
 }
-
-internal protocol RawReceivable: Receivable {
-    
-    typealias ABodyType = BodyType
-    
-    var raw: (ABodyType -> Void)? { get set }
-    
-}

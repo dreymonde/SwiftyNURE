@@ -7,49 +7,12 @@
 //
 
 import Foundation
-import SwiftyJSON
-
-extension JSON: BodyType {
-    
-    internal var toData: NSData {
-        do {
-            return try self.rawData()
-        } catch {
-            print("Can't get rawData")
-            return NSData()
-        }
-    }
-    
-    internal static func fromData(data: NSData) -> JSON? {
-        let json = JSON(data: data)
-        return json
-    }
-    
-}
 
 internal struct JSONRequest: RequestType {
     
     internal let method: Method
     internal let URL: NSURL
     internal var body: NSData?
-    internal var JSONBody: JSON? {
-        get {
-            if let body = body {
-                return JSON(data: body)
-            }
-            return nil
-        }
-        set {
-            guard let newValue = newValue else {
-                return
-            }
-            do {
-                self.body = try newValue.rawData()
-            } catch {
-                return
-            }
-        }
-    }
     internal var completion: (Response<JSON> -> Void)
     internal var error: (RequestError -> Void)? = nil
     
@@ -62,67 +25,42 @@ internal struct JSONRequest: RequestType {
     
     internal func execute() {
         var request = DataRequest(.GET, url: URL) { response in
-            var jsonResponse = JSON(data: response.data)
-            if jsonResponse == JSON.null {
-                guard let fixedData = self.fixFuckingCIST(response.data) else {
-                    self.error?(.JsonParseNull)
-                    return
+            do {
+                if let json = try NSJSONSerialization.JSONObjectWithData(response.data, options: []) as? JSON {
+                    let responseStruct = Response(data: json, response: response.response)
+                    self.completion(responseStruct)
                 }
-                jsonResponse = JSON(data: fixedData)
-                if jsonResponse == JSON.null {
-                    self.error?(.JsonParseNull)
-                    return
-                }
+                self.error?(.JsonParseNull)
+            } catch {
+                self.error?(.JsonParseNull)
             }
-            let responseStruct = Response(data: jsonResponse, response: response.response)
-            self.completion(responseStruct)
         }
-        request.error = { error in
-            self.error?(error)
-        }
+        request.error = pushError
         request.execute()
     }
     
-    /**
-     Deprecated
-     */
-    private func oldExecute() {
-        let nRequest = NSMutableURLRequest(URL: URL)
-        nRequest.HTTPMethod = method.rawValue
-        nRequest.HTTPBody = body?.toData
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(nRequest) { data, response, error in
-            guard error == nil else {
-                self.error?(.NetworkError(info: error!.description))
-                return
-            }
-            
-            guard let httpResponse = response as? NSHTTPURLResponse else {
-                self.error?(.NetworkError(info: "Response is not HTTPURLResponse"))
-                return
-            }
-            
-            guard let data = data else {
-                self.error?(.NoData)
-                return
-            }
-            var jsonResponse = JSON(data: data)
-            if jsonResponse == JSON.null {
-                guard let fixedData = self.fixFuckingCIST(data) else {
-                    self.error?(.JsonParseNull)
-                    return
-                }
-                jsonResponse = JSON(data: fixedData)
-                if jsonResponse == JSON.null {
-                    self.error?(.JsonParseNull)
-                    return
-                }
-            }
-            let responseStruct = Response(data: jsonResponse, response: httpResponse)
-            self.completion(responseStruct)
-        }
-        task.resume()
-    }
+//    internal func oldexecute() {
+//        var request = DataRequest(.GET, url: URL) { response in
+//            var jsonResponse = JSON(data: response.data)
+//            if jsonResponse == JSON.null {
+//                guard let fixedData = self.fixFuckingCIST(response.data) else {
+//                    self.error?(.JsonParseNull)
+//                    return
+//                }
+//                jsonResponse = JSON(data: fixedData)
+//                if jsonResponse == JSON.null {
+//                    self.error?(.JsonParseNull)
+//                    return
+//                }
+//            }
+//            let responseStruct = Response(data: jsonResponse, response: response.response)
+//            self.completion(responseStruct)
+//        }
+//        request.error = { error in
+//            self.error?(error)
+//        }
+//        request.execute()
+//    }
     
     private func fixFuckingCIST(data: NSData) -> NSData? {
         guard let received = String(data: data, encoding: NSWindowsCP1251StringEncoding) else {

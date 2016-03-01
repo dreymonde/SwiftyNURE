@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3645431C85B3CD006C23AD /* JSONProtocols.swift */; };
 		BEAAE3E61C7B7BFA003C90BC /* SwiftyNURE.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */; };
-		BEAAE4171C7B7C2D003C90BC /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FC1C7B7C2D003C90BC /* JSONProtocols.swift */; };
 		BEAAE4181C7B7C2D003C90BC /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */; };
 		BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */; };
 		BEAAE41A1C7B7C2D003C90BC /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FF1C7B7C2D003C90BC /* TimetableProvider.swift */; };
@@ -82,12 +82,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE3645431C85B3CD006C23AD /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
 		BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNURE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyNURE.h; sourceTree = "<group>"; };
 		BEAAE3E71C7B7BFA003C90BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAAE3EC1C7B7BFA003C90BC /* SwiftyNURETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyNURETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAAE3F31C7B7BFA003C90BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEAAE3FC1C7B7C2D003C90BC /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
 		BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
 		BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURE.swift; sourceTree = "<group>"; };
 		BEAAE3FF1C7B7C2D003C90BC /* TimetableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
@@ -195,9 +195,9 @@
 		BEAAE43E1C7B7C50003C90BC /* Administrative */ = {
 			isa = PBXGroup;
 			children = (
-				BEAAE3FC1C7B7C2D003C90BC /* JSONProtocols.swift */,
 				BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */,
 				BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */,
+				BE3645431C85B3CD006C23AD /* JSONProtocols.swift */,
 			);
 			name = Administrative;
 			sourceTree = "<group>";
@@ -373,8 +373,8 @@
 				BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */,
 				BEAAE4281C7B7C2D003C90BC /* GroupParser.swift in Sources */,
 				BEAAE4241C7B7C2D003C90BC /* Parser.swift in Sources */,
-				BEAAE4171C7B7C2D003C90BC /* JSONProtocols.swift in Sources */,
 				BEAAE42B1C7B7C2D003C90BC /* BodyType.swift in Sources */,
+				BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */,
 				BEAAE4271C7B7C2D003C90BC /* TeacherParser.swift in Sources */,
 				BEAAE4291C7B7C2D003C90BC /* EventTypeParser.swift in Sources */,
 				BEAAE4201C7B7C2D003C90BC /* Subject.swift in Sources */,
@@ -506,6 +506,7 @@
 		BEAAE3F71C7B7BFA003C90BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -521,6 +522,7 @@
 				INFOPLIST_FILE = SwiftyNURE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.SwiftyNURE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -531,6 +533,7 @@
 		BEAAE3F81C7B7BFA003C90BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -546,6 +549,7 @@
 				INFOPLIST_FILE = SwiftyNURE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.SwiftyNURE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

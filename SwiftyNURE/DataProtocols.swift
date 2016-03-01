@@ -21,3 +21,4 @@ public protocol DataDecodable {
 }
 
 public protocol DataObject: DataEncodable, DataDecodable {  }
+
