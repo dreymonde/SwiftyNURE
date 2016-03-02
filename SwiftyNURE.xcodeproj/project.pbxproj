@@ -43,10 +43,6 @@
 		BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4321C7B7C3C003C90BC /* NURETests.swift */; };
 		BEAAE4391C7B7C3C003C90BC /* NUREAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4331C7B7C3C003C90BC /* NUREAPITests.swift */; };
 		BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4351C7B7C3C003C90BC /* TimetableProviderTests.swift */; };
-		BEAAE4701C7B98E9003C90BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; };
-		BEAAE4721C7B995E003C90BC /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BEAAE4751C7B99D9003C90BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; };
-		BEAAE4771C7B99E3003C90BC /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +62,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BEAAE4721C7B995E003C90BC /* SwiftyJSON.framework in CopyFiles */,
 				BE080C181C86F0DA0019966A /* EezehRequests.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BEAAE4771C7B99E3003C90BC /* SwiftyJSON.framework in CopyFiles */,
 				BE080C1A1C86FD0C0019966A /* EezehRequests.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +115,6 @@
 		BEAAE4351C7B7C3C003C90BC /* TimetableProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableProviderTests.swift; sourceTree = "<group>"; };
 		BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersProviderTests.swift; sourceTree = "<group>"; };
 		BEAAE4371C7B7C3C003C90BC /* UniversityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityProviderTests.swift; sourceTree = "<group>"; };
-		BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAAE4701C7B98E9003C90BC /* SwiftyJSON.framework in Frameworks */,
 				BE080C171C86F0D00019966A /* EezehRequests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */,
-				BEAAE4751C7B99D9003C90BC /* SwiftyJSON.framework in Frameworks */,
 				BE080C191C86FD0A0019966A /* EezehRequests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				BE080C161C86F0D00019966A /* EezehRequests.framework */,
-				BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */,
 				BEAAE3E41C7B7BFA003C90BC /* SwiftyNURE */,
 				BEAAE3F01C7B7BFA003C90BC /* SwiftyNURETests */,
 				BEAAE3E31C7B7BFA003C90BC /* Products */,
