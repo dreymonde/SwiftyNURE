@@ -3,9 +3,7 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-Максимально простой Swift-фреймворк для общения с cist.nure.ua.
-
-На данный момент работает только с OS X. В ближайшее время планируется адаптация для iOS/watchOS/tvOS, а также выпуск сборки под Linux.
+Максимально простой Swift-фреймворк для общения с cist.nure.ua. Доступен для iOS, OS X, watchOS и tvOS. Поддержка Linux планируется в ближайшее время.
 
 ### Требования ###
 - OS X 10.10+
@@ -19,7 +17,7 @@ github "dreymonde/SwiftyNURE"
 
 ### Дорожная карта ###
 - [x] Убрать зависимость от SwiftyJSON
-- [ ] Добавить поддержку iOS, watchOS, tvOS
+- [x] Добавить поддержку iOS, watchOS, tvOS
 - [ ] Добавить поддержку Linux
 
 ### Инструкции ###
