@@ -19,6 +19,7 @@
 		BE080C271C87058F0019966A /* TeachersParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE080C231C87020B0019966A /* TeachersParser.swift */; };
 		BE080C281C8707610019966A /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */; };
 		BE080C2B1C8711340019966A /* SwiftyNURE+JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE080C2A1C8711340019966A /* SwiftyNURE+JSONProtocols.swift */; };
+		BE22E4A61C871D8F0069483F /* UniversityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4371C7B7C3C003C90BC /* UniversityProviderTests.swift */; };
 		BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3645431C85B3CD006C23AD /* JSONProtocols.swift */; };
 		BEAAE3E61C7B7BFA003C90BC /* SwiftyNURE.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */; };
@@ -390,6 +391,7 @@
 				BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */,
 				BE080C1E1C86FDF60019966A /* GroupsProviderTests.swift in Sources */,
 				BE080C281C8707610019966A /* TeachersProviderTests.swift in Sources */,
+				BE22E4A61C871D8F0069483F /* UniversityProviderTests.swift in Sources */,
 				BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

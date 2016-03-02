@@ -75,23 +75,23 @@ class TimetableProviderTests: NURETests {
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
     
-//    func testProvideAndRestore() {
-//        let expectation = expectationWithDescription("Async timetable task")
-//        let today = NSDate()
-//        let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
-//        let provider = TimetableProvider.Remote(forGroupID: groupID, fromDate: today, toDate: nextWeek) { timetable in
-//            let timetableJson = timetable.toJSON
-//            if let newTimetable = Timetable(withJSON: timetableJson) {
-//                XCTAssertEqual(newTimetable.events.count, timetable.events.count)
-//                XCTAssertEqual(newTimetable.toJSON, timetableJson)
-//            } else {
-//                XCTFail()
-//            }
-//            expectation.fulfill()
-//        }
-//        provider.error = defaultError
-//        provider.execute()
-//        waitForExpectationsWithTimeout(timeout, handler: nil)
-//    }
+    func testProvideAndRestore() {
+        let expectation = expectationWithDescription("Async timetable task")
+        let today = NSDate()
+        let nextWeek = today.dateByAddingTimeInterval(7 * 24 * 60 * 60)
+        let provider = TimetableProvider.Remote(forGroupID: groupID, fromDate: today, toDate: nextWeek) { timetable in
+            let timetableJson = timetable.toJSON()
+            if let newTimetable = Timetable(withJSON: timetableJson) {
+                XCTAssertEqual(newTimetable.events.count, timetable.events.count)
+                XCTAssertTrue((timetableJson as NSDictionary).isEqualTo(newTimetable.toJSON() as NSDictionary))
+            } else {
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        provider.error = defaultError
+        provider.execute()
+        waitForExpectationsWithTimeout(timeout, handler: nil)
+    }
     
 }

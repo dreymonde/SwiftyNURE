@@ -44,6 +44,8 @@ extension JSONDecodable {
         do {
             if let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSON {
                 self.init(withJSON: json)
+            } else {
+                return nil
             }
         } catch {
             print("Can't get JSON from NSData")

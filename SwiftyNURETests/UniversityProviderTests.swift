@@ -27,12 +27,11 @@ class UniversityProviderTests: NURETests {
         let expectation = expectationWithDescription("Async univer task")
         let provider = UniversityProvider.Remote() { university in
             print(university.groups.count, university.teachers.count)
-            let univerJson = university.toJSON
-            print(univerJson)
+            let univerJson = university.toJSON()
             if let newUniver = University(withJSON: univerJson) {
                 XCTAssertEqual(newUniver.teachers.count, university.teachers.count)
                 XCTAssertEqual(newUniver.groups.count, university.groups.count)
-                XCTAssertEqual(univerJson, newUniver.toJSON)
+                XCTAssertTrue((univerJson as NSDictionary).isEqualTo(newUniver.toJSON() as NSDictionary))
             } else {
                 XCTFail()
             }
@@ -47,13 +46,14 @@ class UniversityProviderTests: NURETests {
         let expectation = expectationWithDescription("Async univer task")
         let provider = UniversityProvider.Remote() { university in
             print(university.groups.count, university.teachers.count)
-            guard let univerData = university.toData else {
+            guard let univerData = university.toData() else {
                 XCTFail()
                 return
             }
             if let newUniver = University(withData: univerData) {
                 XCTAssertEqual(newUniver.teachers.count, university.teachers.count)
                 XCTAssertEqual(newUniver.groups.count, university.groups.count)
+                XCTAssertEqual(univerData, newUniver.toData())
             } else {
                 XCTFail()
             }

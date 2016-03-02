@@ -177,7 +177,7 @@ extension University: JSONObject {
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "teachers": teachers.map({ $0.toJSON() }),
-            "groups": teachers.map({ $0.toJSON() })
+            "groups": groups.map({ $0.toJSON() })
         ]
         return jsonDict
     }
