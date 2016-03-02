@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-public final class University {
+public struct University {
     
     public var teachers: [Teacher.Extended] = []
     public var groups: [Group] = []
@@ -19,7 +19,7 @@ public final class University {
         self.groups = groups
     }
     
-    public convenience init() {
+    public init() {
         self.init(teachers: [], groups: [])
     }
     

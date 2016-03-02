@@ -6,7 +6,7 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-internal protocol JSONParser {
+internal protocol JSONCISTParser {
     
     typealias ParseTo
     

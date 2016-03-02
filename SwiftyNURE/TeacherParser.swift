@@ -6,7 +6,7 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-struct TeacherParser: JSONParser {
+struct TeacherParser: JSONCISTParser {
         
     static func parse(fromJSON json: JSON) -> Teacher? {
         guard let id = json["id"] as? Int,

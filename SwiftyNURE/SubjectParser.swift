@@ -6,7 +6,7 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-struct SubjectParser: JSONParser {
+struct SubjectParser: JSONCISTParser {
         
     static func parse(fromJSON json: JSON) -> Subject? {
         guard let name = json["title"] as? String,

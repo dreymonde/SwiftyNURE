@@ -6,7 +6,7 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-struct GroupParser: JSONParser {
+struct GroupParser: JSONCISTParser {
         
     static func parse(fromJSON json: JSON) -> Group? {
         guard let id = json["id"] as? Int,

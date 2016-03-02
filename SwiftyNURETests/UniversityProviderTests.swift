@@ -9,7 +9,6 @@
 import XCTest
 import Foundation
 @testable import SwiftyNURE
-import SwiftyJSON
 
 class UniversityProviderTests: NURETests {
 

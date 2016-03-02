@@ -6,7 +6,7 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-struct EventTypeParser: JSONParser {
+struct EventTypeParser: JSONCISTParser {
     
     static func parse(fromJSON json: JSON) -> EventType? {
         guard let type = json["type"] as? String,

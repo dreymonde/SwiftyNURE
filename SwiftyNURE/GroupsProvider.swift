@@ -9,7 +9,7 @@
 import Foundation
 import EezehRequests
 
-public protocol GroupsProvider: Receivable {
+public protocol GroupsProviderType: Receivable {
     
     var completion: ([Group] -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
@@ -21,49 +21,37 @@ public protocol GroupsProvider: Receivable {
     
 }
 
-public class RemoteGroupsProvider: GroupsProvider {
+public struct GroupsProvider {
     
-    public let completion: ([Group] -> Void)
-    public var error: (ErrorType -> Void)?
-    private let filter: String?
-    
-    public required init(matching filter: String?, _ completion: ([Group] -> Void)) {
-        self.filter = filter
-        self.completion = completion
-    }
-    
-    public convenience required init(_ completion: ([Group] -> Void)) {
-        self.init(matching: nil, completion)
-    }
-    
-    public func execute() {
-        var request = JSONRequest(.GET, url: NURE.apiGroupJson) { jsonResponse in
-            let json = jsonResponse.data
-            var groups = [Group]()
-            for faculty in json["university"]["faculties"] {
-                for direction in faculty["directions"].arrayValue {
-                    for groupJSON in direction["groups"].arrayValue {
-                        if let group = GroupParser.parse(fromJSON: groupJSON) {
-                            if group.name.containsOptionalString(self.filter) && !groups.contains(group) {
-                                groups.append(group)
-                            }
-                        }
-                    }
-                    for speciality in direction["specialities"].arrayValue {
-                        for groupJSON in speciality["groups"].arrayValue {
-                            if let group = GroupParser.parse(fromJSON: groupJSON) {
-                                if group.name.containsOptionalString(self.filter) && !groups.contains(group) {
-                                    groups.append(group)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            self.completion(groups) 
+    public class Remote: GroupsProviderType {
+        
+        public let completion: ([Group] -> Void)
+        public var error: (ErrorType -> Void)?
+        private let filter: String?
+        
+        public required init(matching filter: String?, _ completion: ([Group] -> Void)) {
+            self.filter = filter
+            self.completion = completion
         }
-        request.error = pushError
-        request.execute()
+        
+        public convenience required init(_ completion: ([Group] -> Void)) {
+            self.init(matching: nil, completion)
+        }
+        
+        public func execute() {
+            var request = JSONRequest(.GET, url: NURE.apiGroupJson) { jsonResponse in
+                let json = jsonResponse.data
+                if let groups = GroupsCISTParser.parse(fromJSON: json) {
+                    self.completion(groups.filter({ $0.name.containsOptionalString(self.filter) }))
+                    return
+                }
+                self.error?(RequestError.JsonParseNull)
+            }
+            request.error = pushError
+            request.execute()
+        }
+        
     }
     
 }
+

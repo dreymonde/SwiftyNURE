@@ -9,7 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-internal struct TimetableParser: JSONParser {
+private struct TimetableInfo {
+    var teachers: [Teacher]
+    var groups: [Group]
+    var subjects: [Subject]
+    var types: [EventType]
+}
+
+internal struct TimetableParser: JSONCISTParser {
     
     internal static func parse(fromJSON json: JSON) -> Timetable? {
         guard let jGroups = json["groups"] as? [JSON],
@@ -18,13 +25,14 @@ internal struct TimetableParser: JSONParser {
             jTypes = json["types"] as? [JSON],
             jEvents = json["events"] as? [JSON] else { return nil }
         var timetable = Timetable()
-        timetable.groups = TimetableParser.getGroups(jGroups)
-        timetable.teachers = TimetableParser.getTeachers(jTeachers)
-        timetable.subjects = TimetableParser.getSubjects(jSubjects)
-        timetable.types = TimetableParser.getTypes(jTypes)
+        let timetableInfo = TimetableInfo(teachers: TimetableParser.getTeachers(jTeachers),
+                groups: TimetableParser.getGroups(jGroups),
+                subjects: TimetableParser.getSubjects(jSubjects),
+                types: TimetableParser.getTypes(jTypes)
+        )
         
         for eventJSON in jEvents {
-            if let event = TimetableParser.constructEvent(fromJSON: eventJSON, withInformedTimetable: timetable) {
+            if let event = TimetableParser.constructEvent(fromJSON: eventJSON, withInformedTimetableInfo: timetableInfo) {
                 timetable.events.append(event)
             }
         }
@@ -32,7 +40,7 @@ internal struct TimetableParser: JSONParser {
         return timetable
     }
     
-    internal static func constructEvent(fromJSON json: JSON, withInformedTimetable timetable: Timetable) -> Event? {
+    private static func constructEvent(fromJSON json: JSON, withInformedTimetableInfo timetable: TimetableInfo) -> Event? {
 //        guard let startInt = json["start_time"].int, endInt = json["end_time"].int, subjectId = json["subject_id"].int, typeId = json["type"].int, pairNumber = json["number_pair"].int, auditory = json["auditory"].string, jTeachers = json["teachers"].arrayObject as? [Int], jGroups = json["groups"].arrayObject as? [Int] else {
 //            return nil
 //        }

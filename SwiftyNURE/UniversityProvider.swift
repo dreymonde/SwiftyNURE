@@ -30,7 +30,7 @@ public struct UniversityProvider {
         }
         
         public func execute() {
-            let university = University()
+            var university = University()
             var groupsHere = false
             var teachersHere = false
             
@@ -46,7 +46,7 @@ public struct UniversityProvider {
             teachersProvider.error = pushError
             teachersProvider.execute()
             
-            let groupsProvider = RemoteGroupsProvider() { groups in
+            let groupsProvider = GroupsProvider.Remote() { groups in
                 dispatch_async(dispatch_get_main_queue()) {
                     university.groups = groups
                     groupsHere = true

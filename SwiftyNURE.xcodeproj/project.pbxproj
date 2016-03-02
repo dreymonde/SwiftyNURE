@@ -11,6 +11,14 @@
 		BE080C181C86F0DA0019966A /* EezehRequests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE080C191C86FD0A0019966A /* EezehRequests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; };
 		BE080C1A1C86FD0C0019966A /* EezehRequests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE080C1B1C86FDED0019966A /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4001C7B7C2D003C90BC /* GroupsProvider.swift */; };
+		BE080C1E1C86FDF60019966A /* GroupsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4341C7B7C3C003C90BC /* GroupsProviderTests.swift */; };
+		BE080C221C86FE280019966A /* GroupsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE080C211C86FE280019966A /* GroupsParser.swift */; };
+		BE080C251C8705880019966A /* TeachersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4011C7B7C2D003C90BC /* TeachersProvider.swift */; };
+		BE080C261C87058B0019966A /* UniversityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4021C7B7C2D003C90BC /* UniversityProvider.swift */; };
+		BE080C271C87058F0019966A /* TeachersParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE080C231C87020B0019966A /* TeachersParser.swift */; };
+		BE080C281C8707610019966A /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */; };
+		BE080C2B1C8711340019966A /* SwiftyNURE+JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE080C2A1C8711340019966A /* SwiftyNURE+JSONProtocols.swift */; };
 		BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3645431C85B3CD006C23AD /* JSONProtocols.swift */; };
 		BEAAE3E61C7B7BFA003C90BC /* SwiftyNURE.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */; };
@@ -77,6 +85,9 @@
 
 /* Begin PBXFileReference section */
 		BE080C161C86F0D00019966A /* EezehRequests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EezehRequests.framework; path = Carthage/Build/Mac/EezehRequests.framework; sourceTree = "<group>"; };
+		BE080C211C86FE280019966A /* GroupsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsParser.swift; sourceTree = "<group>"; };
+		BE080C231C87020B0019966A /* TeachersParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersParser.swift; sourceTree = "<group>"; };
+		BE080C2A1C8711340019966A /* SwiftyNURE+JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyNURE+JSONProtocols.swift"; sourceTree = "<group>"; };
 		BE3645431C85B3CD006C23AD /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
 		BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNURE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyNURE.h; sourceTree = "<group>"; };
@@ -187,8 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */,
-				BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */,
 				BE3645431C85B3CD006C23AD /* JSONProtocols.swift */,
+				BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */,
+				BE080C2A1C8711340019966A /* SwiftyNURE+JSONProtocols.swift */,
 			);
 			name = Administrative;
 			sourceTree = "<group>";
@@ -227,6 +239,8 @@
 				BEAAE40D1C7B7C2D003C90BC /* GroupParser.swift */,
 				BEAAE40E1C7B7C2D003C90BC /* EventTypeParser.swift */,
 				BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */,
+				BE080C211C86FE280019966A /* GroupsParser.swift */,
+				BE080C231C87020B0019966A /* TeachersParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -344,9 +358,12 @@
 				BEAAE41E1C7B7C2D003C90BC /* Event.swift in Sources */,
 				BEAAE4311C7B7C2D003C90BC /* University.swift in Sources */,
 				BEAAE41A1C7B7C2D003C90BC /* TimetableProvider.swift in Sources */,
+				BE080C221C86FE280019966A /* GroupsParser.swift in Sources */,
 				BEAAE41F1C7B7C2D003C90BC /* Timetable.swift in Sources */,
+				BE080C271C87058F0019966A /* TeachersParser.swift in Sources */,
 				BEAAE4221C7B7C2D003C90BC /* Group.swift in Sources */,
 				BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */,
+				BE080C251C8705880019966A /* TeachersProvider.swift in Sources */,
 				BEAAE4281C7B7C2D003C90BC /* GroupParser.swift in Sources */,
 				BEAAE4241C7B7C2D003C90BC /* Parser.swift in Sources */,
 				BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */,
@@ -355,7 +372,10 @@
 				BEAAE4201C7B7C2D003C90BC /* Subject.swift in Sources */,
 				BEAAE4231C7B7C2D003C90BC /* EventType.swift in Sources */,
 				BEAAE4261C7B7C2D003C90BC /* SubjectParser.swift in Sources */,
+				BE080C261C87058B0019966A /* UniversityProvider.swift in Sources */,
 				BEAAE4251C7B7C2D003C90BC /* TimetableParser.swift in Sources */,
+				BE080C2B1C8711340019966A /* SwiftyNURE+JSONProtocols.swift in Sources */,
+				BE080C1B1C86FDED0019966A /* GroupsProvider.swift in Sources */,
 				BEAAE4181C7B7C2D003C90BC /* DataProtocols.swift in Sources */,
 				BEAAE42A1C7B7C2D003C90BC /* DateParser.swift in Sources */,
 				BEAAE4211C7B7C2D003C90BC /* Teacher.swift in Sources */,
@@ -368,6 +388,8 @@
 			files = (
 				BEAAE4391C7B7C3C003C90BC /* NUREAPITests.swift in Sources */,
 				BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */,
+				BE080C1E1C86FDF60019966A /* GroupsProviderTests.swift in Sources */,
+				BE080C281C8707610019966A /* TeachersProviderTests.swift in Sources */,
 				BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
