@@ -6,9 +6,6 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-import Foundation
-import SwiftyJSON
-
 internal protocol JSONParser {
     
     typealias ParseTo

@@ -6,15 +6,14 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-import Foundation
-import SwiftyJSON
-
 struct EventTypeParser: JSONParser {
     
     static func parse(fromJSON json: JSON) -> EventType? {
-        guard let type = json["type"].string, id = json["id"].int, shortName = json["short_name"].string, fullName = json["full_name"].string else {
-            return nil
-        }
+        guard let type = json["type"] as? String,
+            id = json["id"] as? Int,
+            shortName = json["short_name"] as? String,
+            fullName = json["full_name"] as? String else { return nil }
+        
         switch type {
         case "lecture":
             return EventType(id: id, shortName: shortName, fullName: fullName, type: .Lecture)

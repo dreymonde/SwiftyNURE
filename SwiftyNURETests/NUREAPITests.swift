@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import SwiftyJSON
+import EezehRequests
 @testable import SwiftyNURE
 
 class NUREAPITests: NURETests {

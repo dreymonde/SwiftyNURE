@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE080C171C86F0D00019966A /* EezehRequests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; };
+		BE080C181C86F0DA0019966A /* EezehRequests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE080C191C86FD0A0019966A /* EezehRequests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; };
+		BE080C1A1C86FD0C0019966A /* EezehRequests.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE080C161C86F0D00019966A /* EezehRequests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3645431C85B3CD006C23AD /* JSONProtocols.swift */; };
 		BEAAE3E61C7B7BFA003C90BC /* SwiftyNURE.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */; };
 		BEAAE4181C7B7C2D003C90BC /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FD1C7B7C2D003C90BC /* DataProtocols.swift */; };
 		BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FE1C7B7C2D003C90BC /* NURE.swift */; };
 		BEAAE41A1C7B7C2D003C90BC /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE3FF1C7B7C2D003C90BC /* TimetableProvider.swift */; };
-		BEAAE41B1C7B7C2D003C90BC /* GroupsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4001C7B7C2D003C90BC /* GroupsProvider.swift */; };
-		BEAAE41C1C7B7C2D003C90BC /* TeachersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4011C7B7C2D003C90BC /* TeachersProvider.swift */; };
-		BEAAE41D1C7B7C2D003C90BC /* UniversityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4021C7B7C2D003C90BC /* UniversityProvider.swift */; };
 		BEAAE41E1C7B7C2D003C90BC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4031C7B7C2D003C90BC /* Event.swift */; };
 		BEAAE41F1C7B7C2D003C90BC /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4041C7B7C2D003C90BC /* Timetable.swift */; };
 		BEAAE4201C7B7C2D003C90BC /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4051C7B7C2D003C90BC /* Subject.swift */; };
@@ -29,19 +30,10 @@
 		BEAAE4281C7B7C2D003C90BC /* GroupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40D1C7B7C2D003C90BC /* GroupParser.swift */; };
 		BEAAE4291C7B7C2D003C90BC /* EventTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40E1C7B7C2D003C90BC /* EventTypeParser.swift */; };
 		BEAAE42A1C7B7C2D003C90BC /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */; };
-		BEAAE42B1C7B7C2D003C90BC /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4101C7B7C2D003C90BC /* BodyType.swift */; };
-		BEAAE42C1C7B7C2D003C90BC /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4111C7B7C2D003C90BC /* RequestType.swift */; };
-		BEAAE42D1C7B7C2D003C90BC /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4121C7B7C2D003C90BC /* DataRequest.swift */; };
-		BEAAE42E1C7B7C2D003C90BC /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4131C7B7C2D003C90BC /* JSONRequest.swift */; };
-		BEAAE42F1C7B7C2D003C90BC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4141C7B7C2D003C90BC /* Response.swift */; };
-		BEAAE4301C7B7C2D003C90BC /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4151C7B7C2D003C90BC /* Receivable.swift */; };
 		BEAAE4311C7B7C2D003C90BC /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4161C7B7C2D003C90BC /* University.swift */; };
 		BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4321C7B7C3C003C90BC /* NURETests.swift */; };
 		BEAAE4391C7B7C3C003C90BC /* NUREAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4331C7B7C3C003C90BC /* NUREAPITests.swift */; };
-		BEAAE43A1C7B7C3C003C90BC /* GroupsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4341C7B7C3C003C90BC /* GroupsProviderTests.swift */; };
 		BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4351C7B7C3C003C90BC /* TimetableProviderTests.swift */; };
-		BEAAE43C1C7B7C3C003C90BC /* TeachersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4361C7B7C3C003C90BC /* TeachersProviderTests.swift */; };
-		BEAAE43D1C7B7C3C003C90BC /* UniversityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAE4371C7B7C3C003C90BC /* UniversityProviderTests.swift */; };
 		BEAAE4701C7B98E9003C90BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; };
 		BEAAE4721C7B995E003C90BC /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BEAAE4751C7B99D9003C90BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */; };
@@ -66,6 +58,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BEAAE4721C7B995E003C90BC /* SwiftyJSON.framework in CopyFiles */,
+				BE080C181C86F0DA0019966A /* EezehRequests.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +69,14 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BEAAE4771C7B99E3003C90BC /* SwiftyJSON.framework in CopyFiles */,
+				BE080C1A1C86FD0C0019966A /* EezehRequests.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE080C161C86F0D00019966A /* EezehRequests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EezehRequests.framework; path = Carthage/Build/Mac/EezehRequests.framework; sourceTree = "<group>"; };
 		BE3645431C85B3CD006C23AD /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
 		BEAAE3E21C7B7BFA003C90BC /* SwiftyNURE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNURE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyNURE.h; sourceTree = "<group>"; };
@@ -107,12 +102,6 @@
 		BEAAE40D1C7B7C2D003C90BC /* GroupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupParser.swift; sourceTree = "<group>"; };
 		BEAAE40E1C7B7C2D003C90BC /* EventTypeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeParser.swift; sourceTree = "<group>"; };
 		BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
-		BEAAE4101C7B7C2D003C90BC /* BodyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
-		BEAAE4111C7B7C2D003C90BC /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		BEAAE4121C7B7C2D003C90BC /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
-		BEAAE4131C7B7C2D003C90BC /* JSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
-		BEAAE4141C7B7C2D003C90BC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		BEAAE4151C7B7C2D003C90BC /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
 		BEAAE4161C7B7C2D003C90BC /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		BEAAE4321C7B7C3C003C90BC /* NURETests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NURETests.swift; sourceTree = "<group>"; };
 		BEAAE4331C7B7C3C003C90BC /* NUREAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUREAPITests.swift; sourceTree = "<group>"; };
@@ -129,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAAE4701C7B98E9003C90BC /* SwiftyJSON.framework in Frameworks */,
+				BE080C171C86F0D00019966A /* EezehRequests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +128,7 @@
 			files = (
 				BEAAE3ED1C7B7BFA003C90BC /* SwiftyNURE.framework in Frameworks */,
 				BEAAE4751C7B99D9003C90BC /* SwiftyJSON.framework in Frameworks */,
+				BE080C191C86FD0A0019966A /* EezehRequests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +138,7 @@
 		BEAAE3D81C7B7BFA003C90BC = {
 			isa = PBXGroup;
 			children = (
+				BE080C161C86F0D00019966A /* EezehRequests.framework */,
 				BEAAE46F1C7B98E9003C90BC /* SwiftyJSON.framework */,
 				BEAAE3E41C7B7BFA003C90BC /* SwiftyNURE */,
 				BEAAE3F01C7B7BFA003C90BC /* SwiftyNURETests */,
@@ -170,7 +162,6 @@
 				BEAAE43F1C7B7C57003C90BC /* Providers */,
 				BEAAE4401C7B7C5E003C90BC /* Model */,
 				BEAAE4411C7B7C67003C90BC /* Parsers */,
-				BEAAE4421C7B7C6D003C90BC /* Requests eez-eh */,
 				BEAAE4161C7B7C2D003C90BC /* University.swift */,
 				BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */,
 				BEAAE3E71C7B7BFA003C90BC /* Info.plist */,
@@ -238,19 +229,6 @@
 				BEAAE40F1C7B7C2D003C90BC /* DateParser.swift */,
 			);
 			name = Parsers;
-			sourceTree = "<group>";
-		};
-		BEAAE4421C7B7C6D003C90BC /* Requests eez-eh */ = {
-			isa = PBXGroup;
-			children = (
-				BEAAE4101C7B7C2D003C90BC /* BodyType.swift */,
-				BEAAE4111C7B7C2D003C90BC /* RequestType.swift */,
-				BEAAE4121C7B7C2D003C90BC /* DataRequest.swift */,
-				BEAAE4131C7B7C2D003C90BC /* JSONRequest.swift */,
-				BEAAE4141C7B7C2D003C90BC /* Response.swift */,
-				BEAAE4151C7B7C2D003C90BC /* Receivable.swift */,
-			);
-			name = "Requests eez-eh";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,32 +342,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAAE41E1C7B7C2D003C90BC /* Event.swift in Sources */,
-				BEAAE42D1C7B7C2D003C90BC /* DataRequest.swift in Sources */,
 				BEAAE4311C7B7C2D003C90BC /* University.swift in Sources */,
 				BEAAE41A1C7B7C2D003C90BC /* TimetableProvider.swift in Sources */,
 				BEAAE41F1C7B7C2D003C90BC /* Timetable.swift in Sources */,
 				BEAAE4221C7B7C2D003C90BC /* Group.swift in Sources */,
-				BEAAE41C1C7B7C2D003C90BC /* TeachersProvider.swift in Sources */,
 				BEAAE4191C7B7C2D003C90BC /* NURE.swift in Sources */,
 				BEAAE4281C7B7C2D003C90BC /* GroupParser.swift in Sources */,
 				BEAAE4241C7B7C2D003C90BC /* Parser.swift in Sources */,
-				BEAAE42B1C7B7C2D003C90BC /* BodyType.swift in Sources */,
 				BE3645441C85B3CD006C23AD /* JSONProtocols.swift in Sources */,
 				BEAAE4271C7B7C2D003C90BC /* TeacherParser.swift in Sources */,
 				BEAAE4291C7B7C2D003C90BC /* EventTypeParser.swift in Sources */,
 				BEAAE4201C7B7C2D003C90BC /* Subject.swift in Sources */,
 				BEAAE4231C7B7C2D003C90BC /* EventType.swift in Sources */,
-				BEAAE41D1C7B7C2D003C90BC /* UniversityProvider.swift in Sources */,
 				BEAAE4261C7B7C2D003C90BC /* SubjectParser.swift in Sources */,
-				BEAAE4301C7B7C2D003C90BC /* Receivable.swift in Sources */,
 				BEAAE4251C7B7C2D003C90BC /* TimetableParser.swift in Sources */,
 				BEAAE4181C7B7C2D003C90BC /* DataProtocols.swift in Sources */,
-				BEAAE41B1C7B7C2D003C90BC /* GroupsProvider.swift in Sources */,
-				BEAAE42C1C7B7C2D003C90BC /* RequestType.swift in Sources */,
 				BEAAE42A1C7B7C2D003C90BC /* DateParser.swift in Sources */,
 				BEAAE4211C7B7C2D003C90BC /* Teacher.swift in Sources */,
-				BEAAE42E1C7B7C2D003C90BC /* JSONRequest.swift in Sources */,
-				BEAAE42F1C7B7C2D003C90BC /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,11 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAAE4391C7B7C3C003C90BC /* NUREAPITests.swift in Sources */,
-				BEAAE43D1C7B7C3C003C90BC /* UniversityProviderTests.swift in Sources */,
-				BEAAE43A1C7B7C3C003C90BC /* GroupsProviderTests.swift in Sources */,
 				BEAAE43B1C7B7C3C003C90BC /* TimetableProviderTests.swift in Sources */,
 				BEAAE4381C7B7C3C003C90BC /* NURETests.swift in Sources */,
-				BEAAE43C1C7B7C3C003C90BC /* TeachersProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

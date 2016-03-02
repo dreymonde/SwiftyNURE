@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EezehRequests
 
 public protocol GroupsProvider: Receivable {
     
@@ -39,7 +40,7 @@ public class RemoteGroupsProvider: GroupsProvider {
         var request = JSONRequest(.GET, url: NURE.apiGroupJson) { jsonResponse in
             let json = jsonResponse.data
             var groups = [Group]()
-            for faculty in json["university"]["faculties"].arrayValue {
+            for faculty in json["university"]["faculties"] {
                 for direction in faculty["directions"].arrayValue {
                     for groupJSON in direction["groups"].arrayValue {
                         if let group = GroupParser.parse(fromJSON: groupJSON) {
