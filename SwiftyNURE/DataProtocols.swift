@@ -10,7 +10,7 @@ import Foundation
 
 public protocol DataEncodable {
     
-    var toData: NSData? { get }
+    func toData() -> NSData?
     
 }
 

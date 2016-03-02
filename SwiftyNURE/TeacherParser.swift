@@ -6,15 +6,12 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
-import Foundation
-import SwiftyJSON
-
-struct TeacherParser: JSONParser {
-    
+struct TeacherParser: JSONCISTParser {
+        
     static func parse(fromJSON json: JSON) -> Teacher? {
-        guard let id = json["id"].int, fullName = json["full_name"].string, shortName = json["short_name"].string else {
-            return nil
-        }
+        guard let id = json["id"] as? Int,
+            fullName = json["full_name"] as? String,
+            shortName = json["short_name"] as? String else { return nil }
         return Teacher(fullName: fullName, shortName: shortName, id: id)
     }
     

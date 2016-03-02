@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+import EezehRequests
 
 public protocol TimetableProviderType: Receivable {
     
@@ -68,28 +68,6 @@ public struct TimetableProvider {
             request.execute()
         }
 
-    }
-
-    /// Deprecated. Use Timetable.toData to convert to binary.
-    internal class RawRemote: Remote, RawReceivable {
-        
-        internal var raw: (JSON -> Void)? = nil
-        
-        internal override func execute() {
-            var request = JSONRequest(.GET, url: requestURL) { jsonResponse in
-                if let timetable = TimetableParser.parse(fromJSON: jsonResponse.data) {
-                    self.raw?(jsonResponse.data)
-                    self.completion(timetable)
-                } else {
-                    self.error?(ProviderError.CantParseFromJSON)
-                }
-            }
-            request.error = { error in
-                self.error?(error)
-            }
-            request.execute()
-        }
-        
     }
 
 }

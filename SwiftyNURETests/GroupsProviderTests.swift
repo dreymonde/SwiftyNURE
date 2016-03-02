@@ -23,7 +23,7 @@ class GroupsProviderTests: NURETests {
 
     func testGroups() {
         let expectation = expectationWithDescription("Async group task")
-        let provider = RemoteGroupsProvider() { groups in
+        let provider = GroupsProvider.Remote() { groups in
             for group in groups {
                 print(group.name)
             }
@@ -36,7 +36,7 @@ class GroupsProviderTests: NURETests {
     
     func testPartGroups() {
         let expectation = expectationWithDescription("Async group task")
-        let _ = RemoteGroupsProvider(matching: "14-1") { groups in
+        let _ = GroupsProvider.Remote(matching: "14-1") { groups in
             for group in groups {
                 print(group.name)
                 if !group.name.containsString("14-1") {

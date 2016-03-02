@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EezehRequests
 
 public protocol TeachersProviderType: Receivable {
     
@@ -39,36 +40,23 @@ public struct TeachersProvider {
         public func execute() {
             var request = JSONRequest(.GET, url: NURE.apiTeachersJson) { jsonResponse in
                 let json = jsonResponse.data
-                var teachers = Array<Teacher.Extended>()
-                for faculty in json["university"]["faculties"].arrayValue {
-                    guard let facultyFull = faculty["full_name"].string, facultyShort = faculty["short_name"].string else {
-                        print("No faculty name")
-                        continue
-                    }
-                    let facultyName = Teacher.Extended.FacultyName(full: facultyFull, short: facultyShort)
-                    for department in faculty["departments"].arrayValue {
-                        guard let departmentFull = department["full_name"].string, departmentShort = department["short_name"].string else {
-                            print("No dep name")
-                            continue
-                        }
-                        let departmentName = Teacher.Extended.DepartmentName(full: departmentFull, short: departmentShort)
-                        for teacherJSON in department["teachers"].arrayValue {
-                            if let steacher = TeacherParser.parse(fromJSON: teacherJSON) {
-                                if steacher.fullName.containsOptionalString(self.filter) || facultyName.isConforming(self.filter) || departmentName.isConforming(self.filter) {
-                                    let teacher = Teacher.Extended(teacher: steacher, department: departmentName, faculty: facultyName)
-                                    teachers.append(teacher)
-                                }
-                            }
-                        }
-                    }
+                if let teachers = TeachersCISTParser.parse(fromJSON: json) {
+                    self.completion(teachers.filter({ $0.isConforming(toString: self.filter) }))
+                    return
                 }
-                self.completion(teachers)
+                self.error?(RequestError.JsonParseNull)
             }
-            request.error = { error in
-                self.error?(error)
-            }
+            request.error = pushError
             request.execute()
         }
+    }
+    
+}
+
+extension Teacher.Extended {
+    
+    func isConforming(toString filter: String?) -> Bool {
+        return fullName.containsOptionalString(filter) || shortName.containsOptionalString(filter) || department.isConforming(filter) || faculty.isConforming(filter)
     }
     
 }
