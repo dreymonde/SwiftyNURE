@@ -18,7 +18,7 @@ github "dreymonde/SwiftyNURE"
 ```
 
 ### Дорожная карта ###
-- [ ] Убрать зависимость от SwiftyJSON
+- [x] Убрать зависимость от SwiftyJSON
 - [ ] Добавить поддержку iOS, watchOS, tvOS
 - [ ] Добавить поддержку Linux
 
@@ -80,7 +80,7 @@ timetableProvider.error = { error in
 }
 timetableProvider.execute()
 ```
-Timetable - коллекция объектов типа Eventable.
+Timetable - коллекция объектов типа Event (реализует Eventable).
 
 ```swift
 public protocol Eventable {
@@ -137,12 +137,12 @@ public protocol DataDecodable {
 }
 public protocol DataObject: DataEncodable, DataDecodable {  }
 ```
-"Под капотом" все эти объекты имплементируют протокол JSONObject: JSONEncodable, JSONDecodable, который наследует DataObject и автоматически конвертирует JSON в NSData. Для работы с JSON используется фреймворк SwitfyJSON. Добавив его в свой проект, вы сможете напрямую обращаться к методам протокола:
+"Под капотом" все эти объекты имплементируют протокол JSONObject: JSONEncodable, JSONDecodable, который наследует DataObject и автоматически конвертирует JSON в NSData.
 ```swift
-let universityJson = university.toJSON // JSON
-let kaukJson = teacher.toJSON // JSON
+let universityJson = university.toJSON // [String: AnyObject]
+let kaukJson = teacher.toJSON // [String: AnyObject]
 let timetable = Timetable(withJSON: timetableJson) // Timetable?
 ```
 > Внимание! JSON-объекты, получаемые в результате использования свойства .toJSON, **не** являются идентичными тем, которые получаются в результате запросов к серверам CIST.
 
-Учтите, что структуры Teacher и Teacher.Extended, имплементирующие протокол TeacherType, различаются. Teacher не содержит в себе информации о кафедре и факультете. Teacher тип можно в стретить в объектах Event, Teacher.Extended - в University.
+Учтите, что структуры Teacher и Teacher.Extended, имплементирующие протокол TeacherType, различаются. Teacher не содержит в себе информации о кафедре и факультете. Teacher можно в стретить в объектах Event, Teacher.Extended - в University.
