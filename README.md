@@ -97,7 +97,7 @@ public protocol Eventable {
     
 }
 ```
-Также существуют поставщики групп (RemoteGroupsProvider) и предодавателей (TeachersProvider.Remote), которые, по факту, "запакованы" в UniversityProvider. Их отличительной особенностью является возможность фильтрованного запроса:
+Также существуют поставщики групп (GroupsProvider.Remote) и предодавателей (TeachersProvider.Remote), которые, по факту, "запакованы" в UniversityProvider. Их отличительной особенностью является возможность фильтрованного запроса:
 ```swift
 let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
     print(teachers)
@@ -139,10 +139,10 @@ public protocol DataObject: DataEncodable, DataDecodable {  }
 ```
 "Под капотом" все эти объекты имплементируют протокол JSONObject: JSONEncodable, JSONDecodable, который наследует DataObject и автоматически конвертирует JSON в NSData.
 ```swift
-let universityJson = university.toJSON // [String: AnyObject]
-let kaukJson = teacher.toJSON // [String: AnyObject]
+let universityJson = university.toJSON() // [String: AnyObject]
+let kaukJson = teacher.toJSON() // [String: AnyObject]
 let timetable = Timetable(withJSON: timetableJson) // Timetable?
 ```
 > Внимание! JSON-объекты, получаемые в результате использования свойства .toJSON, **не** являются идентичными тем, которые получаются в результате запросов к серверам CIST.
 
-Учтите, что структуры Teacher и Teacher.Extended, имплементирующие протокол TeacherType, различаются. Teacher не содержит в себе информации о кафедре и факультете. Teacher можно в стретить в объектах Event, Teacher.Extended - в University.
+Учтите, что структуры Teacher и Teacher.Extended, имплементирующие протокол TeacherType, различаются. Teacher не содержит в себе информации о кафедре и факультете. Teacher можно встретить в объектах Event, Teacher.Extended - в University.
