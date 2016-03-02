@@ -39,7 +39,7 @@ public struct GroupsProvider {
         }
         
         public func execute() {
-            var request = JSONRequest(.GET, url: NURE.apiGroupJson) { jsonResponse in
+            let request = JSONRequest(.GET, url: NURE.apiGroupJson) { jsonResponse in
                 let json = jsonResponse.data
                 if let groups = GroupsCISTParser.parse(fromJSON: json) {
                     self.completion(groups.filter({ $0.name.containsOptionalString(self.filter) }))

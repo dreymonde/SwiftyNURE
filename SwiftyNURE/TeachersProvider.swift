@@ -38,7 +38,7 @@ public struct TeachersProvider {
         }
         
         public func execute() {
-            var request = JSONRequest(.GET, url: NURE.apiTeachersJson) { jsonResponse in
+            let request = JSONRequest(.GET, url: NURE.apiTeachersJson) { jsonResponse in
                 let json = jsonResponse.data
                 if let teachers = TeachersCISTParser.parse(fromJSON: json) {
                     self.completion(teachers.filter({ $0.isConforming(toString: self.filter) }))
