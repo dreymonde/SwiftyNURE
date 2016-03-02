@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BEAAE3E11C7B7BFA003C90BC"
                BuildableName = "SwiftyNURE.framework"
-               BlueprintName = "SwiftyNURE"
+               BlueprintName = "SwiftyNURE OSX"
                ReferencedContainer = "container:SwiftyNURE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BEAAE3EB1C7B7BFA003C90BC"
-               BuildableName = "SwiftyNURETests.xctest"
-               BlueprintName = "SwiftyNURETests"
+               BuildableName = "SwiftyNURE OSX Tests.xctest"
+               BlueprintName = "SwiftyNURE OSX Tests"
                ReferencedContainer = "container:SwiftyNURE.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BEAAE3E11C7B7BFA003C90BC"
             BuildableName = "SwiftyNURE.framework"
-            BlueprintName = "SwiftyNURE"
+            BlueprintName = "SwiftyNURE OSX"
             ReferencedContainer = "container:SwiftyNURE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BEAAE3E11C7B7BFA003C90BC"
             BuildableName = "SwiftyNURE.framework"
-            BlueprintName = "SwiftyNURE"
+            BlueprintName = "SwiftyNURE OSX"
             ReferencedContainer = "container:SwiftyNURE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BEAAE3E11C7B7BFA003C90BC"
             BuildableName = "SwiftyNURE.framework"
-            BlueprintName = "SwiftyNURE"
+            BlueprintName = "SwiftyNURE OSX"
             ReferencedContainer = "container:SwiftyNURE.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -20,7 +20,7 @@ class UniversityProviderTests: NURETests {
         }
         provider.error = defaultError
         provider.execute()
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectationsWithTimeout(10.0, handler: nil)
     }
     
     func testProvideSaveAndRecovery() {
@@ -31,7 +31,7 @@ class UniversityProviderTests: NURETests {
             if let newUniver = University(withJSON: univerJson) {
                 XCTAssertEqual(newUniver.teachers.count, university.teachers.count)
                 XCTAssertEqual(newUniver.groups.count, university.groups.count)
-                XCTAssertTrue((univerJson as NSDictionary).isEqualTo(newUniver.toJSON() as NSDictionary))
+                XCTAssertTrue((univerJson as NSDictionary).isEqual(newUniver.toJSON() as NSDictionary))
             } else {
                 XCTFail()
             }

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Oleg Dreyman. All rights reserved.
 //
 
+import Foundation
 import XCTest
 @testable import SwiftyNURE
 
@@ -83,7 +84,7 @@ class TimetableProviderTests: NURETests {
             let timetableJson = timetable.toJSON()
             if let newTimetable = Timetable(withJSON: timetableJson) {
                 XCTAssertEqual(newTimetable.events.count, timetable.events.count)
-                XCTAssertTrue((timetableJson as NSDictionary).isEqualTo(newTimetable.toJSON() as NSDictionary))
+                XCTAssertTrue((timetableJson as NSDictionary).isEqual(newTimetable.toJSON() as NSDictionary))
             } else {
                 XCTFail()
             }
