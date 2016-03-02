@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 private struct TimetableInfo {
     var teachers: [Teacher]
