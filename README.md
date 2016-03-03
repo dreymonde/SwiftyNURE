@@ -1,7 +1,7 @@
 ![SwiftyNURE](/SwiftyNURELogo.jpg)
 # SwiftyNURE #
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Platforms](https://img.shields.io/badge/platform-iOS%20%7C%20OS%20X%20%7C%20watchOS%20%7C%20tvOS-blue.svg?style=flat) ![Swift](https://img.shields.io/badge/swift-2.1-orange.svg?)
 
 Максимально простой Swift-фреймворк для общения с cist.nure.ua. Доступен для iOS, OS X, watchOS и tvOS. Поддержка Linux планируется в ближайшее время.
 
