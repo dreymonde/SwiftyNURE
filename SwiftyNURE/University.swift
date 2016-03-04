@@ -10,8 +10,8 @@ import Foundation
 
 public struct University {
     
-    public var teachers: [Teacher.Extended] = []
-    public var groups: [Group] = []
+    public let teachers: [Teacher.Extended]
+    public let groups: [Group]
     
     public init(teachers: [Teacher.Extended], groups: [Group]) {
         self.teachers = teachers

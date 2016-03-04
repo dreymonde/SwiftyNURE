@@ -24,15 +24,15 @@ public protocol Eventable {
 
 public struct Event: Eventable {
     
-    public var number: Int
-    public var subject: Subject
-    public var teachers: [Teacher]
-    public var auditory: String
-    public var groups: [Group]
-    public var type: EventType
+    public let number: Int
+    public let subject: Subject
+    public let teachers: [Teacher]
+    public let auditory: String
+    public let groups: [Group]
+    public let type: EventType
     
-    public var startDate: NSDate
-    public var endDate: NSDate
+    public let startDate: NSDate
+    public let endDate: NSDate
     
     public init(number: Int, subject: Subject, teachers: [Teacher], auditory: String, groups: [Group], type: EventType, startDate: NSDate, endDate: NSDate) {
         self.number = number

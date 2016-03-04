@@ -30,15 +30,14 @@ public struct UniversityProvider {
         }
         
         public func execute() {
-            var university = University()
-            var groupsHere = false
-            var teachersHere = false
+            var cGroups: [Group]?
+            var cTeachers: Array<Teacher.Extended>?
             
             let teachersProvider = TeachersProvider.Remote() { teachers in
                 dispatch_async(dispatch_get_main_queue()) {
-                    university.teachers = teachers
-                    teachersHere = true
-                    if groupsHere {
+                    cTeachers = teachers
+                    if let groups = cGroups, teachers = cTeachers {
+                        let university = University(teachers: teachers, groups: groups)
                         self.completion(university)
                     }
                 }
@@ -48,9 +47,9 @@ public struct UniversityProvider {
             
             let groupsProvider = GroupsProvider.Remote() { groups in
                 dispatch_async(dispatch_get_main_queue()) {
-                    university.groups = groups
-                    groupsHere = true
-                    if teachersHere {
+                    cGroups = groups
+                    if let teachers = cTeachers, groups = cGroups {
+                        let university = University(teachers: teachers, groups: groups)
                         self.completion(university)
                     }
                 }

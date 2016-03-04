@@ -9,10 +9,10 @@
 import Foundation
 
 private struct TimetableInfo {
-    var teachers: [Teacher]
-    var groups: [Group]
-    var subjects: [Subject]
-    var types: [EventType]
+    let teachers: [Teacher]
+    let groups: [Group]
+    let subjects: [Subject]
+    let types: [EventType]
 }
 
 internal struct TimetableParser: JSONCISTParser {
@@ -23,7 +23,7 @@ internal struct TimetableParser: JSONCISTParser {
             jSubjects = json["subjects"] as? [JSON],
             jTypes = json["types"] as? [JSON],
             jEvents = json["events"] as? [JSON] else { return nil }
-        var timetable = Timetable()
+        var events = [Event]()
         let timetableInfo = TimetableInfo(teachers: TimetableParser.getTeachers(jTeachers),
                 groups: TimetableParser.getGroups(jGroups),
                 subjects: TimetableParser.getSubjects(jSubjects),
@@ -32,10 +32,11 @@ internal struct TimetableParser: JSONCISTParser {
         
         for eventJSON in jEvents {
             if let event = TimetableParser.constructEvent(fromJSON: eventJSON, withInformedTimetableInfo: timetableInfo) {
-                timetable.events.append(event)
+                events.append(event)
             }
         }
         
+        let timetable = Timetable(events: events)
         return timetable
     }
     

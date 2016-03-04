@@ -17,10 +17,10 @@ public struct EventType {
         self.type = type
     }
     
-    public var id: Int
-    public var shortName: String
-    public var fullName: String
-    public var type: Type
+    public let id: Int
+    public let shortName: String
+    public let fullName: String
+    public let type: Type
     
 }
 

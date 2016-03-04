@@ -10,9 +10,9 @@ import Foundation
 
 public struct Subject {
     
-    public var id: Int
-    public var name: String
-    public var shortName: String
+    public let id: Int
+    public let name: String
+    public let shortName: String
     
     public init(name: String, shortName: String, id: Int) {
         self.name = name
