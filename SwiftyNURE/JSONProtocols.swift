@@ -11,21 +11,21 @@ import Foundation
 public typealias JSON = [String: AnyObject]
 
 public protocol JSONEncodable: DataEncodable {
-    
+
     func toJSON() -> JSON
-    
+
 }
 
 public protocol JSONDecodable {
-    
+
     init?(withJSON json: JSON)
-    
+
 }
 
 public protocol JSONObject: JSONEncodable, JSONDecodable {  }
 
 extension JSONEncodable {
-    
+
     public func toData() -> NSData? {
         do {
             let data = try NSJSONSerialization.dataWithJSONObject(self.toJSON(), options: [])
@@ -35,11 +35,11 @@ extension JSONEncodable {
             return nil
         }
     }
-    
+
 }
 
 extension JSONDecodable {
-    
+
     public init?(withData data: NSData) {
         do {
             if let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSON {
@@ -52,5 +52,5 @@ extension JSONDecodable {
             return nil
         }
     }
-    
+
 }

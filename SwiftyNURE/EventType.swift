@@ -9,19 +9,19 @@
 import Foundation
 
 public struct EventType {
-    
+
     public init(id: Int, shortName: String, fullName: String, type: Type) {
         self.id = id
         self.shortName = shortName
         self.fullName = fullName
         self.type = type
     }
-    
+
     public let id: Int
     public let shortName: String
     public let fullName: String
     public let type: Type
-    
+
 }
 
 public enum Type: String {

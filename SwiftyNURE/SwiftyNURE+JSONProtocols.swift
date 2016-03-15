@@ -9,7 +9,7 @@
 import Foundation
 
 extension Group: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: [String: AnyObject] = [
             "id": id,
@@ -17,18 +17,18 @@ extension Group: JSONObject {
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let id = json["id"] as? Int,
             name = json["name"] as? String
             else { return nil }
         self.init(name: name, id: id)
     }
-    
+
 }
 
 extension Subject: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "id": id,
@@ -37,7 +37,7 @@ extension Subject: JSONObject {
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let id = json["id"] as? Int,
             name = json["name"] as? String,
@@ -45,11 +45,11 @@ extension Subject: JSONObject {
             else { return nil }
         self.init(name: name, shortName: shortName, id: id)
     }
-    
+
 }
 
 extension Teacher: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "id": id,
@@ -58,7 +58,7 @@ extension Teacher: JSONObject {
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let id = json["id"] as? Int,
             fullName = json["full_name"] as? String,
@@ -66,11 +66,11 @@ extension Teacher: JSONObject {
             else { return nil }
         self.init(fullName: fullName, shortName: shortName, id: id)
     }
-    
+
 }
 
 extension Teacher.Extended: JSONObject {
-    
+
     public func toJSON() -> JSON {
         var jsonDict = self.teacher.toJSON()
         jsonDict["faculty_full_name"] = faculty.full
@@ -79,7 +79,7 @@ extension Teacher.Extended: JSONObject {
         jsonDict["department_short_name"] = department.short
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let teacher = Teacher(withJSON: json),
             facultyFull = json["faculty_full_name"] as? String,
@@ -91,11 +91,11 @@ extension Teacher.Extended: JSONObject {
         let departmentName = Teacher.Extended.DepartmentName(full: departmentFull, short: departmentShort)
         self.init(teacher: teacher, department: departmentName, faculty: facultyName)
     }
-    
+
 }
 
 extension EventType: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "id": id,
@@ -105,7 +105,7 @@ extension EventType: JSONObject {
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let typeString = json["type"] as? String, type = Type(rawValue: typeString),
             id = json["id"] as? Int,
@@ -114,18 +114,18 @@ extension EventType: JSONObject {
             else { return nil }
         self.init(id: id, shortName: shortName, fullName: fullName, type: type)
     }
-    
+
 }
 
 extension Event: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "number": number,
             "subject": subject.toJSON(),
-            "teachers": teachers.map{ $0.toJSON() },
+            "teachers": teachers.map { $0.toJSON() },
             "auditory": auditory,
-            "groups": groups.map{ $0.toJSON() },
+            "groups": groups.map { $0.toJSON() },
             "type": type.toJSON(),
             "date": [
                 "start": Int(startDate.timeIntervalSince1970),
@@ -134,7 +134,7 @@ extension Event: JSONObject {
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let number = json["number"] as? Int,
             jSubject = json["subject"] as? JSON, subject = Subject(withJSON: jSubject),
@@ -152,28 +152,28 @@ extension Event: JSONObject {
         let endDate = NSDate(timeIntervalSince1970: Double(endDateInterval))
         self.init(number: number, subject: subject, teachers: teachers, auditory: auditory, groups: groups, type: type, startDate: startDate, endDate: endDate)
     }
-    
+
 }
 
 extension Timetable: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "events": events.flatMap({ $0.toJSON() })
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let jEvents = json["events"] as? [JSON] else { return nil }
-        let events = jEvents.flatMap{ Event(withJSON: $0) }
+        let events = jEvents.flatMap { Event(withJSON: $0) }
         self.init(events: events)
     }
-    
+
 }
 
 extension University: JSONObject {
-    
+
     public func toJSON() -> JSON {
         let jsonDict: JSON = [
             "teachers": teachers.map({ $0.toJSON() }),
@@ -181,7 +181,7 @@ extension University: JSONObject {
         ]
         return jsonDict
     }
-    
+
     public init?(withJSON json: JSON) {
         guard let jTeachers = json["teachers"] as? [JSON],
             jGroups = json["groups"] as? [JSON]
@@ -190,12 +190,5 @@ extension University: JSONObject {
         let groups = jGroups.flatMap({ Group(withJSON: $0) })
         self.init(teachers: teachers, groups: groups)
     }
-    
+
 }
-
-
-
-
-
-
-

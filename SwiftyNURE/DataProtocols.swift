@@ -9,15 +9,15 @@
 import Foundation
 
 public protocol DataEncodable {
-    
+
     func toData() -> NSData?
-    
+
 }
 
 public protocol DataDecodable {
-    
+
     init?(withData data: NSData)
-    
+
 }
 
 public protocol DataObject: DataEncodable, DataDecodable {  }

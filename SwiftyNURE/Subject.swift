@@ -9,15 +9,15 @@
 import Foundation
 
 public struct Subject {
-    
+
     public let id: Int
     public let name: String
     public let shortName: String
-    
+
     public init(name: String, shortName: String, id: Int) {
         self.name = name
         self.shortName = shortName
         self.id = id
     }
-    
+
 }

@@ -9,31 +9,31 @@
 import Foundation
 
 public protocol Eventable {
-    
+
     var subject: Subject { get }
     var teachers: [Teacher] { get }
     var auditory: String { get }
     var groups: [Group] { get }
     var type: EventType { get }
     var number: Int { get }
-    
+
     var startDate: NSDate { get }
     var endDate: NSDate { get }
-    
+
 }
 
 public struct Event: Eventable {
-    
+
     public let number: Int
     public let subject: Subject
     public let teachers: [Teacher]
     public let auditory: String
     public let groups: [Group]
     public let type: EventType
-    
+
     public let startDate: NSDate
     public let endDate: NSDate
-    
+
     public init(number: Int, subject: Subject, teachers: [Teacher], auditory: String, groups: [Group], type: EventType, startDate: NSDate, endDate: NSDate) {
         self.number = number
         self.subject = subject
@@ -44,5 +44,5 @@ public struct Event: Eventable {
         self.startDate = startDate
         self.endDate = endDate
     }
-    
+
 }

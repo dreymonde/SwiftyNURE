@@ -11,14 +11,14 @@ import XCTest
 @testable import SwiftyNURE
 
 class TimetableProviderTests: NURETests {
-    
+
     let groupID = 4801986
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -34,7 +34,7 @@ class TimetableProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testProvideIncorrect() {
         let expectation = expectationWithDescription("Async timetable task")
         let provider = TimetableProvider.Remote(forGroupID: 15) { timetable in
@@ -47,7 +47,7 @@ class TimetableProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testProvideThisWeek() {
         let expectation = expectationWithDescription("Async timetable task")
         let today = NSDate()
@@ -62,7 +62,7 @@ class TimetableProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testProvideFullAndShowDay() {
         let expectation = expectationWithDescription("Async timetable task")
         let today = NSDate()
@@ -75,7 +75,7 @@ class TimetableProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testProvideAndRestore() {
         let expectation = expectationWithDescription("Async timetable task")
         let today = NSDate()
@@ -94,5 +94,5 @@ class TimetableProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
 }

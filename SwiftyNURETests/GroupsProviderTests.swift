@@ -15,7 +15,7 @@ class GroupsProviderTests: NURETests {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -33,7 +33,7 @@ class GroupsProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testPartGroups() {
         let expectation = expectationWithDescription("Async group task")
         let _ = GroupsProvider.Remote(matching: "14-1") { groups in

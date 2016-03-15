@@ -7,13 +7,13 @@
 //
 
 struct EventTypeParser: JSONCISTParser {
-    
+
     static func parse(fromJSON json: JSON) -> EventType? {
         guard let type = json["type"] as? String,
             id = json["id"] as? Int,
             shortName = json["short_name"] as? String,
             fullName = json["full_name"] as? String else { return nil }
-        
+
         switch type {
         case "lecture":
             return EventType(id: id, shortName: shortName, fullName: fullName, type: .Lecture)
@@ -33,5 +33,5 @@ struct EventTypeParser: JSONCISTParser {
             return nil
         }
     }
-    
+
 }

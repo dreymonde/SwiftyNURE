@@ -10,29 +10,29 @@ import Foundation
 import EezehRequests
 
 public protocol UniversityProviderType: Receivable {
-    
+
     var completion: (University -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
-    
-    func execute() -> ()
-    
+
+    func execute() -> Void
+
 }
 
 public struct UniversityProvider {
-    
+
     public class Remote: UniversityProviderType {
-        
+
         public let completion: (University -> Void)
         public var error: (ErrorType -> Void)?
-        
+
         public init(_ completion: (University -> Void)) {
             self.completion = completion
         }
-        
+
         public func execute() {
             var cGroups: [Group]?
             var cTeachers: Array<Teacher.Extended>?
-            
+
             let teachersProvider = TeachersProvider.Remote() { teachers in
                 dispatch_async(dispatch_get_main_queue()) {
                     cTeachers = teachers
@@ -44,7 +44,7 @@ public struct UniversityProvider {
             }
             teachersProvider.error = pushError
             teachersProvider.execute()
-            
+
             let groupsProvider = GroupsProvider.Remote() { groups in
                 dispatch_async(dispatch_get_main_queue()) {
                     cGroups = groups
@@ -57,7 +57,7 @@ public struct UniversityProvider {
             groupsProvider.error = pushError
             groupsProvider.execute()
         }
-        
+
     }
-    
+
 }

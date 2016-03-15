@@ -7,9 +7,9 @@
 //
 
 struct GroupsCISTParser: JSONCISTParser {
-    
+
     static func parse(fromJSON json: JSON) -> [Group]? {
-        
+
         var groups = [Group]()
         guard let university = json["university"] as? JSON,
             faculties = university["faculties"] as? [JSON] else { return nil }
@@ -20,7 +20,7 @@ struct GroupsCISTParser: JSONCISTParser {
                     if let jGroups = direction["groups"] as? [JSON] {
                         groups.appendContentsOf(GroupsCISTParser.groups(fromJSONArray: jGroups, existingGroups: groups))
                     }
-                    
+
                     // Specializations
                     if let specialities = direction["specialities"] as? [JSON] {
                         for speciality in specialities {
@@ -33,9 +33,9 @@ struct GroupsCISTParser: JSONCISTParser {
             }
         }
         return groups
-        
+
     }
-    
+
     internal static func groups(fromJSONArray jsons: [JSON], existingGroups groups: [Group]) -> [Group] {
         var newGroups = [Group]()
         for json in jsons {
@@ -45,5 +45,5 @@ struct GroupsCISTParser: JSONCISTParser {
         }
         return newGroups
     }
-    
+
 }

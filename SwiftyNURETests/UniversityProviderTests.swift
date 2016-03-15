@@ -22,7 +22,7 @@ class UniversityProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(10.0, handler: nil)
     }
-    
+
     func testProvideSaveAndRecovery() {
         let expectation = expectationWithDescription("Async univer task")
         let provider = UniversityProvider.Remote() { university in
@@ -41,7 +41,7 @@ class UniversityProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testProvideSaveAndDataRecovery() {
         let expectation = expectationWithDescription("Async univer task")
         let provider = UniversityProvider.Remote() { university in

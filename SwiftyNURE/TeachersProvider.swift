@@ -10,33 +10,33 @@ import Foundation
 import EezehRequests
 
 public protocol TeachersProviderType: Receivable {
-    
+
     typealias ATeacher = TeacherType
-    
+
     var completion: ([ATeacher] -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
-    
-    func execute() -> ()
-    
+
+    func execute() -> Void
+
 }
 
 public struct TeachersProvider {
-    
+
     public class Remote: TeachersProviderType {
-        
+
         public let completion: ([Teacher.Extended] -> Void)
         public var error: (ErrorType -> Void)?
         private let filter: String?
-        
+
         public init(matching filter: String?, _ completion: ([Teacher.Extended] -> Void)) {
             self.filter = filter
             self.completion = completion
         }
-        
+
         public convenience init(completion: ([Teacher.Extended] -> Void)) {
             self.init(matching: nil, completion)
         }
-        
+
         public func execute() {
             let request = JSONRequest(.GET, url: NURE.apiTeachersJson) { jsonResponse in
                 let json = jsonResponse.data
@@ -50,13 +50,13 @@ public struct TeachersProvider {
             request.execute()
         }
     }
-    
+
 }
 
 extension Teacher.Extended {
-    
+
     func isConforming(toString filter: String?) -> Bool {
         return fullName.containsOptionalString(filter) || shortName.containsOptionalString(filter) || department.isConforming(filter) || faculty.isConforming(filter)
     }
-    
+
 }

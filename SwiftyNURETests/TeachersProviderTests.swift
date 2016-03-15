@@ -15,7 +15,7 @@ class TeachersProviderTests: NURETests {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -34,7 +34,7 @@ class TeachersProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testFilteredNameProvide() {
         let expectation = expectationWithDescription("Async teacher task")
         let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
@@ -49,7 +49,7 @@ class TeachersProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
     func testFilteredDepProvide() {
         let expectation = expectationWithDescription("Async teacher task")
         let provider = TeachersProvider.Remote(matching: "Кафедра програмної інженерії") { teachers in
@@ -65,5 +65,5 @@ class TeachersProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-    
+
 }

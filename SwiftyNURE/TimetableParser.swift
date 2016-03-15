@@ -16,7 +16,7 @@ private struct TimetableInfo {
 }
 
 internal struct TimetableParser: JSONCISTParser {
-    
+
     internal static func parse(fromJSON json: JSON) -> Timetable? {
         guard let jGroups = json["groups"] as? [JSON],
             jTeachers = json["teachers"] as? [JSON],
@@ -29,21 +29,18 @@ internal struct TimetableParser: JSONCISTParser {
                 subjects: TimetableParser.getSubjects(jSubjects),
                 types: TimetableParser.getTypes(jTypes)
         )
-        
+
         for eventJSON in jEvents {
             if let event = TimetableParser.constructEvent(fromJSON: eventJSON, withInformedTimetableInfo: timetableInfo) {
                 events.append(event)
             }
         }
-        
+
         let timetable = Timetable(events: events)
         return timetable
     }
-    
+
     private static func constructEvent(fromJSON json: JSON, withInformedTimetableInfo timetable: TimetableInfo) -> Event? {
-//        guard let startInt = json["start_time"].int, endInt = json["end_time"].int, subjectId = json["subject_id"].int, typeId = json["type"].int, pairNumber = json["number_pair"].int, auditory = json["auditory"].string, jTeachers = json["teachers"].arrayObject as? [Int], jGroups = json["groups"].arrayObject as? [Int] else {
-//            return nil
-//        }
         guard let startInt = json["start_time"] as? Int,
             endInt = json["end_time"] as? Int,
             subjectId = json["subject_id"] as? Int,
@@ -52,7 +49,7 @@ internal struct TimetableParser: JSONCISTParser {
             auditory = json["auditory"] as? String,
             jTeachers = json["teachers"] as? [Int],
             jGroups = json["groups"] as? [Int] else { return nil }
-        
+
         let startDate = DateParser.parse(fromInt: startInt)
         let endDate = DateParser.parse(fromInt: endInt)
         guard let subject = timetable.subjects.filter({ $0.id == subjectId }).first else {
@@ -63,12 +60,12 @@ internal struct TimetableParser: JSONCISTParser {
         guard let type = timetable.types.filter({ $0.id == typeId }).first else {
             return nil
         }
-        
+
         let event = Event(number: pairNumber, subject: subject, teachers: teachers, auditory: auditory, groups: groups, type: type, startDate: startDate, endDate: endDate)
         return event
-        
+
     }
-    
+
     internal static func getGroups(jsons: [JSON]) -> [Group] {
         var groups = [Group]()
         for groupJSON in jsons {
@@ -78,7 +75,7 @@ internal struct TimetableParser: JSONCISTParser {
         }
         return groups
     }
-    
+
     internal static func getTeachers(jsons: [JSON]) -> [Teacher] {
         var teachers = [Teacher]()
         for teacherJSON in jsons {
@@ -88,7 +85,7 @@ internal struct TimetableParser: JSONCISTParser {
         }
         return teachers
     }
-    
+
     internal static func getSubjects(json: [JSON]) -> [Subject] {
         var subjects = [Subject]()
         for subjectJSON in json {
@@ -98,7 +95,7 @@ internal struct TimetableParser: JSONCISTParser {
         }
         return subjects
     }
-    
+
     internal static func getTypes(json: [JSON]) -> [EventType] {
         var types = [EventType]()
         for typeJSON in json {
@@ -108,7 +105,7 @@ internal struct TimetableParser: JSONCISTParser {
         }
         return types
     }
-    
+
     internal static func eventType(fromID id: Int, inJSONArray json: [JSON]) -> EventType? {
         for typeJSON in json {
             if let typeID = typeJSON["id"] as? Int where typeID == id {
@@ -117,5 +114,5 @@ internal struct TimetableParser: JSONCISTParser {
         }
         return nil
     }
-    
+
 }

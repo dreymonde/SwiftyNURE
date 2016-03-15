@@ -7,9 +7,9 @@
 //
 
 struct TeachersCISTParser: JSONCISTParser {
-    
+
     static func parse(fromJSON json: JSON) -> [Teacher.Extended]? {
-        
+
         var teachers = Array<Teacher.Extended>()
         guard let university = json["university"] as? JSON,
             faculties = university["faculties"] as? [JSON] else { return nil }
@@ -38,7 +38,7 @@ struct TeachersCISTParser: JSONCISTParser {
             }
         }
         return teachers
-        
+
     }
-    
+
 }

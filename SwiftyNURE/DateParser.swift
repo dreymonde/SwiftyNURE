@@ -9,9 +9,9 @@
 import Foundation
 
 struct DateParser {
-    
+
     static func parse(fromInt int: Int) -> NSDate {
         return NSDate(timeIntervalSince1970: NSTimeInterval(int))
     }
-    
+
 }

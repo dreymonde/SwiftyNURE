@@ -7,12 +7,12 @@
 //
 
 struct SubjectParser: JSONCISTParser {
-        
+
     static func parse(fromJSON json: JSON) -> Subject? {
         guard let name = json["title"] as? String,
             shortName = json["brief"] as? String,
             identifier = json["id"] as? Int else { return nil }
         return Subject(name: name, shortName: shortName, id: identifier)
     }
-    
+
 }

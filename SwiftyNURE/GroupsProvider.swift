@@ -10,34 +10,34 @@ import Foundation
 import EezehRequests
 
 public protocol GroupsProviderType: Receivable {
-    
+
     var completion: ([Group] -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
-    
+
     init(matching filter: String?, _ completion: ([Group] -> Void))
     init(_ completion: ([Group] -> Void))
-    
-    func execute() -> ()
-    
+
+    func execute() -> Void
+
 }
 
 public struct GroupsProvider {
-    
+
     public class Remote: GroupsProviderType {
-        
+
         public let completion: ([Group] -> Void)
         public var error: (ErrorType -> Void)?
         private let filter: String?
-        
+
         public required init(matching filter: String?, _ completion: ([Group] -> Void)) {
             self.filter = filter
             self.completion = completion
         }
-        
+
         public convenience required init(_ completion: ([Group] -> Void)) {
             self.init(matching: nil, completion)
         }
-        
+
         public func execute() {
             let request = JSONRequest(.GET, url: NURE.apiGroupJson) { jsonResponse in
                 let json = jsonResponse.data
@@ -50,8 +50,7 @@ public struct GroupsProvider {
             request.error = pushError
             request.execute()
         }
-        
-    }
-    
-}
 
+    }
+
+}

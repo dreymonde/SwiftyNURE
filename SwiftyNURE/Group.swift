@@ -9,15 +9,15 @@
 import Foundation
 
 public struct Group {
-    
+
     public let id: Int
     public let name: String
-    
+
     public init(name: String, id: Int) {
         self.id = id
         self.name = name
     }
-    
+
 }
 
 extension Group: Equatable {  }

@@ -9,17 +9,17 @@
 import Foundation
 
 public struct University {
-    
+
     public let teachers: [Teacher.Extended]
     public let groups: [Group]
-    
+
     public init(teachers: [Teacher.Extended], groups: [Group]) {
         self.teachers = teachers
         self.groups = groups
     }
-    
+
     public init() {
         self.init(teachers: [], groups: [])
     }
-    
+
 }
