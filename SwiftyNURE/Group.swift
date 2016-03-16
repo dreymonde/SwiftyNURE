@@ -20,7 +20,11 @@ public struct Group {
 
 }
 
-extension Group: Equatable {  }
+extension Group: Hashable {
+    public var hashValue: Int {
+        return self.id
+    }
+}
 
 public func == (lhs: Group, rhs: Group) -> Bool {
     return lhs.id == rhs.id && lhs.name == rhs.name
