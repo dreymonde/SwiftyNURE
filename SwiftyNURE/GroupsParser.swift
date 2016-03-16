@@ -37,11 +37,11 @@ struct GroupsCISTParser: JSONCISTParser {
     }
 
     internal static func groups(fromJSONArray jsons: [JSON], existingGroups groups: [Group]) -> [Group] {
-        var newGroups = [Group]()
-        for json in jsons {
+        let newGroups = jsons.flatMap { (json: JSON) -> Group? in
             if let group = GroupParser.parse(fromJSON: json) where !groups.contains(group) {
-                newGroups.append(group)
+                return group
             }
+            return nil
         }
         return newGroups
     }

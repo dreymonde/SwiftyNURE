@@ -19,8 +19,8 @@ internal struct NURE {
 extension String {
 
     internal func containsOptionalString(other: String?) -> Bool {
-        if let string = other {
-            return self.containsString(string)
+        if let contains = other.map(containsString) {
+            return contains
         }
         return true
     }

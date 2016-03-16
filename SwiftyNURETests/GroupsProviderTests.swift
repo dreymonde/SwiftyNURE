@@ -24,9 +24,7 @@ class GroupsProviderTests: NURETests {
     func testGroups() {
         let expectation = expectationWithDescription("Async group task")
         let provider = GroupsProvider.Remote() { groups in
-            for group in groups {
-                print(group.name)
-            }
+            XCTAssertGreaterThan(groups.count, 1000)
             expectation.fulfill()
         }
         provider.error = defaultError

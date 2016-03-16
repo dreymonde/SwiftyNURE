@@ -21,6 +21,19 @@ class NUREAPITests: NURETests {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func testContainsOptionalString() {
+        let winterBird = "I need to remember how it was to feel alive"
+        
+        let alive: String? = "alive"
+        XCTAssertTrue(winterBird.containsOptionalString(alive))
+        
+        let bird: String? = "bird"
+        XCTAssertFalse(winterBird.containsOptionalString(bird))
+        
+        let nothing: String? = nil
+        XCTAssertTrue(winterBird.containsOptionalString(nothing))
+    }
 
     func testJSONRequest() {
         let expectation = expectationWithDescription("Async JSON task")
