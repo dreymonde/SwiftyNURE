@@ -8,8 +8,8 @@
 
 struct GroupsCISTParser: JSONCISTParser {
 
-    static func parse(fromJSON json: JSON) -> [Group]? {
-
+    /// Deprecated
+    static func imperativeParse(fromJSON json: JSON) -> [Group]? {
         var groups = [Group]()
         guard let university = json["university"] as? JSON,
             faculties = university["faculties"] as? [JSON] else { return nil }
@@ -34,6 +34,20 @@ struct GroupsCISTParser: JSONCISTParser {
         }
         return groups
 
+    }
+    
+    static func parse(fromJSON json: JSON) -> [Group]? {
+        guard let university = json["university"] as? JSON,
+            faculties = university["faculties"] as? [JSON] else {
+            return nil
+        }
+        let directions = faculties.flatMap({ $0["directions"] as? [JSON] }).flatten()
+        let specialities = directions.flatMap({ $0["specialities"] as? [JSON] }).flatten()
+        let jgroups = Array(directions.flatMap({ $0["groups"] as? [JSON] }).flatten())
+            + Array(specialities.flatMap({ $0["groups"] as? [JSON] }).flatten())
+        // TODO: Ugly
+        let groups = Set(jgroups.flatMap({ GroupParser.parse(fromJSON: $0) }))
+        return Array(groups)
     }
 
     internal static func groups(fromJSONArray jsons: [JSON], existingGroups groups: [Group]) -> [Group] {

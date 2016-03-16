@@ -1083,7 +1083,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.SwiftyNURE;
 				PRODUCT_NAME = SwiftyNURE;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
@@ -1110,6 +1110,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreymonde.SwiftyNURE;
 				PRODUCT_NAME = SwiftyNURE;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -1155,6 +1156,7 @@
 				BE0482101C873FD2005589E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE04823A1C8740A3005589E5 /* Build configuration list for PBXNativeTarget "SwiftyNURE tvOS" */ = {
 			isa = XCConfigurationList;
@@ -1163,6 +1165,7 @@
 				BE04823C1C8740A3005589E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE22E4C11C8728F00069483F /* Build configuration list for PBXNativeTarget "SwiftyNURE iOS" */ = {
 			isa = XCConfigurationList;
