@@ -12,7 +12,7 @@
 ### Интеграция ###
 Вы можете легко интегрировать SwiftyNURE с вашим проектом с помощью [Carthage](https://github.com/Carthage/Carthage). Просто добавьте в ваш Cartfile:
 ```
-github "dreymonde/SwiftyNURE"
+github "dreymonde/SwiftyNURE" ~> 1.2.2
 ```
 
 ### Дорожная карта ###
