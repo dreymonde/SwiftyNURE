@@ -19,6 +19,16 @@ extension Name {
     }
 }
 
+public struct FacultyName: Name {
+    public let full: String
+    public let short: String
+}
+
+public struct DepartmentName: Name {
+    public let full: String
+    public let short: String
+}
+
 public protocol TeacherType {
 
     var id: Int { get }
@@ -30,16 +40,6 @@ public protocol TeacherType {
 public struct Teacher: TeacherType {
 
     public struct Extended: TeacherType {
-
-        public struct FacultyName: Name {
-            public let full: String
-            public let short: String
-        }
-
-        public struct DepartmentName: Name {
-            public let full: String
-            public let short: String
-        }
 
         public let id: Int
         public let shortName: String

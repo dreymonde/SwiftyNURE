@@ -87,8 +87,8 @@ extension Teacher.Extended: JSONObject {
             departmentFull = json["department_full_name"] as? String,
             departmentShort = json["department_short_name"] as? String
             else { return nil }
-        let facultyName = Teacher.Extended.FacultyName(full: facultyFull, short: facultyShort)
-        let departmentName = Teacher.Extended.DepartmentName(full: departmentFull, short: departmentShort)
+        let facultyName = FacultyName(full: facultyFull, short: facultyShort)
+        let departmentName = DepartmentName(full: departmentFull, short: departmentShort)
         self.init(teacher: teacher, department: departmentName, faculty: facultyName)
     }
 
