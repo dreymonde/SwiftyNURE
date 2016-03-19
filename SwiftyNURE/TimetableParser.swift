@@ -24,12 +24,7 @@ internal struct TimetableParser: JSONCISTParser {
             jTypes = json["types"] as? [JSON],
             jEvents = json["events"] as? [JSON] else { return nil }
         var events = [Event]()
-        let timetableInfo = TimetableInfo(teachers: TimetableParser.getTeachers(jTeachers),
-                groups: TimetableParser.getGroups(jGroups),
-                subjects: TimetableParser.getSubjects(jSubjects),
-                types: TimetableParser.getTypes(jTypes)
-        )
-
+        let timetableInfo = TimetableParser.constructTimetableInfo(jTeachers: jTeachers, jGroups: jGroups, jSubjects: jSubjects, jTypes: jTypes)
         for eventJSON in jEvents {
             if let event = TimetableParser.constructEvent(fromJSON: eventJSON, withInformedTimetableInfo: timetableInfo) {
                 events.append(event)
@@ -64,6 +59,14 @@ internal struct TimetableParser: JSONCISTParser {
         let event = Event(number: pairNumber, subject: subject, teachers: teachers, auditory: auditory, groups: groups, type: type, startDate: startDate, endDate: endDate)
         return event
 
+    }
+    
+    private static func constructTimetableInfo(jTeachers jTeachers: [JSON], jGroups: [JSON], jSubjects: [JSON], jTypes: [JSON]) -> TimetableInfo {
+        return TimetableInfo(teachers: TimetableParser.getTeachers(jTeachers),
+            groups: TimetableParser.getGroups(jGroups),
+            subjects: TimetableParser.getSubjects(jSubjects),
+            types: TimetableParser.getTypes(jTypes)
+        )
     }
 
     internal static func getGroups(jsons: [JSON]) -> [Group] {
