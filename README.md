@@ -21,7 +21,7 @@ github "dreymonde/SwiftyNURE" ~> 1.2.2
 - [ ] Добавить поддержку Linux
 
 ### Инструкции ###
-Основа каркаса - поставщики (Providers). Все поставщики имплементируют протокол Receivable.
+Основа каркаса - поставщики (Providers). Все поставщики имплементируют протокол `Receivable`.
 
 ```swift
 let universityProvider = UniversityProvider.Remote() { nure in
@@ -41,7 +41,7 @@ let universityProvider = UniversityProvider.Remote() { nure in
 	let teachers = nure.teachers // [Teacher.Extended]
 }.execute()
 ```
-University - объект, содержащий в себе массив учителей (Teacher.Extended) и групп (Group).
+`University` - объект, содержащий в себе массив учителей (`Teacher.Extended`) и групп (`Group`).
 
 ```swift
 let id = teacher.id // Int
@@ -55,7 +55,7 @@ let departmentFullName = teacher.department.full // String
 let groupId = group.id // Int
 let name = group.name // String
 ```
-Для получения расписания существует поставщик расписания (TimetableProvider):
+Для получения расписания существует поставщик расписания (`TimetableProvider`):
 
 ```swift
 // Расписания от сегодня до конца следующей недели
@@ -78,10 +78,10 @@ timetableProvider.error = { error in
 }
 timetableProvider.execute()
 ```
-Timetable - коллекция объектов типа Event (реализует Eventable).
+`Timetable` - коллекция объектов типа `Event` (реализует `EventProtocol`).
 
 ```swift
-public protocol Eventable {
+public protocol EventProtocol {
     
     var subject: Subject { get }
     var teachers: [Teacher] { get }
@@ -95,7 +95,7 @@ public protocol Eventable {
     
 }
 ```
-Также существуют поставщики групп (GroupsProvider.Remote) и предодавателей (TeachersProvider.Remote), которые, по факту, "запакованы" в UniversityProvider. Их отличительной особенностью является возможность фильтрованного запроса:
+Также существуют поставщики групп (`GroupsProvider.Remote`) и предодавателей (`TeachersProvider.Remote`), которые, по факту, "запакованы" в `UniversityProvider`. Их отличительной особенностью является возможность фильтрованного запроса:
 ```swift
 let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
     print(teachers)
@@ -104,7 +104,7 @@ let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
 Группы фильтруются по названию, преподаватели - по имени, кафедре (как по полному, так и сокращённому названию) и факультету (аналогично).
 
 ### Оперирование информацией ###
-Университет может быть закодирован в NSData и обратно:
+Университет может быть закодирован в `NSData` и обратно:
 
 ```swift
 // To NSData
@@ -115,7 +115,7 @@ if let university = University(withData: binary) {
 	print(university.groups)
 }
 ```
-Это же работает и для Timetable:
+Это же работает и для `Timetable`:
 ```swift
 // To NSData
 let data = timetable.toData() // NSData?
@@ -125,7 +125,7 @@ if let timetable = Timetable(withData: data) {
     print(timetable.events(forDay: NSDate()))
 }
 ```
-Эти возможности заданы протоколом DataObject, который имплементируют практически все типы SwiftyNURE.
+Эти возможности заданы протоколом `DataObject`, который имплементируют практически все типы SwiftyNURE.
 ```swift
 public protocol DataEncodable {
     var toData: NSData? { get }
@@ -135,12 +135,12 @@ public protocol DataDecodable {
 }
 public protocol DataObject: DataEncodable, DataDecodable {  }
 ```
-"Под капотом" все эти объекты имплементируют протокол JSONObject: JSONEncodable, JSONDecodable, который наследует DataObject и автоматически конвертирует JSON в NSData.
+"Под капотом" все эти объекты имплементируют протокол `JSONObject: JSONEncodable, JSONDecodable`, который наследует `DataObject` и автоматически конвертирует JSON в `NSData`.
 ```swift
 let universityJson = university.toJSON() // [String: AnyObject]
 let kaukJson = teacher.toJSON() // [String: AnyObject]
 let timetable = Timetable(withJSON: timetableJson) // Timetable?
 ```
-> Внимание! JSON-объекты, получаемые в результате использования свойства .toJSON, **не** являются идентичными тем, которые получаются в результате запросов к серверам CIST.
+> Внимание! JSON-объекты, получаемые в результате использования свойства `.toJSON`, **не** являются идентичными тем, которые получаются в результате запросов к серверам CIST.
 
-Учтите, что структуры Teacher и Teacher.Extended, имплементирующие протокол TeacherType, различаются. Teacher не содержит в себе информации о кафедре и факультете. Teacher можно встретить в объектах Event, Teacher.Extended - в University.
+Учтите, что структуры `Teacher` и `Teacher.Extended`, имплементирующие протокол `TeacherType`, различаются. `Teacher` не содержит в себе информации о кафедре и факультете. `Teacher` можно встретить в объектах `Event`, `Teacher.Extended` - в `University`.
