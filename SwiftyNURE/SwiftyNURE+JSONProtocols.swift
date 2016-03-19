@@ -30,20 +30,20 @@ extension Group: JSONObject {
 extension Subject: JSONObject {
 
     public func toJSON() -> JSON {
-        let jsonDict: JSON = [
+        let subjectJsonDict: JSON = [
             "id": id,
             "name": name,
             "short_name": shortName
         ]
-        return jsonDict
+        return subjectJsonDict
     }
 
     public init?(withJSON json: JSON) {
-        guard let id = json["id"] as? Int,
+        guard let subjectId = json["id"] as? Int,
             name = json["name"] as? String,
             shortName = json["short_name"] as? String
             else { return nil }
-        self.init(name: name, shortName: shortName, id: id)
+        self.init(name: name, shortName: shortName, id: subjectId)
     }
 
 }
@@ -60,11 +60,11 @@ extension Teacher: JSONObject {
     }
 
     public init?(withJSON json: JSON) {
-        guard let id = json["id"] as? Int,
+        guard let teacherId = json["id"] as? Int,
             fullName = json["full_name"] as? String,
             shortName = json["short_name"] as? String
             else { return nil }
-        self.init(fullName: fullName, shortName: shortName, id: id)
+        self.init(fullName: fullName, shortName: shortName, id: teacherId)
     }
 
 }
