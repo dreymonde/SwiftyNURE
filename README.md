@@ -1,7 +1,7 @@
 ![SwiftyNURE](/SwiftyNURELogo.jpg)
 # SwiftyNURE #
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Swift](https://img.shields.io/badge/Swift-2.1-orange.svg?)
+![Swift](https://img.shields.io/badge/Swift-2.1-orange.svg?) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![codebeat badge](https://codebeat.co/badges/96d04038-4f22-42f4-b7c5-21ae82d1b4b3)](https://codebeat.co/projects/github-com-dreymonde-swiftynure)
 
 Максимально простой Swift-фреймворк для общения с cist.nure.ua. Доступен для iOS, OS X, watchOS и tvOS. Поддержка Linux планируется в ближайшее время.
 
