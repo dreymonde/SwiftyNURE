@@ -11,10 +11,6 @@ import Foundation
 public struct Timetable {
 
     public let events: [Event]
-//    internal var teachers: [Teacher] = [Teacher]()
-//    internal var groups: [Group] = [Group]()
-//    internal var subjects: [Subject] = [Subject]()
-//    internal var types: [EventType] = [EventType]()
 
     public init(events: [Event] = []) {
         self.events = events
