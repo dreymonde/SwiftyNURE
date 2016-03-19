@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Eventable {
+public protocol EventProtocol {
 
     var subject: Subject { get }
     var teachers: [Teacher] { get }
@@ -22,7 +22,7 @@ public protocol Eventable {
 
 }
 
-public struct Event: Eventable {
+public struct Event: EventProtocol {
 
     public let number: Int
     public let subject: Subject
