@@ -35,7 +35,7 @@ class GroupsProviderTests: NURETests {
     func testPartGroups() {
         let expectation = expectationWithDescription("Async group task")
         let _ = GroupsProvider.Remote(matching: "14-1") { groups in
-            for group in groups {
+            groups.forEach { group in
                 print(group.name)
                 if !group.name.containsString("14-1") {
                     XCTFail("It needs to contain 14-1")

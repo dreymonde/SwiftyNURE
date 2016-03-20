@@ -23,13 +23,8 @@ internal struct TimetableParser: JSONCISTParser {
             jSubjects = json["subjects"] as? [JSON],
             jTypes = json["types"] as? [JSON],
             jEvents = json["events"] as? [JSON] else { return nil }
-        var events = [Event]()
         let timetableInfo = TimetableParser.constructTimetableInfo(jTeachers: jTeachers, jGroups: jGroups, jSubjects: jSubjects, jTypes: jTypes)
-        for eventJSON in jEvents {
-            if let event = TimetableParser.constructEvent(fromJSON: eventJSON, withInformedTimetableInfo: timetableInfo) {
-                events.append(event)
-            }
-        }
+        let events = jEvents.flatMap({ TimetableParser.constructEvent(fromJSON: $0, withInformedTimetableInfo: timetableInfo) })
 
         let timetable = Timetable(events: events)
         return timetable
@@ -70,52 +65,28 @@ internal struct TimetableParser: JSONCISTParser {
     }
 
     internal static func getGroups(jsons: [JSON]) -> [Group] {
-        var groups = [Group]()
-        for groupJSON in jsons {
-            if let group = GroupParser.parse(fromJSON: groupJSON) {
-                groups.append(group)
-            }
-        }
-        return groups
+        return jsons.flatMap(GroupParser.parse)
     }
 
     internal static func getTeachers(jsons: [JSON]) -> [Teacher] {
-        var teachers = [Teacher]()
-        for teacherJSON in jsons {
-            if let teacher = TeacherParser.parse(fromJSON: teacherJSON) {
-                teachers.append(teacher)
-            }
-        }
-        return teachers
+        return jsons.flatMap(TeacherParser.parse)
     }
 
-    internal static func getSubjects(json: [JSON]) -> [Subject] {
-        var subjects = [Subject]()
-        for subjectJSON in json {
-            if let subject = SubjectParser.parse(fromJSON: subjectJSON) {
-                subjects.append(subject)
-            }
-        }
-        return subjects
+    internal static func getSubjects(jsons: [JSON]) -> [Subject] {
+        return jsons.flatMap(SubjectParser.parse)
     }
 
-    internal static func getTypes(json: [JSON]) -> [EventType] {
-        var types = [EventType]()
-        for typeJSON in json {
-            if let type = EventTypeParser.parse(fromJSON: typeJSON) {
-                types.append(type)
-            }
-        }
-        return types
+    internal static func getTypes(jsons: [JSON]) -> [EventType] {
+        return jsons.flatMap(EventTypeParser.parse)
     }
 
-    internal static func eventType(fromID id: Int, inJSONArray json: [JSON]) -> EventType? {
-        for typeJSON in json {
-            if let typeID = typeJSON["id"] as? Int where typeID == id {
-                return EventTypeParser.parse(fromJSON: typeJSON)
+    internal static func eventType(fromID id: Int, inJSONArray jsons: [JSON]) -> EventType? {
+        return jsons.lazy.filter({ (jType: JSON) -> Bool in
+            if let typeID = jType["id"] as? Int where typeID == id {
+                return true
             }
-        }
-        return nil
+            return false
+        }).first.flatMap(EventTypeParser.parse)
     }
 
 }

@@ -24,8 +24,8 @@ class TeachersProviderTests: NURETests {
     func testProvide() {
         let expectation = expectationWithDescription("Async teacher task")
         let provider = TeachersProvider.Remote() { teachers in
-            for teacher in teachers {
-                print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
+            teachers.forEach {
+                print("\($0.fullName) | \($0.department.short) | \($0.faculty.short)")
             }
             XCTAssertGreaterThanOrEqual(teachers.count, 800)
             expectation.fulfill()
@@ -38,7 +38,7 @@ class TeachersProviderTests: NURETests {
     func testFilteredNameProvide() {
         let expectation = expectationWithDescription("Async teacher task")
         let provider = TeachersProvider.Remote(matching: "Каук") { teachers in
-            for teacher in teachers {
+            teachers.forEach { teacher in
                 if !teacher.fullName.containsString("Каук") { XCTFail() }
                 print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
             }
@@ -53,7 +53,7 @@ class TeachersProviderTests: NURETests {
     func testFilteredDepProvide() {
         let expectation = expectationWithDescription("Async teacher task")
         let provider = TeachersProvider.Remote(matching: "Кафедра програмної інженерії") { teachers in
-            for teacher in teachers {
+            teachers.forEach { teacher in
                 if !teacher.department.full.containsString("програмної інженерії") { XCTFail() }
                 print("\(teacher.fullName) | \(teacher.department.short) | \(teacher.faculty.short)")
             }
