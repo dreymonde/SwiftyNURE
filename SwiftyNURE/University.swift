@@ -18,8 +18,4 @@ public struct University {
         self.groups = groups
     }
 
-    public init() {
-        self.init(teachers: [], groups: [])
-    }
-
 }

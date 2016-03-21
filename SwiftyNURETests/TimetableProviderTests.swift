@@ -34,7 +34,7 @@ class TimetableProviderTests: NURETests {
         provider.execute()
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
-
+    
     func testProvideIncorrect() {
         let expectation = expectationWithDescription("Async timetable task")
         let provider = TimetableProvider.Remote(forGroupID: 15) { timetable in
