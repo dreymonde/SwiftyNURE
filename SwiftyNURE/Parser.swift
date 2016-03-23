@@ -8,7 +8,7 @@
 
 internal protocol JSONCISTParser {
 
-    typealias ParseTo
+    associatedtype ParseTo
 
     static func parse(fromJSON json: JSON) -> ParseTo?
 

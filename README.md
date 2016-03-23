@@ -1,18 +1,18 @@
 ![SwiftyNURE](/SwiftyNURELogo.jpg)
 # SwiftyNURE #
 
-![Swift](https://img.shields.io/badge/Swift-2.1-orange.svg?) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![codebeat badge](https://codebeat.co/badges/96d04038-4f22-42f4-b7c5-21ae82d1b4b3)](https://codebeat.co/projects/github-com-dreymonde-swiftynure)
+![Swift](https://img.shields.io/badge/Swift-2.2-orange.svg?) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![codebeat badge](https://codebeat.co/badges/96d04038-4f22-42f4-b7c5-21ae82d1b4b3)](https://codebeat.co/projects/github-com-dreymonde-swiftynure)
 
 Максимально простой Swift-фреймворк для общения с cist.nure.ua. Доступен для iOS, OS X, watchOS и tvOS. Поддержка Linux планируется в ближайшее время.
 
 ### Требования ###
 - OS X 10.10+
-- Xcode 7
+- Xcode 7.3
 
 ### Интеграция ###
 Вы можете легко интегрировать SwiftyNURE с вашим проектом с помощью [Carthage](https://github.com/Carthage/Carthage). Просто добавьте в ваш Cartfile:
 ```
-github "dreymonde/SwiftyNURE" ~> 1.2.3
+github "dreymonde/SwiftyNURE" ~> 1.3.0
 ```
 
 ### Дорожная карта ###

@@ -11,7 +11,7 @@ import EezehRequests
 
 public protocol TeachersProviderType: Receivable {
 
-    typealias ATeacher = TeacherType
+    associatedtype ATeacher = TeacherType
 
     var completion: ([ATeacher] -> Void) { get }
     var error: (ErrorType -> Void)? { get set }
