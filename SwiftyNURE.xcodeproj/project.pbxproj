@@ -297,7 +297,7 @@
 				BE080C161C86F0D00019966A /* EezehRequests.framework */,
 				BE04822B1C87401F005589E5 /* EezehRequests.framework */,
 				BE41DB481C872C060062F561 /* EezehRequests.framework */,
-				BEAAE3E41C7B7BFA003C90BC /* SwiftyNURE */,
+				BEAAE3E41C7B7BFA003C90BC /* Sources */,
 				BEAAE3F01C7B7BFA003C90BC /* SwiftyNURETests */,
 				BEAAE3E31C7B7BFA003C90BC /* Products */,
 			);
@@ -316,17 +316,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEAAE3E41C7B7BFA003C90BC /* SwiftyNURE */ = {
+		BEAAE3E41C7B7BFA003C90BC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BEAAE43E1C7B7C50003C90BC /* Administrative */,
-				BEAAE43F1C7B7C57003C90BC /* Providers */,
-				BEAAE4401C7B7C5E003C90BC /* Model */,
-				BEAAE4411C7B7C67003C90BC /* Parsers */,
-				BEAAE4161C7B7C2D003C90BC /* University.swift */,
+				BEF2D7D91CA53BCC00172582 /* SwiftyNURE */,
 				BEAAE3E51C7B7BFA003C90BC /* SwiftyNURE.h */,
 				BEAAE3E71C7B7BFA003C90BC /* Info.plist */,
 			);
+			name = Sources;
 			path = SwiftyNURE;
 			sourceTree = "<group>";
 		};
@@ -393,6 +390,18 @@
 				BE080C231C87020B0019966A /* TeachersParser.swift */,
 			);
 			name = Parsers;
+			sourceTree = "<group>";
+		};
+		BEF2D7D91CA53BCC00172582 /* SwiftyNURE */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAE43E1C7B7C50003C90BC /* Administrative */,
+				BEAAE43F1C7B7C57003C90BC /* Providers */,
+				BEAAE4401C7B7C5E003C90BC /* Model */,
+				BEAAE4411C7B7C67003C90BC /* Parsers */,
+				BEAAE4161C7B7C2D003C90BC /* University.swift */,
+			);
+			name = SwiftyNURE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

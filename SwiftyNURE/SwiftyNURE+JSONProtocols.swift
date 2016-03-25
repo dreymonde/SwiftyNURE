@@ -107,7 +107,7 @@ extension EventType: JSONObject {
     }
 
     public init?(withJSON json: JSON) {
-        guard let typeString = json["type"] as? String, type = Type(rawValue: typeString),
+        guard let typeString = json["type"] as? String, type = Kind(rawValue: typeString),
             id = json["id"] as? Int,
             shortName = json["short_name"] as? String,
             fullName = json["full_name"] as? String

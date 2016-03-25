@@ -10,7 +10,7 @@ import Foundation
 
 public struct EventType {
     
-    public enum Type: String {
+    public enum Kind: String {
         case Lecture
         case Practice
         case Lab
@@ -20,7 +20,7 @@ public struct EventType {
         case CourseWork
     }
 
-    public init(id: Int, shortName: String, fullName: String, type: Type) {
+    public init(id: Int, shortName: String, fullName: String, type: Kind) {
         self.id = id
         self.shortName = shortName
         self.fullName = fullName
@@ -30,6 +30,6 @@ public struct EventType {
     public let id: Int
     public let shortName: String
     public let fullName: String
-    public let type: Type
+    public let type: Kind
 
 }
